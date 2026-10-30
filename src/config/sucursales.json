@@ -1,0 +1,84 @@
+{
+ "empresa": {
+  "nombre": "Distribuidora Río Claro",
+  "giro": "Distribución de productos de limpieza e higiene",
+  "anosEnElMercado": 22,
+  "empleados": 140,
+  "proveedores": 60,
+  "clientesActivos": 1800,
+  "tiposDeCliente": [
+   "Hoteles",
+   "Restaurantes",
+   "Escuelas",
+   "Pequeñas tiendas"
+  ],
+  "sucursalPrincipalId": "gdl"
+ },
+ "sucursales": [
+  {
+   "id": "gdl",
+   "nombre": "Río Claro Guadalajara",
+   "esPrincipal": true,
+   "direccionGeneral": true,
+   "ciudad": "Guadalajara",
+   "calle": "Av. Chapultepec Sur",
+   "numero": "1250",
+   "colonia": "Americana",
+   "estado": "Jalisco",
+   "codigoPostal": "44160",
+   "telefono": "+52 33 3615 0100"
+  },
+  {
+   "id": "zap",
+   "nombre": "Río Claro Zapopan",
+   "esPrincipal": false,
+   "direccionGeneral": false,
+   "ciudad": "Zapopan",
+   "calle": "Av. Patria",
+   "numero": "2100",
+   "colonia": "Jardines Universidad",
+   "estado": "Jalisco",
+   "codigoPostal": "45110",
+   "telefono": "+52 33 3629 0200"
+  },
+  {
+   "id": "leo",
+   "nombre": "Río Claro León",
+   "esPrincipal": false,
+   "direccionGeneral": false,
+   "ciudad": "León",
+   "calle": "Blvd. Adolfo López Mateos Ote.",
+   "numero": "1580",
+   "colonia": "Los Paraísos",
+   "estado": "Guanajuato",
+   "codigoPostal": "37320",
+   "telefono": "+52 477 714 0300"
+  },
+  {
+   "id": "qro",
+   "nombre": "Río Claro Querétaro",
+   "esPrincipal": false,
+   "direccionGeneral": false,
+   "ciudad": "Querétaro",
+   "calle": "Av. Constituyentes",
+   "numero": "480",
+   "colonia": "Niños Héroes",
+   "estado": "Querétaro",
+   "codigoPostal": "76010",
+   "telefono": "+52 442 215 0400"
+  },
+  {
+   "id": "ags",
+   "nombre": "Río Claro Aguascalientes",
+   "esPrincipal": false,
+   "direccionGeneral": false,
+   "ciudad": "Aguascalientes",
+   "calle": "Av. Aguascalientes Sur",
+   "numero": "905",
+   "colonia": "Jardines de la Concepción",
+   "estado": "Aguascalientes",
+   "codigoPostal": "20120",
+   "telefono": "+52 449 910 0500"
+  }
+ ]
+}

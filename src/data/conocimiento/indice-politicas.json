@@ -1,0 +1,270 @@
+{
+ "meta": {
+  "descripcion": "Índice de políticas vigentes de Distribuidora Río Claro. audiencia=publica puede cargarse en el asistente para clientes; audiencia=interna solo para empleados.",
+  "total": 13,
+  "publicas": 9,
+  "internas": 4
+ },
+ "politicas": [
+  {
+   "id": "POL-01",
+   "titulo": "Política de devoluciones",
+   "version": "3.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0018",
+    "nombre": "Javier Vargas Chávez",
+    "puesto": "Gerente de sucursal"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-01_Politica_de_devoluciones.md",
+   "archivoDocx": "politicas_devoluciones/Politica_Devoluciones_2024_v3.docx"
+  },
+  {
+   "id": "POL-02",
+   "titulo": "Pedidos y cancelaciones",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0018",
+    "nombre": "Javier Vargas Chávez",
+    "puesto": "Gerente de sucursal"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-02_Pedidos_y_cancelaciones.md",
+   "archivoDocx": "politicas/docx/POL-02_Pedidos_y_cancelaciones.docx"
+  },
+  {
+   "id": "POL-03",
+   "titulo": "Entregas y envíos",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0042",
+    "nombre": "Diana Barajas Sánchez",
+    "puesto": "Coordinador de logística"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-03_Entregas_y_envios.md",
+   "archivoDocx": "politicas/docx/POL-03_Entregas_y_envios.docx"
+  },
+  {
+   "id": "POL-04",
+   "titulo": "Precios, descuentos e IVA",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor",
+    "puesto": "Director general"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-04_Precios_descuentos_e_IVA.md",
+   "archivoDocx": "politicas/docx/POL-04_Precios_descuentos_e_IVA.docx"
+  },
+  {
+   "id": "POL-05",
+   "titulo": "Crédito y cobranza",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0003",
+    "nombre": "Sandra Castro García",
+    "puesto": "Contador general"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-05_Credito_y_cobranza.md",
+   "archivoDocx": "politicas/docx/POL-05_Credito_y_cobranza.docx"
+  },
+  {
+   "id": "POL-06",
+   "titulo": "Facturación a clientes",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0003",
+    "nombre": "Sandra Castro García",
+    "puesto": "Contador general"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-06_Facturacion_a_clientes.md",
+   "archivoDocx": "politicas/docx/POL-06_Facturacion_a_clientes.docx"
+  },
+  {
+   "id": "POL-07",
+   "titulo": "Atención de quejas y seguimiento",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0018",
+    "nombre": "Javier Vargas Chávez",
+    "puesto": "Gerente de sucursal"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-07_Atencion_de_quejas_y_seguimiento.md",
+   "archivoDocx": "politicas/docx/POL-07_Atencion_de_quejas_y_seguimiento.docx"
+  },
+  {
+   "id": "POL-08",
+   "titulo": "Uso del asistente de inteligencia artificial",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2026-10-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0017",
+    "nombre": "Carlos Medina Ríos",
+    "puesto": "Soporte y sistemas"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-08_Uso_del_asistente_de_inteligencia_artificial.md",
+   "archivoDocx": "politicas/docx/POL-08_Uso_del_asistente_de_inteligencia_artificial.docx"
+  },
+  {
+   "id": "POL-09",
+   "titulo": "Privacidad y protección de datos personales",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2026-10-01",
+   "audiencia": "publica",
+   "cargarEnAsistenteClientes": true,
+   "responsable": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor",
+    "puesto": "Director general"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-09_Privacidad_y_proteccion_de_datos_personales.md",
+   "archivoDocx": "politicas/docx/POL-09_Privacidad_y_proteccion_de_datos_personales.docx"
+  },
+  {
+   "id": "POL-10",
+   "titulo": "Pago a proveedores y recepción de facturas",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2024-06-01",
+   "audiencia": "interna",
+   "cargarEnAsistenteClientes": false,
+   "responsable": {
+    "idEmpleado": "RC-0003",
+    "nombre": "Sandra Castro García",
+    "puesto": "Contador general"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-10_Pago_a_proveedores_y_recepcion_de_facturas.md",
+   "archivoDocx": "politicas/docx/POL-10_Pago_a_proveedores_y_recepcion_de_facturas.docx"
+  },
+  {
+   "id": "POL-11",
+   "titulo": "Compras y alta de proveedores",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2025-03-01",
+   "audiencia": "interna",
+   "cargarEnAsistenteClientes": false,
+   "responsable": {
+    "idEmpleado": "RC-0011",
+    "nombre": "Enrique Palacios García",
+    "puesto": "Jefe de compras"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-11_Compras_y_alta_de_proveedores.md",
+   "archivoDocx": "politicas/docx/POL-11_Compras_y_alta_de_proveedores.docx"
+  },
+  {
+   "id": "POL-12",
+   "titulo": "Inventario y existencias",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2025-03-01",
+   "audiencia": "interna",
+   "cargarEnAsistenteClientes": false,
+   "responsable": {
+    "idEmpleado": "RC-0031",
+    "nombre": "Antonio Gómez López",
+    "puesto": "Jefe de bodega"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-12_Inventario_y_existencias.md",
+   "archivoDocx": "politicas/docx/POL-12_Inventario_y_existencias.docx"
+  },
+  {
+   "id": "POL-13",
+   "titulo": "Accesos y seguridad de la información",
+   "version": "1.0",
+   "vigente": true,
+   "vigenteDesde": "2026-10-01",
+   "audiencia": "interna",
+   "cargarEnAsistenteClientes": false,
+   "responsable": {
+    "idEmpleado": "RC-0017",
+    "nombre": "Carlos Medina Ríos",
+    "puesto": "Soporte y sistemas"
+   },
+   "autorizo": {
+    "idEmpleado": "RC-0001",
+    "nombre": "Ernesto Ramírez Villaseñor"
+   },
+   "archivoMd": "politicas/md/POL-13_Accesos_y_seguridad_de_la_informacion.md",
+   "archivoDocx": "politicas/docx/POL-13_Accesos_y_seguridad_de_la_informacion.docx"
+  }
+ ]
+}

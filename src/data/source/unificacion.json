@@ -1,0 +1,4648 @@
+{
+ "meta": {
+  "descripcion": "Unificación determinista de los inventarios de cinco sucursales contra el catálogo único.",
+  "fuente": "data/Inventario/* y src/data/source/catalogo-productos.json",
+  "totalSucursales": 5,
+  "totalProductos": 64,
+  "totalFilas": 320
+ },
+ "sucursales": {
+  "gdl": {
+   "archivo": "Inventario_Guadalajara.xlsx",
+   "hojas": [
+    "Inventario"
+   ],
+   "filasLeidas": 64,
+   "filasResueltas": 64,
+   "filasEnRevision": 0,
+   "convenciones": {
+    "factorPrecio": 1,
+    "precioIncluyeIVA": false,
+    "existenciaSignifica": "fisica"
+   }
+  },
+  "zap": {
+   "archivo": "Productos_Zapopan.xlsx",
+   "hojas": [
+    "Productos"
+   ],
+   "filasLeidas": 64,
+   "filasResueltas": 64,
+   "filasEnRevision": 0,
+   "convenciones": {
+    "factorPrecio": 1.16,
+    "precioIncluyeIVA": true,
+    "existenciaSignifica": "disponible"
+   }
+  },
+  "leo": {
+   "archivo": "Inventario_Leon_oct2026.xlsx",
+   "hojas": [
+    "Lista"
+   ],
+   "filasLeidas": 64,
+   "filasResueltas": 64,
+   "filasEnRevision": 0,
+   "convenciones": {
+    "factorPrecio": 1,
+    "precioIncluyeIVA": false,
+    "existenciaSignifica": "fisica"
+   }
+  },
+  "qro": {
+   "archivo": "Catalogo_Queretaro.xlsx",
+   "hojas": [
+    "Químicos y limpieza",
+    "Papel y plásticos",
+    "Utensilios y equipo"
+   ],
+   "filasLeidas": 64,
+   "filasResueltas": 64,
+   "filasEnRevision": 0,
+   "convenciones": {
+    "factorPrecio": 1,
+    "precioIncluyeIVA": false,
+    "existenciaSignifica": "fisica"
+   }
+  },
+  "ags": {
+   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "hojas": [
+    "Existencias AGS"
+   ],
+   "filasLeidas": 64,
+   "filasResueltas": 61,
+   "filasEnRevision": 3,
+   "convenciones": {
+    "factorPrecio": 1,
+    "precioIncluyeIVA": false,
+    "existenciaSignifica": "fisica"
+   }
+  }
+ },
+ "productos": [
+  {
+   "claveProducto": "CLO-1L",
+   "nombreCatalogo": "Cloro 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0244",
+     "nombrePublicado": "CLORO LITRO",
+     "unidad": "BOT",
+     "precioPublicado": 18.5,
+     "precioSinIVA": 18.5,
+     "existenciaPublicada": 240,
+     "existenciaComparable": 240,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP937A",
+     "nombrePublicado": "Cloro 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 21.46,
+     "precioSinIVA": 18.5,
+     "existenciaPublicada": 180,
+     "existenciaComparable": 180,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10539,
+     "nombrePublicado": "Blanqueador 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 18.5,
+     "precioSinIVA": 18.5,
+     "existenciaPublicada": 95,
+     "existenciaComparable": 95,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q001",
+     "nombrePublicado": "Cloro Blanqueador 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 18.5,
+     "precioSinIVA": 18.5,
+     "existenciaPublicada": 310,
+     "existenciaComparable": 310,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Cloro (litro)",
+     "unidad": "botella",
+     "precioPublicado": 18.5,
+     "precioSinIVA": 18.5,
+     "existenciaPublicada": 120,
+     "existenciaComparable": 120,
+     "metodo": "alias",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 18.5,
+     "max": 21.46
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "CLO-4L",
+   "nombreCatalogo": "Cloro 4 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0655",
+     "nombrePublicado": "CLORO GALON",
+     "unidad": "GAR",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 116,
+     "existenciaComparable": 116,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP821B",
+     "nombrePublicado": "Cloro 4L",
+     "unidad": "4 litros",
+     "precioPublicado": 60.32,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 28,
+     "existenciaComparable": 52,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10815,
+     "nombrePublicado": "Blanqueador 4L",
+     "unidad": "4L",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 72,
+     "existenciaComparable": 72,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q002",
+     "nombrePublicado": "Cloro Blanqueador 4 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 99,
+     "existenciaComparable": 99,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Cloro (galón)",
+     "unidad": "garrafa",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 107,
+     "existenciaComparable": 107,
+     "metodo": "alias",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 52,
+     "max": 60.32
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "CLO-20L",
+   "nombreCatalogo": "Cloro 20 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1030",
+     "nombrePublicado": "CLORO 20 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 14,
+     "existenciaComparable": 14,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP834G",
+     "nombrePublicado": "Cloro 20L",
+     "unidad": "20 litros",
+     "precioPublicado": 243.6,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10537,
+     "nombrePublicado": "Blanqueador 20 Lts",
+     "unidad": "20L",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q003",
+     "nombrePublicado": "Cloro Blanqueador 20 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 35,
+     "existenciaComparable": 35,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Cloro (20 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 18,
+     "metodo": "alias",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 210,
+     "max": 243.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DES-1L",
+   "nombreCatalogo": "Desinfectante multiusos 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1049",
+     "nombrePublicado": "DESINFECTANTE MULTIUSOS 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 32,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 123,
+     "existenciaComparable": 123,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP581C",
+     "nombrePublicado": "Limpiador multiusos 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 37.12,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 0,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10280,
+     "nombrePublicado": "Desinfectante uso general 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 32,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q004",
+     "nombrePublicado": "Desinfectante Mult. 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 32,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 23,
+     "existenciaComparable": 23,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 32,
+     "max": 37.12
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DES-5L",
+   "nombreCatalogo": "Desinfectante multiusos 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0211",
+     "nombrePublicado": "DESINFECTANTE MULTIUSOS 5 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 60,
+     "existenciaComparable": 60,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP593D",
+     "nombrePublicado": "Desinfectante 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 110.2,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 45,
+     "existenciaComparable": 45,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10835,
+     "nombrePublicado": "Desinfectante uso general 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 30,
+     "existenciaComparable": 30,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q005",
+     "nombrePublicado": "Desinfectante Mult. 5 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 80,
+     "existenciaComparable": 80,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Desinfectante (5 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 31,
+     "existenciaComparable": 31,
+     "metodo": "alias",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 95,
+     "max": 110.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DES-20L",
+   "nombreCatalogo": "Desinfectante multiusos 20 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0458",
+     "nombrePublicado": "DESINFECTANTE MULTIUSOS 20 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 340,
+     "precioSinIVA": 340,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP970B",
+     "nombrePublicado": "Limpiador multiusos 20L",
+     "unidad": "20 litros",
+     "precioPublicado": 394.4,
+     "precioSinIVA": 340,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10096,
+     "nombrePublicado": "Desinfectante uso general 20 Lts",
+     "unidad": "20L",
+     "precioPublicado": 340,
+     "precioSinIVA": 340,
+     "existenciaPublicada": 44,
+     "existenciaComparable": 44,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q006",
+     "nombrePublicado": "Desinfectante Mult. 20 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 340,
+     "precioSinIVA": 340,
+     "existenciaPublicada": 16,
+     "existenciaComparable": 16,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 340,
+     "max": 394.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "ACM-1L",
+   "nombreCatalogo": "Ácido muriático 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1140",
+     "nombrePublicado": "ACIDO MURIATICO 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 107,
+     "existenciaComparable": 107,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP741H",
+     "nombrePublicado": "Ácido muriático 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 32.48,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10868,
+     "nombrePublicado": "Ácido muriático 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 85,
+     "existenciaComparable": 85,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q007",
+     "nombrePublicado": "Ácido Muriático 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 49,
+     "existenciaComparable": 49,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Ácido muriático (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 85,
+     "existenciaComparable": 85,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 28,
+     "max": 32.48
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "ACM-4L",
+   "nombreCatalogo": "Ácido muriático 4 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0862",
+     "nombrePublicado": "ACIDO MURIATICO 4 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 89,
+     "precioSinIVA": 89,
+     "existenciaPublicada": 178,
+     "existenciaComparable": 178,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP790H",
+     "nombrePublicado": "Ácido muriático 4L",
+     "unidad": "4 litros",
+     "precioPublicado": 103.24,
+     "precioSinIVA": 89,
+     "existenciaPublicada": 17,
+     "existenciaComparable": 17,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10219,
+     "nombrePublicado": "Ácido muriático 4 Lts",
+     "unidad": "4L",
+     "precioPublicado": 89,
+     "precioSinIVA": 89,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q008",
+     "nombrePublicado": "Ácido Muriático 4 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 89,
+     "precioSinIVA": 89,
+     "existenciaPublicada": 29,
+     "existenciaComparable": 29,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Ácido muriático (4 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 89,
+     "precioSinIVA": 89,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 89,
+     "max": 103.24
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "SAN-1L",
+   "nombreCatalogo": "Sanitizante para superficies 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1173",
+     "nombrePublicado": "SANITIZANTE PARA SUPERFICIES 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 110,
+     "existenciaComparable": 110,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP831E",
+     "nombrePublicado": "Sanitizante para superficies 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 52.2,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 24,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10236,
+     "nombrePublicado": "Sanitizante para superficies 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 16,
+     "existenciaComparable": 16,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q009",
+     "nombrePublicado": "Sanitizante para Superficies 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 74,
+     "existenciaComparable": 74,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Sanitizante para superficies (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 99,
+     "existenciaComparable": 99,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 45,
+     "max": 52.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "LVC-1L",
+   "nombreCatalogo": "Limpiavidrios 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1122",
+     "nombrePublicado": "LIMPIAVIDRIOS 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 36,
+     "precioSinIVA": 36,
+     "existenciaPublicada": 182,
+     "existenciaComparable": 182,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP673G",
+     "nombrePublicado": "Limpiavidrios 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 41.76,
+     "precioSinIVA": 36,
+     "existenciaPublicada": 28,
+     "existenciaComparable": 30,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10005,
+     "nombrePublicado": "Limpiavidrios 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 36,
+     "precioSinIVA": 36,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q010",
+     "nombrePublicado": "Limpiavidrios 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 36,
+     "precioSinIVA": 36,
+     "existenciaPublicada": 39,
+     "existenciaComparable": 39,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Limpiavidrios (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 36,
+     "precioSinIVA": 36,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 36,
+     "max": 41.76
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DGR-1L",
+   "nombreCatalogo": "Desengrasante 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1006",
+     "nombrePublicado": "DESENGRASANTE 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 152,
+     "existenciaComparable": 152,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP785E",
+     "nombrePublicado": "Desengrasante 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 55.68,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 66,
+     "existenciaComparable": 69,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10976,
+     "nombrePublicado": "Desengrasante 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 56,
+     "existenciaComparable": 56,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q011",
+     "nombrePublicado": "Desengrasante 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 84,
+     "existenciaComparable": 84,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Desengrasante (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 88,
+     "existenciaComparable": 88,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 48,
+     "max": 55.68
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DGR-5L",
+   "nombreCatalogo": "Desengrasante 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0904",
+     "nombrePublicado": "DESENGRASANTE 5 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 35,
+     "existenciaComparable": 35,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP661H",
+     "nombrePublicado": "Desengrasante 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 220.4,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 34,
+     "existenciaComparable": 34,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10095,
+     "nombrePublicado": "Desengrasante 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q012",
+     "nombrePublicado": "Desengrasante 5 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 9,
+     "existenciaComparable": 9,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Desengrasante (5 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 190,
+     "max": 220.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DET-1K",
+   "nombreCatalogo": "Detergente en polvo 1 kg",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0492",
+     "nombrePublicado": "DETERGENTE POLVO 1 KG",
+     "unidad": "BOLSA",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 134,
+     "existenciaComparable": 134,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP924G",
+     "nombrePublicado": "Detergente en polvo 1 kg",
+     "unidad": "1 kg",
+     "precioPublicado": 44.08,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 25,
+     "existenciaComparable": 25,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10899,
+     "nombrePublicado": "Jabón en polvo 1 kg",
+     "unidad": "1 kg",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 15,
+     "existenciaComparable": 15,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q013",
+     "nombrePublicado": "Detergente en Polvo 1 Kg",
+     "unidad": "Bls",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 88,
+     "existenciaComparable": 88,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Detergente en polvo (1 kg)",
+     "unidad": "bolsa",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 31,
+     "existenciaComparable": 31,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 38,
+     "max": 44.08
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DET-5K",
+   "nombreCatalogo": "Detergente en polvo 5 kg",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0006",
+     "nombrePublicado": "DETERGENTE POLVO 5 KG",
+     "unidad": "BOLSA",
+     "precioPublicado": 165,
+     "precioSinIVA": 165,
+     "existenciaPublicada": 19,
+     "existenciaComparable": 19,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP543D",
+     "nombrePublicado": "Detergente en polvo 5 kg",
+     "unidad": "5 kg",
+     "precioPublicado": 191.4,
+     "precioSinIVA": 165,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 6,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10465,
+     "nombrePublicado": "Jabón en polvo 5 kg",
+     "unidad": "5 kg",
+     "precioPublicado": 165,
+     "precioSinIVA": 165,
+     "existenciaPublicada": 37,
+     "existenciaComparable": 37,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q014",
+     "nombrePublicado": "Detergente en Polvo 5 Kg",
+     "unidad": "Bls",
+     "precioPublicado": 165,
+     "precioSinIVA": 165,
+     "existenciaPublicada": 36,
+     "existenciaComparable": 36,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Detergente en polvo (5 kg)",
+     "unidad": "bolsa",
+     "precioPublicado": 165,
+     "precioSinIVA": 165,
+     "existenciaPublicada": 54,
+     "existenciaComparable": 54,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 165,
+     "max": 191.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DET-20K",
+   "nombreCatalogo": "Detergente en polvo 20 kg",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0166",
+     "nombrePublicado": "DETERGENTE POLVO 20 KG",
+     "unidad": "SACO",
+     "precioPublicado": 560,
+     "precioSinIVA": 560,
+     "existenciaPublicada": 43,
+     "existenciaComparable": 43,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP401E",
+     "nombrePublicado": "Detergente en polvo 20 kg",
+     "unidad": "20 kg",
+     "precioPublicado": 649.6,
+     "precioSinIVA": 560,
+     "existenciaPublicada": 15,
+     "existenciaComparable": 15,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10661,
+     "nombrePublicado": "Jabón en polvo 20 kg",
+     "unidad": "20 kg",
+     "precioPublicado": 560,
+     "precioSinIVA": 560,
+     "existenciaPublicada": 24,
+     "existenciaComparable": 24,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q015",
+     "nombrePublicado": "Detergente en Polvo 20 Kg",
+     "unidad": "Sco",
+     "precioPublicado": 560,
+     "precioSinIVA": 560,
+     "existenciaPublicada": 21,
+     "existenciaComparable": 21,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Detergente en polvo (20 kg)",
+     "unidad": "saco",
+     "precioPublicado": 560,
+     "precioSinIVA": 560,
+     "existenciaPublicada": 46,
+     "existenciaComparable": 46,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 560,
+     "max": 649.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "JAB-1L",
+   "nombreCatalogo": "Jabón líquido para manos 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0227",
+     "nombrePublicado": "JABON LIQUIDO MANOS 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 110,
+     "existenciaComparable": 110,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP109A",
+     "nombrePublicado": "Jabón de manos 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 48.72,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 69,
+     "existenciaComparable": 90,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10338,
+     "nombrePublicado": "Jabón manos 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 70,
+     "existenciaComparable": 70,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q016",
+     "nombrePublicado": "Jabón Líquido Manos 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 130,
+     "existenciaComparable": 130,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Jabón de manos (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 60,
+     "existenciaComparable": 60,
+     "metodo": "alias",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 42,
+     "max": 48.72
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "JAB-5L",
+   "nombreCatalogo": "Jabón líquido para manos 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0589",
+     "nombrePublicado": "JABON LIQUIDO MANOS 5 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 170,
+     "precioSinIVA": 170,
+     "existenciaPublicada": 48,
+     "existenciaComparable": 48,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP253H",
+     "nombrePublicado": "Jabón de manos líquido 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 197.2,
+     "precioSinIVA": 170,
+     "existenciaPublicada": 15,
+     "existenciaComparable": 15,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10417,
+     "nombrePublicado": "Jabón manos 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 170,
+     "precioSinIVA": 170,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q017",
+     "nombrePublicado": "Jabón Líquido Manos 5 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 170,
+     "precioSinIVA": 170,
+     "existenciaPublicada": 47,
+     "existenciaComparable": 47,
+     "metodo": "similitud",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 170,
+     "max": 197.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "JTR-750",
+   "nombreCatalogo": "Jabón para trastes 750 ml",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0201",
+     "nombrePublicado": "JABON PARA TRASTES 750 ML",
+     "unidad": "BOT",
+     "precioPublicado": 34,
+     "precioSinIVA": 34,
+     "existenciaPublicada": 316,
+     "existenciaComparable": 316,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP922H",
+     "nombrePublicado": "Jabón para trastes 750ml",
+     "unidad": "750 ml",
+     "precioPublicado": 39.44,
+     "precioSinIVA": 34,
+     "existenciaPublicada": 45,
+     "existenciaComparable": 45,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10558,
+     "nombrePublicado": "Jabón para trastes 750 ml",
+     "unidad": "750 ml",
+     "precioPublicado": 34,
+     "precioSinIVA": 34,
+     "existenciaPublicada": 139,
+     "existenciaComparable": 139,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q018",
+     "nombrePublicado": "Jabón para Trastes 750 Ml",
+     "unidad": "Bot",
+     "precioPublicado": 34,
+     "precioSinIVA": 34,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 18,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Jabón para trastes (750 ml)",
+     "unidad": "botella",
+     "precioPublicado": 34,
+     "precioSinIVA": 34,
+     "existenciaPublicada": 96,
+     "existenciaComparable": 96,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 34,
+     "max": 39.44
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "JTR-5L",
+   "nombreCatalogo": "Jabón para trastes 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0921",
+     "nombrePublicado": "JABON PARA TRASTES 5 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 35,
+     "existenciaComparable": 35,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP468D",
+     "nombrePublicado": "Jabón para trastes 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 174,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 20,
+     "existenciaComparable": 20,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10802,
+     "nombrePublicado": "Jabón para trastes 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 10,
+     "existenciaComparable": 10,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q019",
+     "nombrePublicado": "Jabón para Trastes 5 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 18,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Jabón para trastes (5 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 47,
+     "existenciaComparable": 47,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 150,
+     "max": 174
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "SUA-1L",
+   "nombreCatalogo": "Suavizante de telas 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0024",
+     "nombrePublicado": "SUAVIZANTE TELAS 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 31,
+     "precioSinIVA": 31,
+     "existenciaPublicada": 296,
+     "existenciaComparable": 296,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP366H",
+     "nombrePublicado": "Suavizante de telas 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 35.96,
+     "precioSinIVA": 31,
+     "existenciaPublicada": 62,
+     "existenciaComparable": 67,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10853,
+     "nombrePublicado": "Suavizante ropa 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 31,
+     "precioSinIVA": 31,
+     "existenciaPublicada": 226,
+     "existenciaComparable": 226,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q020",
+     "nombrePublicado": "Suavizante de Telas 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 31,
+     "precioSinIVA": 31,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Suavizante de telas (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 31,
+     "precioSinIVA": 31,
+     "existenciaPublicada": 109,
+     "existenciaComparable": 109,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 31,
+     "max": 35.96
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "SUA-5L",
+   "nombreCatalogo": "Suavizante de telas 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1005",
+     "nombrePublicado": "SUAVIZANTE TELAS 5 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 264,
+     "existenciaComparable": 264,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP577H",
+     "nombrePublicado": "Suavizante de telas 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 145,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 41,
+     "existenciaComparable": 80,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10869,
+     "nombrePublicado": "Suavizante ropa 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 14,
+     "existenciaComparable": 14,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q021",
+     "nombrePublicado": "Suavizante de Telas 5 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 63,
+     "existenciaComparable": 63,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Suavizante de telas (5 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 20,
+     "existenciaComparable": 20,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 125,
+     "max": 145
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "PHI-12",
+   "nombreCatalogo": "Papel higiénico 12 rollos",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0644",
+     "nombrePublicado": "PAPEL HIGIENICO 12 ROLLOS",
+     "unidad": "PAQ",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 141,
+     "existenciaComparable": 141,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP927G",
+     "nombrePublicado": "Papel sanitario 12 rollos",
+     "unidad": "12 rollos",
+     "precioPublicado": 71.92,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 19,
+     "existenciaComparable": 43,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10866,
+     "nombrePublicado": "Papel de baño 12 rollos",
+     "unidad": "12 rollos",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q026",
+     "nombrePublicado": "Papel Higiénico 12 Rll",
+     "unidad": "Pq",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Papel higiénico paquete",
+     "unidad": "paquete",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 119,
+     "existenciaComparable": 119,
+     "metodo": "alias",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 62,
+     "max": 71.92
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "PHI-48",
+   "nombreCatalogo": "Papel higiénico 48 rollos",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0431",
+     "nombrePublicado": "PAPEL HIGIENICO 48 ROLLOS",
+     "unidad": "CJA",
+     "precioPublicado": 235,
+     "precioSinIVA": 235,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 18,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP671A",
+     "nombrePublicado": "Papel sanitario 48 rollos",
+     "unidad": "48 rollos",
+     "precioPublicado": 272.6,
+     "precioSinIVA": 235,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 0,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10686,
+     "nombrePublicado": "Papel de baño 48 rollos",
+     "unidad": "48 rollos",
+     "precioPublicado": 235,
+     "precioSinIVA": 235,
+     "existenciaPublicada": 29,
+     "existenciaComparable": 29,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q027",
+     "nombrePublicado": "Papel Higiénico 48 Rll",
+     "unidad": "Cja",
+     "precioPublicado": 235,
+     "precioSinIVA": 235,
+     "existenciaPublicada": 15,
+     "existenciaComparable": 15,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Papel higiénico 48 rollos",
+     "unidad": "caja",
+     "precioPublicado": 235,
+     "precioSinIVA": 235,
+     "existenciaPublicada": 36,
+     "existenciaComparable": 36,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 235,
+     "max": 272.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "PHJ-6",
+   "nombreCatalogo": "Papel higiénico jumbo 6 rollos",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0814",
+     "nombrePublicado": "PAPEL HIGIENICO JUMBO 6 ROLLOS",
+     "unidad": "PAQ",
+     "precioPublicado": 215,
+     "precioSinIVA": 215,
+     "existenciaPublicada": 40,
+     "existenciaComparable": 40,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP951E",
+     "nombrePublicado": "Papel sanitario jumbo 6 rollos",
+     "unidad": "6 rollos",
+     "precioPublicado": 249.4,
+     "precioSinIVA": 215,
+     "existenciaPublicada": 20,
+     "existenciaComparable": 20,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10186,
+     "nombrePublicado": "Papel de baño jumbo 6 rollos",
+     "unidad": "6 rollos",
+     "precioPublicado": 215,
+     "precioSinIVA": 215,
+     "existenciaPublicada": 6,
+     "existenciaComparable": 6,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q028",
+     "nombrePublicado": "Papel Higiénico Jumbo 6 Rll",
+     "unidad": "Pq",
+     "precioPublicado": 215,
+     "precioSinIVA": 215,
+     "existenciaPublicada": 7,
+     "existenciaComparable": 7,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Papel higiénico jumbo 6 rollos",
+     "unidad": "paquete",
+     "precioPublicado": 215,
+     "precioSinIVA": 215,
+     "existenciaPublicada": 38,
+     "existenciaComparable": 38,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 215,
+     "max": 249.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "TRO-6",
+   "nombreCatalogo": "Toalla en rollo 6 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0516",
+     "nombrePublicado": "TOALLA EN ROLLO 6 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 21,
+     "existenciaComparable": 21,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP424H",
+     "nombrePublicado": "Toalla en rollo 6 pzas",
+     "unidad": "6 rollos",
+     "precioPublicado": 174,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 12,
+     "existenciaComparable": 12,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10984,
+     "nombrePublicado": "Toalla en rollo 6 pzs",
+     "unidad": "6 rollos",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q029",
+     "nombrePublicado": "Toalla en Rollo 6 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 41,
+     "existenciaComparable": 41,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Toalla en rollo 6 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 150,
+     "precioSinIVA": 150,
+     "existenciaPublicada": 20,
+     "existenciaComparable": 20,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 150,
+     "max": 174
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "TIN-250",
+   "nombreCatalogo": "Toalla interdoblada 250 hojas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0713",
+     "nombrePublicado": "TOALLA INTERDOBLADA 250 HOJAS",
+     "unidad": "PAQ",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 86,
+     "existenciaComparable": 86,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP931B",
+     "nombrePublicado": "Toalla interdoblada 250 hojas",
+     "unidad": "250 hojas",
+     "precioPublicado": 55.68,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 61,
+     "existenciaComparable": 61,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10027,
+     "nombrePublicado": "Toalla Z 250 hojas",
+     "unidad": "250 hojas",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 50,
+     "existenciaComparable": 50,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q030",
+     "nombrePublicado": "Toalla Interdoblada 250 Hojas",
+     "unidad": "Pq",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 123,
+     "existenciaComparable": 123,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Toalla interdoblada 250 hojas",
+     "unidad": "paquete",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 65,
+     "existenciaComparable": 65,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 48,
+     "max": 55.68
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "TIN-CJ",
+   "nombreCatalogo": "Toalla interdoblada caja con 20 paquetes",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0731",
+     "nombrePublicado": "TOALLA INTERDOBLADA CAJA CON 20 PAQ",
+     "unidad": "CJA",
+     "precioPublicado": 820,
+     "precioSinIVA": 820,
+     "existenciaPublicada": 22,
+     "existenciaComparable": 22,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP548E",
+     "nombrePublicado": "Toalla interdoblada caja con 20 paquetes",
+     "unidad": "20 paquetes",
+     "precioPublicado": 951.2,
+     "precioSinIVA": 820,
+     "existenciaPublicada": 20,
+     "existenciaComparable": 20,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10360,
+     "nombrePublicado": "Toalla Z caja con 20 paquetes",
+     "unidad": "20 paquetes",
+     "precioPublicado": 820,
+     "precioSinIVA": 820,
+     "existenciaPublicada": 15,
+     "existenciaComparable": 15,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q031",
+     "nombrePublicado": "Toalla Interdoblada Caja con 20 Pqt",
+     "unidad": "Cja",
+     "precioPublicado": 820,
+     "precioSinIVA": 820,
+     "existenciaPublicada": 64,
+     "existenciaComparable": 64,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Toalla interdoblada caja con 20 paquetes",
+     "unidad": "caja",
+     "precioPublicado": 820,
+     "precioSinIVA": 820,
+     "existenciaPublicada": 30,
+     "existenciaComparable": 30,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 820,
+     "max": 951.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "SRV-500",
+   "nombreCatalogo": "Servilletas 500 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0771",
+     "nombrePublicado": "SERVILLETAS 500 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 103,
+     "existenciaComparable": 103,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP563C",
+     "nombrePublicado": "Servilletas 500 pzas",
+     "unidad": "500 piezas",
+     "precioPublicado": 71.92,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 39,
+     "existenciaComparable": 39,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10160,
+     "nombrePublicado": "Servilletas 500 pzs",
+     "unidad": "500 piezas",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 73,
+     "existenciaComparable": 73,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q032",
+     "nombrePublicado": "Servilleta 500 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 95,
+     "existenciaComparable": 95,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Servilletas 500 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 124,
+     "existenciaComparable": 124,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 62,
+     "max": 71.92
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "VAS-50",
+   "nombreCatalogo": "Vasos desechables 50 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1052",
+     "nombrePublicado": "VASOS DESECHABLES 50 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 86,
+     "existenciaComparable": 86,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP535H",
+     "nombrePublicado": "Vasos desechables 50 pzas",
+     "unidad": "50 piezas",
+     "precioPublicado": 32.48,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 48,
+     "existenciaComparable": 48,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10575,
+     "nombrePublicado": "Vasos desechables 50 pzs",
+     "unidad": "50 piezas",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 93,
+     "existenciaComparable": 93,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q033",
+     "nombrePublicado": "Vasos Desechables 50 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 90,
+     "existenciaComparable": 90,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Vasos desechables 50 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 92,
+     "existenciaComparable": 92,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 28,
+     "max": 32.48
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "BAS-CH",
+   "nombreCatalogo": "Bolsa para basura chica 25 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0157",
+     "nombrePublicado": "BOLSA P/BASURA CHICA 25 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 133,
+     "existenciaComparable": 133,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP165E",
+     "nombrePublicado": "Bolsa de basura chica 25 pzas",
+     "unidad": "25 piezas",
+     "precioPublicado": 44.08,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 9,
+     "existenciaComparable": 33,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10703,
+     "nombrePublicado": "Bolsa p/basura chica 25 pzs",
+     "unidad": "25 piezas",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 23,
+     "existenciaComparable": 23,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q034",
+     "nombrePublicado": "Bolsa Basura Chica 25 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 142,
+     "existenciaComparable": 142,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Bolsa de basura chica 25 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 144,
+     "existenciaComparable": 144,
+     "metodo": "similitud",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 38,
+     "max": 44.08
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "BAS-MD",
+   "nombreCatalogo": "Bolsa para basura mediana 25 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0698",
+     "nombrePublicado": "BOLSA P/BASURA MEDIANA 25 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 102,
+     "existenciaComparable": 102,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP610F",
+     "nombrePublicado": "Bolsa de basura mediana 25 pzas",
+     "unidad": "25 piezas",
+     "precioPublicado": 60.32,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 26,
+     "existenciaComparable": 48,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10586,
+     "nombrePublicado": "Bolsa p/basura mediana 25 pzs",
+     "unidad": "25 piezas",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 74,
+     "existenciaComparable": 74,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q035",
+     "nombrePublicado": "Bolsa Basura Mediana 25 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 9,
+     "existenciaComparable": 9,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Bolsa de basura mediana 25 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 52,
+     "precioSinIVA": 52,
+     "existenciaPublicada": 111,
+     "existenciaComparable": 111,
+     "metodo": "similitud",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 52,
+     "max": 60.32
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "BAS-GD",
+   "nombreCatalogo": "Bolsa para basura grande 10 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0184",
+     "nombrePublicado": "BOLSA P/BASURA GRANDE 10 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 194,
+     "existenciaComparable": 194,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP198D",
+     "nombrePublicado": "Bolsa de basura grande 10 pzas",
+     "unidad": "10 piezas",
+     "precioPublicado": 75.4,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 1,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10810,
+     "nombrePublicado": "Bolsa grande",
+     "unidad": "10 piezas",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 183,
+     "existenciaComparable": 183,
+     "metodo": "alias",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q036",
+     "nombrePublicado": "Bolsa Basura Grande 10 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 20,
+     "existenciaComparable": 20,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Bolsa de basura grande 10 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 30,
+     "existenciaComparable": 30,
+     "metodo": "similitud",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 65,
+     "max": 75.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "BAS-JB",
+   "nombreCatalogo": "Bolsa industrial jumbo 10 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1142",
+     "nombrePublicado": "BOLSA INDUSTRIAL JUMBO 10 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 162,
+     "existenciaComparable": 162,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP865G",
+     "nombrePublicado": "Bolsa industrial jumbo 10 pzas",
+     "unidad": "10 piezas",
+     "precioPublicado": 90.48,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 6,
+     "existenciaComparable": 80,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10551,
+     "nombrePublicado": "Bolsa industrial jumbo 10 pzs",
+     "unidad": "10 piezas",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 53,
+     "existenciaComparable": 53,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q037",
+     "nombrePublicado": "Bolsa Industrial Jumbo 10 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 42,
+     "existenciaComparable": 42,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Bolsa industrial jumbo 10 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 148,
+     "existenciaComparable": 148,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 78,
+     "max": 90.48
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "STR-45",
+   "nombreCatalogo": "Película stretch",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1102",
+     "nombrePublicado": "PELICULA STRETCH",
+     "unidad": "ROLLO",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 145,
+     "existenciaComparable": 145,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP249H",
+     "nombrePublicado": "Película stretch",
+     "unidad": "rollo 45 cm",
+     "precioPublicado": 145,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10221,
+     "nombrePublicado": "Película stretch",
+     "unidad": "rollo 45 cm",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 95,
+     "existenciaComparable": 95,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q038",
+     "nombrePublicado": "Película Stretch",
+     "unidad": "Rll",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 50,
+     "existenciaComparable": 50,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Película stretch",
+     "unidad": "rollo",
+     "precioPublicado": 125,
+     "precioSinIVA": 125,
+     "existenciaPublicada": 85,
+     "existenciaComparable": 85,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 125,
+     "max": 145
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "BOT-1L",
+   "nombreCatalogo": "Botella PET 1 litro (paquete de 50)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0599",
+     "nombrePublicado": "BOTELLA PET 1 LT (PAQ DE 50)",
+     "unidad": "PAQ",
+     "precioPublicado": 140,
+     "precioSinIVA": 140,
+     "existenciaPublicada": 12,
+     "existenciaComparable": 12,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP114B",
+     "nombrePublicado": "Botella PET 1L (paquete de 50)",
+     "unidad": "50 piezas",
+     "precioPublicado": 162.4,
+     "precioSinIVA": 140,
+     "existenciaPublicada": 73,
+     "existenciaComparable": 73,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10112,
+     "nombrePublicado": "Botella PET 1000ml (paquete de 50)",
+     "unidad": "50 piezas",
+     "precioPublicado": 140,
+     "precioSinIVA": 140,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q039",
+     "nombrePublicado": "Botella PET 1 Lt (paquete de 50)",
+     "unidad": "Pq",
+     "precioPublicado": 140,
+     "precioSinIVA": 140,
+     "existenciaPublicada": 22,
+     "existenciaComparable": 22,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Botella PET (1 lt (paquete de 50))",
+     "unidad": "paquete",
+     "precioPublicado": 140,
+     "precioSinIVA": 140,
+     "existenciaPublicada": 14,
+     "existenciaComparable": 14,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 140,
+     "max": 162.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "GAR-5L",
+   "nombreCatalogo": "Garrafa vacía 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0590",
+     "nombrePublicado": "GARRAFA VACIA 5 LTS",
+     "unidad": "PZA",
+     "precioPublicado": 14,
+     "precioSinIVA": 14,
+     "existenciaPublicada": 23,
+     "existenciaComparable": 23,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP100H",
+     "nombrePublicado": "Garrafa vacía 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 16.24,
+     "precioSinIVA": 14,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 86,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10635,
+     "nombrePublicado": "Garrafa vacía 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 14,
+     "precioSinIVA": 14,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q040",
+     "nombrePublicado": "Garrafa Vacía 5 Lt",
+     "unidad": "Pza",
+     "precioPublicado": 14,
+     "precioSinIVA": 14,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Garrafa vacía (5 lt)",
+     "unidad": "pieza",
+     "precioPublicado": 14,
+     "precioSinIVA": 14,
+     "existenciaPublicada": 1,
+     "existenciaComparable": 1,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 14,
+     "max": 16.24
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "ATO-PK",
+   "nombreCatalogo": "Atomizadores (paquete de 20)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0937",
+     "nombrePublicado": "ATOMIZADORES (PAQ DE 20)",
+     "unidad": "PAQ",
+     "precioPublicado": 120,
+     "precioSinIVA": 120,
+     "existenciaPublicada": 35,
+     "existenciaComparable": 35,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP694B",
+     "nombrePublicado": "Atomizadores (paquete de 20)",
+     "unidad": "20 piezas",
+     "precioPublicado": 139.2,
+     "precioSinIVA": 120,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10733,
+     "nombrePublicado": "Atomizadores (paquete de 20)",
+     "unidad": "20 piezas",
+     "precioPublicado": 120,
+     "precioSinIVA": 120,
+     "existenciaPublicada": 35,
+     "existenciaComparable": 35,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q041",
+     "nombrePublicado": "Atomizadores (paquete de 20)",
+     "unidad": "Pq",
+     "precioPublicado": 120,
+     "precioSinIVA": 120,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Atomizadores (paquete de 20)",
+     "unidad": "paquete",
+     "precioPublicado": 120,
+     "precioSinIVA": 120,
+     "existenciaPublicada": 8,
+     "existenciaComparable": 8,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 2,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 120,
+     "max": 139.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "TAP-PK",
+   "nombreCatalogo": "Tapas (paquete de 100)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0289",
+     "nombrePublicado": "TAPAS (PAQ DE 100)",
+     "unidad": "PAQ",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 26,
+     "existenciaComparable": 26,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP724D",
+     "nombrePublicado": "Tapas (paquete de 100)",
+     "unidad": "100 piezas",
+     "precioPublicado": 98.6,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 30,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10287,
+     "nombrePublicado": "Tapas (paquete de 100)",
+     "unidad": "100 piezas",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 0,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q042",
+     "nombrePublicado": "Tapas (paquete de 100)",
+     "unidad": "Pq",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 29,
+     "existenciaComparable": 29,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Tapas (paquete de 100)",
+     "unidad": "paquete",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 7,
+     "existenciaComparable": 7,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 2,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 85,
+     "max": 98.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "AMB-400",
+   "nombreCatalogo": "Aromatizante ambiental aerosol 400 ml",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1183",
+     "nombrePublicado": "AROMATIZANTE AMBIENTAL AEROSOL 400 ML",
+     "unidad": "PZA",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 180,
+     "existenciaComparable": 180,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP353B",
+     "nombrePublicado": "Aromatizante ambiental aerosol 400ml",
+     "unidad": "400 ml",
+     "precioPublicado": 48.72,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 25,
+     "existenciaComparable": 25,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10569,
+     "nombrePublicado": "Aromatizante spray 400 ml",
+     "unidad": "400 ml",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 72,
+     "existenciaComparable": 72,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q022",
+     "nombrePublicado": "Aromatizante Ambiental Aerosol 400 Ml",
+     "unidad": "Pza",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 61,
+     "existenciaComparable": 61,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Aromatizante ambiental aerosol (400 ml)",
+     "unidad": "pieza",
+     "precioPublicado": 42,
+     "precioSinIVA": 42,
+     "existenciaPublicada": 121,
+     "existenciaComparable": 121,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 42,
+     "max": 48.72
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "FRA-1L",
+   "nombreCatalogo": "Fragancia concentrada 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0633",
+     "nombrePublicado": "FRAGANCIA CONCENTRADA 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 159,
+     "existenciaComparable": 159,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP735A",
+     "nombrePublicado": "Fragancia concentrada 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 110.2,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 79,
+     "existenciaComparable": 139,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10769,
+     "nombrePublicado": "Fragancia concentrada 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 77,
+     "existenciaComparable": 77,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q023",
+     "nombrePublicado": "Fragancia Concentrada 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 57,
+     "existenciaComparable": 57,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Fragancia concentrada (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 95,
+     "precioSinIVA": 95,
+     "existenciaPublicada": 34,
+     "existenciaComparable": 34,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 95,
+     "max": 110.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "PAS-12",
+   "nombreCatalogo": "Pastillas sanitarias para baño 12 piezas",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0051",
+     "nombrePublicado": "PASTILLAS SANITARIAS 12 PZAS",
+     "unidad": "PAQ",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 211,
+     "existenciaComparable": 211,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP869E",
+     "nombrePublicado": "Pastillas para baño 12 pzas",
+     "unidad": "12 piezas",
+     "precioPublicado": 81.2,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 12,
+     "existenciaComparable": 12,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10581,
+     "nombrePublicado": "Pastillas sanitarias para baño 12 pzs",
+     "unidad": "12 piezas",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 0,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q024",
+     "nombrePublicado": "Pastillas Sanitarias para Baño 12 Pz",
+     "unidad": "Pq",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 57,
+     "existenciaComparable": 57,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Pastillas sanitarias para baño 12 piezas",
+     "unidad": "paquete",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 20,
+     "existenciaComparable": 20,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 70,
+     "max": 81.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "AMB-5L",
+   "nombreCatalogo": "Aromatizante líquido 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0756",
+     "nombrePublicado": "AROMATIZANTE LIQUIDO 5 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 51,
+     "existenciaComparable": 51,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP784F",
+     "nombrePublicado": "Aromatizante líquido 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 208.8,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 16,
+     "existenciaComparable": 35,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10748,
+     "nombrePublicado": "Aromatizante líquido 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 31,
+     "existenciaComparable": 31,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q025",
+     "nombrePublicado": "Aromatizante Líquido 5 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Aromatizante líquido (5 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 32,
+     "existenciaComparable": 32,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 180,
+     "max": 208.8
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "ESC-STD",
+   "nombreCatalogo": "Escoba estándar",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0745",
+     "nombrePublicado": "ESCOBA ESTANDAR",
+     "unidad": "PZA",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 105,
+     "existenciaComparable": 105,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP258A",
+     "nombrePublicado": "Escoba normal",
+     "unidad": "pieza",
+     "precioPublicado": 52.2,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 38,
+     "existenciaComparable": 38,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10583,
+     "nombrePublicado": "Escoba estándar",
+     "unidad": "pieza",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 64,
+     "existenciaComparable": 64,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q043",
+     "nombrePublicado": "Escoba Estándar",
+     "unidad": "Pza",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 39,
+     "existenciaComparable": 39,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Escoba estándar",
+     "unidad": "pieza",
+     "precioPublicado": 45,
+     "precioSinIVA": 45,
+     "existenciaPublicada": 50,
+     "existenciaComparable": 50,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 45,
+     "max": 52.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "ESC-IND",
+   "nombreCatalogo": "Escoba industrial",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0945",
+     "nombrePublicado": "ESCOBA INDUSTRIAL",
+     "unidad": "PZA",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 148,
+     "existenciaComparable": 148,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP420H",
+     "nombrePublicado": "Escoba industrial",
+     "unidad": "pieza",
+     "precioPublicado": 90.48,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 33,
+     "existenciaComparable": 33,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10301,
+     "nombrePublicado": "Escoba industrial",
+     "unidad": "pieza",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 98,
+     "existenciaComparable": 98,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q044",
+     "nombrePublicado": "Escoba Industrial",
+     "unidad": "Pza",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 127,
+     "existenciaComparable": 127,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Escoba industrial",
+     "unidad": "pieza",
+     "precioPublicado": 78,
+     "precioSinIVA": 78,
+     "existenciaPublicada": 69,
+     "existenciaComparable": 69,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 78,
+     "max": 90.48
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "TRA-ALG",
+   "nombreCatalogo": "Trapeador de algodón",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0865",
+     "nombrePublicado": "TRAPEADOR DE ALGODON",
+     "unidad": "PZA",
+     "precioPublicado": 55,
+     "precioSinIVA": 55,
+     "existenciaPublicada": 68,
+     "existenciaComparable": 68,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP806C",
+     "nombrePublicado": "Mechudo de algodón",
+     "unidad": "pieza",
+     "precioPublicado": 63.8,
+     "precioSinIVA": 55,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 25,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10576,
+     "nombrePublicado": "Mechudo de algodón",
+     "unidad": "pieza",
+     "precioPublicado": 55,
+     "precioSinIVA": 55,
+     "existenciaPublicada": 26,
+     "existenciaComparable": 26,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q045",
+     "nombrePublicado": "Trapeador Algodón",
+     "unidad": "Pza",
+     "precioPublicado": 55,
+     "precioSinIVA": 55,
+     "existenciaPublicada": 22,
+     "existenciaComparable": 22,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Trapeador de algodón",
+     "unidad": "pieza",
+     "precioPublicado": 55,
+     "precioSinIVA": 55,
+     "existenciaPublicada": 19,
+     "existenciaComparable": 19,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 55,
+     "max": 63.8
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "TRA-MIC",
+   "nombreCatalogo": "Trapeador de microfibra",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0186",
+     "nombrePublicado": "TRAPEADOR DE MICROFIBRA",
+     "unidad": "PZA",
+     "precioPublicado": 98,
+     "precioSinIVA": 98,
+     "existenciaPublicada": 54,
+     "existenciaComparable": 54,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP658D",
+     "nombrePublicado": "Mechudo de microfibra",
+     "unidad": "pieza",
+     "precioPublicado": 113.68,
+     "precioSinIVA": 98,
+     "existenciaPublicada": 57,
+     "existenciaComparable": 57,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10274,
+     "nombrePublicado": "Mechudo de microfibra",
+     "unidad": "pieza",
+     "precioPublicado": 98,
+     "precioSinIVA": 98,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q046",
+     "nombrePublicado": "Trapeador de Microfibra",
+     "unidad": "Pza",
+     "precioPublicado": 98,
+     "precioSinIVA": 98,
+     "existenciaPublicada": 64,
+     "existenciaComparable": 64,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Trapeador de microfibra",
+     "unidad": "pieza",
+     "precioPublicado": 98,
+     "precioSinIVA": 98,
+     "existenciaPublicada": 53,
+     "existenciaComparable": 53,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 98,
+     "max": 113.68
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "CUB-12",
+   "nombreCatalogo": "Cubeta 12 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0817",
+     "nombrePublicado": "CUBETA 12 LTS",
+     "unidad": "PZA",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 75,
+     "existenciaComparable": 75,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP584C",
+     "nombrePublicado": "Cubeta 12L",
+     "unidad": "12 litros",
+     "precioPublicado": 55.68,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 17,
+     "existenciaComparable": 17,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10135,
+     "nombrePublicado": "Cubo 12 Lts",
+     "unidad": "12L",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 35,
+     "existenciaComparable": 35,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q047",
+     "nombrePublicado": "Cubeta 12 Lt",
+     "unidad": "Pza",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 60,
+     "existenciaComparable": 60,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Cubeta (12 lt)",
+     "unidad": "pieza",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 109,
+     "existenciaComparable": 109,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 48,
+     "max": 55.68
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "CUB-20",
+   "nombreCatalogo": "Cubeta 20 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1136",
+     "nombrePublicado": "CUBETA 20 LTS",
+     "unidad": "PZA",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 47,
+     "existenciaComparable": 47,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP712E",
+     "nombrePublicado": "Cubeta 20L",
+     "unidad": "20 litros",
+     "precioPublicado": 98.6,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 18,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10103,
+     "nombrePublicado": "Cubo 20 Lts",
+     "unidad": "20L",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 30,
+     "existenciaComparable": 30,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q048",
+     "nombrePublicado": "Cubeta 20 Lt",
+     "unidad": "Pza",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 23,
+     "existenciaComparable": 23,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Cubeta (20 lt)",
+     "unidad": "pieza",
+     "precioPublicado": 85,
+     "precioSinIVA": 85,
+     "existenciaPublicada": 63,
+     "existenciaComparable": 63,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 85,
+     "max": 98.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "MIC-6",
+   "nombreCatalogo": "Paño de microfibra (paquete de 6)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1021",
+     "nombrePublicado": "PANO DE MICROFIBRA (PAQ DE 6)",
+     "unidad": "PAQ",
+     "precioPublicado": 110,
+     "precioSinIVA": 110,
+     "existenciaPublicada": 139,
+     "existenciaComparable": 139,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP186G",
+     "nombrePublicado": "Paño de microfibra (paquete de 6)",
+     "unidad": "6 piezas",
+     "precioPublicado": 127.6,
+     "precioSinIVA": 110,
+     "existenciaPublicada": 23,
+     "existenciaComparable": 23,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10800,
+     "nombrePublicado": "Paño de microfibra (paquete de 6)",
+     "unidad": "6 piezas",
+     "precioPublicado": 110,
+     "precioSinIVA": 110,
+     "existenciaPublicada": 67,
+     "existenciaComparable": 67,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q049",
+     "nombrePublicado": "Paño de Microfibra (paquete de 6)",
+     "unidad": "Pq",
+     "precioPublicado": 110,
+     "precioSinIVA": 110,
+     "existenciaPublicada": 87,
+     "existenciaComparable": 87,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Paño de microfibra (paquete de 6)",
+     "unidad": "paquete",
+     "precioPublicado": 110,
+     "precioSinIVA": 110,
+     "existenciaPublicada": 11,
+     "existenciaComparable": 11,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 110,
+     "max": 127.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "FIB-10",
+   "nombreCatalogo": "Fibra para trastes (paquete de 10)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0239",
+     "nombrePublicado": "FIBRA TRASTES (PAQ DE 10)",
+     "unidad": "PAQ",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 52,
+     "existenciaComparable": 52,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP784C",
+     "nombrePublicado": "Fibra verde (paquete de 10)",
+     "unidad": "10 piezas",
+     "precioPublicado": 71.92,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 46,
+     "existenciaComparable": 46,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10270,
+     "nombrePublicado": "Esponja fibra (paquete de 10)",
+     "unidad": "10 piezas",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 24,
+     "existenciaComparable": 24,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q050",
+     "nombrePublicado": "Fibra para Trastes (paquete de 10)",
+     "unidad": "Pq",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 39,
+     "existenciaComparable": 39,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Fibra para trastes (paquete de 10)",
+     "unidad": "paquete",
+     "precioPublicado": 62,
+     "precioSinIVA": 62,
+     "existenciaPublicada": 14,
+     "existenciaComparable": 14,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 62,
+     "max": 71.92
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "REC-PZ",
+   "nombreCatalogo": "Recogedor",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0872",
+     "nombrePublicado": "RECOGEDOR",
+     "unidad": "PZA",
+     "precioPublicado": 32,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 170,
+     "existenciaComparable": 170,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP238E",
+     "nombrePublicado": "Recogedor",
+     "unidad": "pieza",
+     "precioPublicado": 37.12,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 30,
+     "existenciaComparable": 78,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10098,
+     "nombrePublicado": "Recogedor",
+     "unidad": "pieza",
+     "precioPublicado": 32,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q051",
+     "nombrePublicado": "Recogedor",
+     "unidad": "Pza",
+     "precioPublicado": 32,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 14,
+     "existenciaComparable": 14,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Recogedor",
+     "unidad": "pieza",
+     "precioPublicado": 32,
+     "precioSinIVA": 32,
+     "existenciaPublicada": 13,
+     "existenciaComparable": 13,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 2,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 32,
+     "max": 37.12
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "CEP-WC",
+   "nombreCatalogo": "Cepillo para baño",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1038",
+     "nombrePublicado": "CEPILLO PARA BANO",
+     "unidad": "PZA",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 182,
+     "existenciaComparable": 182,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP619G",
+     "nombrePublicado": "Cepillo para baño",
+     "unidad": "pieza",
+     "precioPublicado": 32.48,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 18,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10977,
+     "nombrePublicado": "Cepillo para baño",
+     "unidad": "pieza",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 162,
+     "existenciaComparable": 162,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q052",
+     "nombrePublicado": "Cepillo para Baño",
+     "unidad": "Pza",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 22,
+     "existenciaComparable": 22,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Cepillo para baño",
+     "unidad": "pieza",
+     "precioPublicado": 28,
+     "precioSinIVA": 28,
+     "existenciaPublicada": 49,
+     "existenciaComparable": 49,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 28,
+     "max": 32.48
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "GUA-LAT",
+   "nombreCatalogo": "Guantes de látex (caja con 50 pares)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0816",
+     "nombrePublicado": "GUANTES DE LATEX (CAJA CON 50 PARES)",
+     "unidad": "CJA",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 18,
+     "existenciaComparable": 18,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP499C",
+     "nombrePublicado": "Guantes de látex (caja con 50 pares)",
+     "unidad": "50 pares",
+     "precioPublicado": 208.8,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10446,
+     "nombrePublicado": "Guantes de látex (caja con 50 pares)",
+     "unidad": "50 pares",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 40,
+     "existenciaComparable": 40,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q053",
+     "nombrePublicado": "Guantes de Látex (caja con 50 Pares)",
+     "unidad": "Cja",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 0,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Guantes de látex (caja con 50 pares)",
+     "unidad": "caja",
+     "precioPublicado": 180,
+     "precioSinIVA": 180,
+     "existenciaPublicada": 81,
+     "existenciaComparable": 81,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 180,
+     "max": 208.8
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "GUA-NIT",
+   "nombreCatalogo": "Guantes de nitrilo (caja con 100 piezas)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1075",
+     "nombrePublicado": "GUANTES DE NITRILO (CAJA CON 100 PZAS)",
+     "unidad": "CJA",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP632D",
+     "nombrePublicado": "Guantes de nitrilo (caja con 100 pzas)",
+     "unidad": "100 piezas",
+     "precioPublicado": 220.4,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 22,
+     "existenciaComparable": 22,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10175,
+     "nombrePublicado": "Guantes de nitrilo (caja con 100 pzs)",
+     "unidad": "100 piezas",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 8,
+     "existenciaComparable": 8,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q054",
+     "nombrePublicado": "Guantes de Nitrilo (caja con 100 Pz)",
+     "unidad": "Cja",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 10,
+     "existenciaComparable": 10,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Guantes de nitrilo (caja con 100 piezas)",
+     "unidad": "caja",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 39,
+     "existenciaComparable": 39,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 190,
+     "max": 220.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "CUB-BOC",
+   "nombreCatalogo": "Cubrebocas (caja con 50 piezas)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0530",
+     "nombrePublicado": "CUBREBOCAS (CAJA CON 50 PZAS)",
+     "unidad": "CJA",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 291,
+     "existenciaComparable": 291,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP485A",
+     "nombrePublicado": "Cubreboca (caja con 50 pzas)",
+     "unidad": "50 piezas",
+     "precioPublicado": 81.2,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 59,
+     "existenciaComparable": 86,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10108,
+     "nombrePublicado": "Cubrebocas (caja con 50 pzs)",
+     "unidad": "50 piezas",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 67,
+     "existenciaComparable": 67,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q055",
+     "nombrePublicado": "Cubrebocas (caja con 50 Pz)",
+     "unidad": "Cja",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 49,
+     "existenciaComparable": 49,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Cubrebocas (caja con 50 piezas)",
+     "unidad": "caja",
+     "precioPublicado": 70,
+     "precioSinIVA": 70,
+     "existenciaPublicada": 82,
+     "existenciaComparable": 82,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 70,
+     "max": 81.2
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DSP-JAB",
+   "nombreCatalogo": "Dispensador de jabón de pared",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0861",
+     "nombrePublicado": "DISPENSADOR DE JABON DE PARED",
+     "unidad": "PZA",
+     "precioPublicado": 160,
+     "precioSinIVA": 160,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP208G",
+     "nombrePublicado": "Dispensador de jabón de pared",
+     "unidad": "pieza",
+     "precioPublicado": 185.6,
+     "precioSinIVA": 160,
+     "existenciaPublicada": 12,
+     "existenciaComparable": 12,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10700,
+     "nombrePublicado": "Dispensador de jabón de pared",
+     "unidad": "pieza",
+     "precioPublicado": 160,
+     "precioSinIVA": 160,
+     "existenciaPublicada": 12,
+     "existenciaComparable": 12,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q056",
+     "nombrePublicado": "Dispensador de Jabón de Pared",
+     "unidad": "Pza",
+     "precioPublicado": 160,
+     "precioSinIVA": 160,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Dispensador de jabón de pared",
+     "unidad": "pieza",
+     "precioPublicado": 160,
+     "precioSinIVA": 160,
+     "existenciaPublicada": 10,
+     "existenciaComparable": 10,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 160,
+     "max": 185.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DSP-PAP",
+   "nombreCatalogo": "Dispensador de papel higiénico jumbo",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1156",
+     "nombrePublicado": "DISPENSADOR DE PAPEL HIGIENICO JUMBO",
+     "unidad": "PZA",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 28,
+     "existenciaComparable": 28,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP175A",
+     "nombrePublicado": "Dispensador de Papel sanitario jumbo",
+     "unidad": "pieza",
+     "precioPublicado": 243.6,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 10,
+     "existenciaComparable": 10,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10061,
+     "nombrePublicado": "Dispensador de Papel de baño jumbo",
+     "unidad": "pieza",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 11,
+     "existenciaComparable": 11,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q057",
+     "nombrePublicado": "Dispensador de Papel Higiénico Jumbo",
+     "unidad": "Pza",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Dispensador de Papel higiénico jumbo",
+     "unidad": "pieza",
+     "precioPublicado": 210,
+     "precioSinIVA": 210,
+     "existenciaPublicada": 11,
+     "existenciaComparable": 11,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 210,
+     "max": 243.6
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "DSP-TOA",
+   "nombreCatalogo": "Dispensador de toalla interdoblada",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0982",
+     "nombrePublicado": "DISPENSADOR DE TOALLA INTERDOBLADA",
+     "unidad": "PZA",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 21,
+     "existenciaComparable": 21,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP953F",
+     "nombrePublicado": "Dispensador de toalla interdoblada",
+     "unidad": "pieza",
+     "precioPublicado": 220.4,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10777,
+     "nombrePublicado": "Dispensador de Toalla Z",
+     "unidad": "pieza",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 8,
+     "existenciaComparable": 8,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q058",
+     "nombrePublicado": "Dispensador de Toalla Interdoblada",
+     "unidad": "Pza",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 11,
+     "existenciaComparable": 11,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Dispensador de toalla interdoblada",
+     "unidad": "pieza",
+     "precioPublicado": 190,
+     "precioSinIVA": 190,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 4,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 190,
+     "max": 220.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "CRL-LIM",
+   "nombreCatalogo": "Carro de limpieza con exprimidor",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1051",
+     "nombrePublicado": "CARRO DE LIMPIEZA CON EXPRIMIDOR",
+     "unidad": "PZA",
+     "precioPublicado": 1450,
+     "precioSinIVA": 1450,
+     "existenciaPublicada": 10,
+     "existenciaComparable": 10,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP761F",
+     "nombrePublicado": "Carro de limpieza con exprimidor",
+     "unidad": "pieza",
+     "precioPublicado": 1682,
+     "precioSinIVA": 1450,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10364,
+     "nombrePublicado": "Carro de limpieza con exprimidor",
+     "unidad": "pieza",
+     "precioPublicado": 1450,
+     "precioSinIVA": 1450,
+     "existenciaPublicada": 5,
+     "existenciaComparable": 5,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q059",
+     "nombrePublicado": "Carro de Limpieza con Exprimidor",
+     "unidad": "Pza",
+     "precioPublicado": 1450,
+     "precioSinIVA": 1450,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Carro de limpieza con exprimidor",
+     "unidad": "pieza",
+     "precioPublicado": 1450,
+     "precioSinIVA": 1450,
+     "existenciaPublicada": 3,
+     "existenciaComparable": 3,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 1450,
+     "max": 1682
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "GEL-500",
+   "nombreCatalogo": "Gel antibacterial 500 ml",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1061",
+     "nombrePublicado": "GEL ANTIBACTERIAL 500 ML",
+     "unidad": "BOT",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 144,
+     "existenciaComparable": 144,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP888A",
+     "nombrePublicado": "Gel sanitizante 500ml",
+     "unidad": "500 ml",
+     "precioPublicado": 44.08,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 50,
+     "existenciaComparable": 50,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10739,
+     "nombrePublicado": "Gel antibacteriano 500 ml",
+     "unidad": "500 ml",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 62,
+     "existenciaComparable": 62,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q060",
+     "nombrePublicado": "Gel antibacterial medio litro",
+     "unidad": "Bot",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 9,
+     "existenciaComparable": 9,
+     "metodo": "similitud",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Gel antibacterial (500 ml)",
+     "unidad": "botella",
+     "precioPublicado": 38,
+     "precioSinIVA": 38,
+     "existenciaPublicada": 28,
+     "existenciaComparable": 28,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 38,
+     "max": 44.08
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "GEL-1L",
+   "nombreCatalogo": "Gel antibacterial 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0052",
+     "nombrePublicado": "GEL ANTIBACTERIAL 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 152,
+     "existenciaComparable": 152,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP126H",
+     "nombrePublicado": "Gel sanitizante 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 75.4,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 49,
+     "existenciaComparable": 54,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10821,
+     "nombrePublicado": "Gel antibacteriano 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 34,
+     "existenciaComparable": 34,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q061",
+     "nombrePublicado": "Gel Antibacterial 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 117,
+     "existenciaComparable": 117,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Gel antibacterial (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 65,
+     "precioSinIVA": 65,
+     "existenciaPublicada": 217,
+     "existenciaComparable": 217,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 65,
+     "max": 75.4
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "GEL-5L",
+   "nombreCatalogo": "Gel antibacterial 5 litros",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-1179",
+     "nombrePublicado": "GEL ANTIBACTERIAL 5 LTS",
+     "unidad": "GAR",
+     "precioPublicado": 230,
+     "precioSinIVA": 230,
+     "existenciaPublicada": 17,
+     "existenciaComparable": 17,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP435E",
+     "nombrePublicado": "Gel sanitizante 5L",
+     "unidad": "5 litros",
+     "precioPublicado": 266.8,
+     "precioSinIVA": 230,
+     "existenciaPublicada": 12,
+     "existenciaComparable": 14,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10189,
+     "nombrePublicado": "Gel antibacteriano 5 Lts",
+     "unidad": "5L",
+     "precioPublicado": 230,
+     "precioSinIVA": 230,
+     "existenciaPublicada": 0,
+     "existenciaComparable": 0,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q062",
+     "nombrePublicado": "Gel Antibacterial 5 Lt",
+     "unidad": "Gar",
+     "precioPublicado": 230,
+     "precioSinIVA": 230,
+     "existenciaPublicada": 21,
+     "existenciaComparable": 21,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Gel antibacterial (5 lt)",
+     "unidad": "garrafa",
+     "precioPublicado": 230,
+     "precioSinIVA": 230,
+     "existenciaPublicada": 6,
+     "existenciaComparable": 6,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 230,
+     "max": 266.8
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "TOH-80",
+   "nombreCatalogo": "Toallitas desinfectantes (tubo de 80)",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0460",
+     "nombrePublicado": "TOALLITAS DESINFECTANTES (TUBO DE 80)",
+     "unidad": "TUBO",
+     "precioPublicado": 58,
+     "precioSinIVA": 58,
+     "existenciaPublicada": 25,
+     "existenciaComparable": 25,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP560F",
+     "nombrePublicado": "Toallitas desinfectantes (tubo de 80)",
+     "unidad": "80 piezas",
+     "precioPublicado": 67.28,
+     "precioSinIVA": 58,
+     "existenciaPublicada": 200,
+     "existenciaComparable": 200,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10645,
+     "nombrePublicado": "Toallitas desinfectantes (tubo de 80)",
+     "unidad": "80 piezas",
+     "precioPublicado": 58,
+     "precioSinIVA": 58,
+     "existenciaPublicada": 4,
+     "existenciaComparable": 4,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q063",
+     "nombrePublicado": "Toallitas Desinfectantes (tubo de 80)",
+     "unidad": "Tbo",
+     "precioPublicado": 58,
+     "precioSinIVA": 58,
+     "existenciaPublicada": 29,
+     "existenciaComparable": 29,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Toallitas desinfectantes (tubo de 80)",
+     "unidad": "tubo",
+     "precioPublicado": 58,
+     "precioSinIVA": 58,
+     "existenciaPublicada": 124,
+     "existenciaComparable": 124,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 3,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 58,
+     "max": 67.28
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  },
+  {
+   "claveProducto": "JAA-1L",
+   "nombreCatalogo": "Jabón antibacterial 1 litro",
+   "porSucursal": {
+    "gdl": {
+     "codigo": "GDL-0265",
+     "nombrePublicado": "JABON ANTIBACTERIAL 1 LT",
+     "unidad": "BOT",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 234,
+     "existenciaComparable": 234,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "zap": {
+     "codigo": "ZP224H",
+     "nombrePublicado": "Jabón antibacterial 1L",
+     "unidad": "1 litro",
+     "precioPublicado": 55.68,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 84,
+     "existenciaComparable": 84,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "leo": {
+     "codigo": 10518,
+     "nombrePublicado": "Jabón antibacterial 1000ml",
+     "unidad": "1L",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 62,
+     "existenciaComparable": 62,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "qro": {
+     "codigo": "Q064",
+     "nombrePublicado": "Jabón Antibacterial 1 Lt",
+     "unidad": "Bot",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 99,
+     "existenciaComparable": 99,
+     "metodo": "nombre",
+     "puntaje": 1
+    },
+    "ags": {
+     "codigo": null,
+     "nombrePublicado": "Jabón antibacterial (1 lt)",
+     "unidad": "botella",
+     "precioPublicado": 48,
+     "precioSinIVA": 48,
+     "existenciaPublicada": 146,
+     "existenciaComparable": 146,
+     "metodo": "nombre",
+     "puntaje": 1
+    }
+   },
+   "contradicciones": {
+    "nombresDistintos": 5,
+    "preciosPublicadosDistintos": true,
+    "rangoPreciosPublicados": {
+     "min": 48,
+     "max": 55.68
+    },
+    "preciosNormalizadosDistintos": false,
+    "existenciasPublicadasDistintas": true
+   }
+  }
+ ],
+ "revision": [
+  {
+   "sucursal": "ags",
+   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "hoja": "Existencias AGS",
+   "fila": 22,
+   "codigo": null,
+   "nombrePublicado": "Desinfectante (1 lt)",
+   "mejorCandidato": {
+    "clave": "DES-1L",
+    "nombre": "Desinfectante multiusos 1 litro",
+    "puntaje": 0.75
+   },
+   "puntaje": 0.75
+  },
+  {
+   "sucursal": "ags",
+   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "hoja": "Existencias AGS",
+   "fila": 23,
+   "codigo": null,
+   "nombrePublicado": "Desinfectante (20 lt)",
+   "mejorCandidato": {
+    "clave": "DES-20L",
+    "nombre": "Desinfectante multiusos 20 litros",
+    "puntaje": 0.75
+   },
+   "puntaje": 0.75
+  },
+  {
+   "sucursal": "ags",
+   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "hoja": "Existencias AGS",
+   "fila": 43,
+   "codigo": null,
+   "nombrePublicado": "Jabón de manos (5 lt)",
+   "mejorCandidato": {
+    "clave": "JAB-5L",
+    "nombre": "Jabón líquido para manos 5 litros",
+    "puntaje": 0.8
+   },
+   "puntaje": 0.8
+  }
+ ],
+ "resumen": {
+  "filasTotales": 320,
+  "resueltas": 317,
+  "enRevision": 3,
+  "porcentajeResueltas": 99.06,
+  "productosConAlMenos2Nombres": 64,
+  "productosConPreciosPublicadosDistintos": 64
+ }
+}

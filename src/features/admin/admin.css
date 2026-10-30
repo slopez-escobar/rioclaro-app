@@ -1,0 +1,349 @@
+.admin-summary {
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--borde);
+  border-radius: var(--r);
+  background: #fff;
+}
+
+.admin-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.5rem), 1fr));
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.admin-summary-cards > div {
+  min-width: 0;
+  padding: 0.8rem;
+  border-radius: 10px;
+  background: #edf5e7;
+}
+
+.admin-summary-cards dt {
+  color: #435b48;
+  font-size: 0.86rem;
+  font-weight: 650;
+}
+
+.admin-summary-cards dd {
+  margin: 0.25rem 0 0;
+  color: var(--hondo);
+  font-size: 1.4rem;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.admin-summary-cards .admin-payroll-summary dd {
+  font-size: 1rem;
+}
+
+.admin-summary > p {
+  margin: 0.75rem 0 0;
+  color: #435b48;
+}
+
+.admin-assistant-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--borde);
+  border-radius: var(--r);
+  background: #fff;
+}
+
+.admin-assistant-control h2 {
+  margin: 0 0 0.35rem;
+  color: var(--hondo);
+  font-size: 1.12rem;
+}
+
+.admin-assistant-control p {
+  margin: 0.25rem 0 0;
+}
+
+.admin-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin: 1.25rem 0 0;
+}
+
+.admin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.admin-tabs button {
+  min-height: 42px;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid #b8cbb5;
+  border-radius: 10px 10px 0 0;
+  background: #fff;
+  color: var(--tinta);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 650;
+}
+
+.admin-tabs button[aria-selected="true"] {
+  border-color: var(--hondo);
+  background: var(--hondo);
+  color: #fff;
+}
+
+.admin-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  align-items: end;
+  gap: 0.35rem 0.8rem;
+  margin: 1rem 0;
+}
+
+.admin-filters .campo {
+  min-width: 0;
+  margin: 0;
+}
+
+.admin-select-field,
+.admin-textarea-field {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 0.35rem 0;
+  color: #3e5942;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.admin-select-field select,
+.admin-textarea-field textarea {
+  width: 100%;
+  min-height: 47px;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #b8cbb5;
+  border-radius: 10px;
+  background: #fff;
+  color: var(--tinta);
+  font: inherit;
+}
+
+.admin-textarea-field textarea {
+  min-height: 7rem;
+  resize: vertical;
+}
+
+.admin-table-scroll {
+  max-width: 100%;
+  margin-top: 1rem;
+  overflow: auto;
+  border: 1px solid var(--borde);
+  border-radius: var(--r);
+  background: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+}
+
+.admin-table caption {
+  padding: 0.85rem;
+  color: var(--hondo);
+  font-weight: 700;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.65rem 0.75rem;
+  border-top: 1px solid var(--borde);
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-table thead th {
+  position: sticky;
+  top: 0;
+  background: #edf5e7;
+  color: var(--hondo);
+}
+
+.admin-table tbody th {
+  color: var(--hondo);
+}
+
+.admin-account-action {
+  min-width: 10rem;
+}
+
+.admin-account-action small,
+.admin-state-detail small,
+.admin-role-matrix thead small {
+  display: block;
+  max-width: 16rem;
+  margin-top: 0.3rem;
+  color: #536758;
+  font-size: 0.78rem;
+}
+
+.admin-role-matrix {
+  min-width: 1300px;
+}
+
+.admin-role-matrix thead th:first-child,
+.admin-role-matrix tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #fff;
+}
+
+.admin-role-matrix thead th:first-child {
+  z-index: 2;
+  background: #edf5e7;
+}
+
+.admin-role-matrix th:not(:first-child) {
+  min-width: 9rem;
+}
+
+.admin-payroll-row th,
+.admin-payroll-row td {
+  background: #fff2d6 !important;
+  font-weight: 700;
+}
+
+.admin-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin: 0.85rem 0 1.25rem;
+}
+
+.admin-pagination p {
+  margin: 0;
+}
+
+.admin-pagination > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.admin-audit-log {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.admin-audit-log li {
+  display: grid;
+  gap: 0.3rem;
+  padding: 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.admin-audit-log time {
+  color: #536758;
+  font-size: 0.85rem;
+}
+
+.admin-audit-log p {
+  margin: 0;
+}
+
+.admin-error {
+  padding: 1rem;
+  border: 1px solid #b34043;
+  border-radius: var(--r);
+  background: #fff5f5;
+  color: #79262a;
+}
+
+.admin-error p:last-child {
+  margin-bottom: 0;
+}
+
+.admin-announcement {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.admin-dialog {
+  width: min(520px, calc(100vw - 2rem));
+  max-width: 520px;
+  padding: 1.25rem;
+  border: 0;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--tinta);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%);
+}
+
+.admin-dialog::backdrop {
+  background: rgb(12 30 18 / 58%);
+}
+
+.admin-dialog h2 {
+  color: var(--hondo);
+}
+
+.admin-character-count {
+  margin: 0.3rem 0;
+  color: #536758;
+  font-size: 0.85rem;
+}
+
+.admin-dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+:is(.admin-tabs button, .admin-select-field select, .admin-textarea-field textarea, .admin-table-scroll):focus-visible {
+  outline: 3px solid #172e87;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .admin-assistant-control {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-toolbar {
+    align-items: stretch;
+  }
+
+  .admin-tabs {
+    width: 100%;
+  }
+
+  .admin-toolbar > .btn {
+    align-self: flex-start;
+  }
+}

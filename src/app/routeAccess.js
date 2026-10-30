@@ -1,0 +1,16 @@
+export const ROUTE_ACCESS = [
+  { path: "/login", label: "Inicio de sesión", redirect: true },
+  { path: "/ia-responsable", label: "IA responsable" },
+  { path: "/panel", label: "Panel", module: "reporte_ventas" },
+  { path: "/admin", label: "Administración", module: "usuarios_y_accesos" },
+  { path: "/politicas", label: "Políticas" },
+  { path: "/asistente", label: "Asistente", module: "asistente_ia", action: "usar" },
+  { path: "/facturas", label: "Facturas", module: "facturas_proveedores" },
+  { path: "/pedidos", label: "Pedidos", module: "pedidos" },
+  { path: "/ventas", label: "Ventas", module: "reporte_ventas" },
+  { path: "/quejas", label: "Quejas", module: "quejas" },
+  { path: "/existencias", label: "Existencias", module: "existencias" },
+  { path: "/catalogo", label: "Catálogo", module: "existencias" },
+  { path: "/", label: "Inicio", redirect: true },
+  { path: "*", label: "Ruta desconocida", redirect: true },
+];

@@ -1,0 +1,277 @@
+{
+ "meta": {
+  "descripcion": "Conciliación de los reportes de ventas de septiembre de 2026 contra los pedidos registrados.",
+  "periodo": "2026-09",
+  "definicion": "Venta correcta: productos sin IVA por sucursal de venta y fecha del pedido; se excluyen cancelados y devueltos."
+ },
+ "sucursales": [
+  {
+   "id": "gdl",
+   "nombre": "Guadalajara",
+   "archivo": "Ventas_Sep_Guadalajara.xlsx",
+   "hoja": "Septiembre",
+   "filasLeidas": 64,
+   "totalReportado": 1823672.48,
+   "totalDeclaradoEnElArchivo": 1823672.48,
+   "totalCorrecto": 1641691.28,
+   "diferencia": 181981.2,
+   "explicacion": {
+    "hipotesis": "incluye_cancelados",
+    "descripcion": "Incluye pedidos cancelados",
+    "desglose": {
+     "canceladosIncluidos": 181981.2
+    }
+   },
+   "hipotesisProbadas": {
+    "incluye_cancelados": {
+     "total": 1823672.48,
+     "desglose": {
+      "canceladosIncluidos": 181981.2
+     }
+    },
+    "por_fecha_de_entrega": {
+     "total": 1558506.3,
+     "desglose": {
+      "entregadosEnElPeriodoDePedidosDeOtroMes": 53426.28,
+      "pedidosDelPeriodoNoEntregadosEnElPeriodo": 136611.26
+     }
+    },
+    "por_sucursal_que_surte": {
+     "total": 1561641.74,
+     "desglose": {
+      "ventasDeOtrasSucursalesSurtidasPorEstaSucursal": 47068.08,
+      "ventasDeEstaSucursalSurtidasPorOtras": 127117.62
+     }
+    },
+    "con_iva": {
+     "total": 1904361.88,
+     "desglose": {
+      "ivaDeProductos": 262670.6
+     }
+    },
+    "incluye_devueltos": {
+     "total": 1711242.08,
+     "desglose": {
+      "devolucionesIncluidas": 69550.8
+     }
+    }
+   }
+  },
+  {
+   "id": "zap",
+   "nombre": "Zapopan",
+   "archivo": "ventas septiembre zapopan.xlsx",
+   "hoja": "Ventas",
+   "filasLeidas": 64,
+   "totalReportado": 652214.84,
+   "totalDeclaradoEnElArchivo": 652214.84,
+   "totalCorrecto": 832964.7,
+   "diferencia": -180749.86,
+   "explicacion": {
+    "hipotesis": "por_fecha_de_entrega",
+    "descripcion": "Cuenta por fecha de entrega, no por fecha de pedido",
+    "desglose": {
+     "entregadosEnElPeriodoDePedidosDeOtroMes": 1938,
+     "pedidosDelPeriodoNoEntregadosEnElPeriodo": 182687.86
+    }
+   },
+   "hipotesisProbadas": {
+    "incluye_cancelados": {
+     "total": 884166.46,
+     "desglose": {
+      "canceladosIncluidos": 51201.76
+     }
+    },
+    "por_fecha_de_entrega": {
+     "total": 652214.84,
+     "desglose": {
+      "entregadosEnElPeriodoDePedidosDeOtroMes": 1938,
+      "pedidosDelPeriodoNoEntregadosEnElPeriodo": 182687.86
+     }
+    },
+    "por_sucursal_que_surte": {
+     "total": 717332.82,
+     "desglose": {
+      "ventasDeOtrasSucursalesSurtidasPorEstaSucursal": 36483.3,
+      "ventasDeEstaSucursalSurtidasPorOtras": 152115.18
+     }
+    },
+    "con_iva": {
+     "total": 966239.04,
+     "desglose": {
+      "ivaDeProductos": 133274.34
+     }
+    },
+    "incluye_devueltos": {
+     "total": 876709.74,
+     "desglose": {
+      "devolucionesIncluidas": 43745.04
+     }
+    }
+   }
+  },
+  {
+   "id": "leo",
+   "nombre": "León",
+   "archivo": "Reporte_Ventas_Leon_FINAL.xlsx",
+   "hoja": "Hoja1",
+   "filasLeidas": 64,
+   "totalReportado": 766586.52,
+   "totalDeclaradoEnElArchivo": 766586.52,
+   "totalCorrecto": 653579.36,
+   "diferencia": 113007.16,
+   "explicacion": {
+    "hipotesis": "por_sucursal_que_surte",
+    "descripcion": "Cuenta lo que surte la sucursal, no lo que vende",
+    "desglose": {
+     "ventasDeOtrasSucursalesSurtidasPorEstaSucursal": 152060,
+     "ventasDeEstaSucursalSurtidasPorOtras": 39052.84
+    }
+   },
+   "hipotesisProbadas": {
+    "incluye_cancelados": {
+     "total": 677765.92,
+     "desglose": {
+      "canceladosIncluidos": 24186.56
+     }
+    },
+    "por_fecha_de_entrega": {
+     "total": 624932.76,
+     "desglose": {
+      "entregadosEnElPeriodoDePedidosDeOtroMes": 41047.28,
+      "pedidosDelPeriodoNoEntregadosEnElPeriodo": 69693.88
+     }
+    },
+    "por_sucursal_que_surte": {
+     "total": 766586.52,
+     "desglose": {
+      "ventasDeOtrasSucursalesSurtidasPorEstaSucursal": 152060,
+      "ventasDeEstaSucursalSurtidasPorOtras": 39052.84
+     }
+    },
+    "con_iva": {
+     "total": 758152.1,
+     "desglose": {
+      "ivaDeProductos": 104572.74
+     }
+    },
+    "incluye_devueltos": {
+     "total": 664675.2,
+     "desglose": {
+      "devolucionesIncluidas": 11095.84
+     }
+    }
+   }
+  },
+  {
+   "id": "qro",
+   "nombre": "Querétaro",
+   "archivo": "VENTAS QRO SEP.xlsx",
+   "hoja": "SEP",
+   "filasLeidas": 63,
+   "totalReportado": 763521.46,
+   "totalDeclaradoEnElArchivo": 763521.46,
+   "totalCorrecto": 658208.12,
+   "diferencia": 105313.34,
+   "explicacion": {
+    "hipotesis": "con_iva",
+    "descripcion": "Reporta cifras con IVA incluido",
+    "desglose": {
+     "ivaDeProductos": 105313.34
+    }
+   },
+   "hipotesisProbadas": {
+    "incluye_cancelados": {
+     "total": 714296.04,
+     "desglose": {
+      "canceladosIncluidos": 56087.92
+     }
+    },
+    "por_fecha_de_entrega": {
+     "total": 552783.24,
+     "desglose": {
+      "entregadosEnElPeriodoDePedidosDeOtroMes": 3854,
+      "pedidosDelPeriodoNoEntregadosEnElPeriodo": 109278.88
+     }
+    },
+    "por_sucursal_que_surte": {
+     "total": 655616.5,
+     "desglose": {
+      "ventasDeOtrasSucursalesSurtidasPorEstaSucursal": 53797.98,
+      "ventasDeEstaSucursalSurtidasPorOtras": 56389.6
+     }
+    },
+    "con_iva": {
+     "total": 763521.46,
+     "desglose": {
+      "ivaDeProductos": 105313.34
+     }
+    },
+    "incluye_devueltos": {
+     "total": 692686.28,
+     "desglose": {
+      "devolucionesIncluidas": 34478.16
+     }
+    }
+   }
+  },
+  {
+   "id": "ags",
+   "nombre": "Aguascalientes",
+   "archivo": "Ventas_AGS.xlsx",
+   "hoja": "Sept",
+   "filasLeidas": 63,
+   "totalReportado": 349811.56,
+   "totalDeclaradoEnElArchivo": 349811.56,
+   "totalCorrecto": 318236.8,
+   "diferencia": 31574.76,
+   "explicacion": {
+    "hipotesis": "incluye_devueltos",
+    "descripcion": "No resta las devoluciones",
+    "desglose": {
+     "devolucionesIncluidas": 31574.76
+    }
+   },
+   "hipotesisProbadas": {
+    "incluye_cancelados": {
+     "total": 325188,
+     "desglose": {
+      "canceladosIncluidos": 6951.2
+     }
+    },
+    "por_fecha_de_entrega": {
+     "total": 317101,
+     "desglose": {
+      "entregadosEnElPeriodoDePedidosDeOtroMes": 30983.76,
+      "pedidosDelPeriodoNoEntregadosEnElPeriodo": 32119.56
+     }
+    },
+    "por_sucursal_que_surte": {
+     "total": 403502.68,
+     "desglose": {
+      "ventasDeOtrasSucursalesSurtidasPorEstaSucursal": 89374.88,
+      "ventasDeEstaSucursalSurtidasPorOtras": 4109
+     }
+    },
+    "con_iva": {
+     "total": 369154.71,
+     "desglose": {
+      "ivaDeProductos": 50917.91
+     }
+    },
+    "incluye_devueltos": {
+     "total": 349811.56,
+     "desglose": {
+      "devolucionesIncluidas": 31574.76
+     }
+    }
+   }
+  }
+ ],
+ "resumen": {
+  "totalCorrecto": 4104680.26,
+  "sumaDeLosReportes": 4355806.86,
+  "diferenciaGlobal": 251126.6,
+  "sucursalesExplicadas": 5
+ }
+}

@@ -1,0 +1,356 @@
+{
+ "roles": [
+  {
+   "codigo": "direccion",
+   "nombre": "Dirección",
+   "descripcion": "Visión completa de la empresa, incluida la aprobación de pagos y el reporte consolidado.",
+   "esEmpleado": true,
+   "alcance": "todas",
+   "permisos": {
+    "facturas_proveedores": [
+     "ver",
+     "aprobar"
+    ],
+    "proveedores": [
+     "ver"
+    ],
+    "pedidos": [
+     "ver"
+    ],
+    "clientes": [
+     "ver"
+    ],
+    "quejas": [
+     "ver"
+    ],
+    "existencias": [
+     "ver"
+    ],
+    "reporte_ventas": [
+     "ver"
+    ],
+    "empleados": [
+     "ver"
+    ],
+    "nominas": [
+     "ver"
+    ],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 1
+  },
+  {
+   "codigo": "finanzas",
+   "nombre": "Finanzas",
+   "descripcion": "Captura, valida y aprueba facturas de proveedores; da seguimiento a cobranza.",
+   "esEmpleado": true,
+   "alcance": "todas",
+   "permisos": {
+    "facturas_proveedores": [
+     "ver",
+     "crear",
+     "editar",
+     "aprobar"
+    ],
+    "proveedores": [
+     "ver"
+    ],
+    "pedidos": [
+     "ver"
+    ],
+    "clientes": [
+     "ver"
+    ],
+    "quejas": [],
+    "existencias": [],
+    "reporte_ventas": [
+     "ver"
+    ],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 8
+  },
+  {
+   "codigo": "compras",
+   "nombre": "Compras",
+   "descripcion": "Gestiona proveedores y consulta sus facturas y las existencias.",
+   "esEmpleado": true,
+   "alcance": "todas",
+   "permisos": {
+    "facturas_proveedores": [
+     "ver",
+     "crear"
+    ],
+    "proveedores": [
+     "ver",
+     "crear",
+     "editar"
+    ],
+    "pedidos": [],
+    "clientes": [],
+    "quejas": [],
+    "existencias": [
+     "ver"
+    ],
+    "reporte_ventas": [],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 4
+  },
+  {
+   "codigo": "rh",
+   "nombre": "Recursos humanos",
+   "descripcion": "Administra expedientes y nómina del personal.",
+   "esEmpleado": true,
+   "alcance": "todas",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [],
+    "clientes": [],
+    "quejas": [],
+    "existencias": [],
+    "reporte_ventas": [],
+    "empleados": [
+     "ver",
+     "crear",
+     "editar"
+    ],
+    "nominas": [
+     "ver"
+    ],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 2
+  },
+  {
+   "codigo": "administrador_ti",
+   "nombre": "Administrador de TI",
+   "descripcion": "Administra accesos y puede apagar el asistente; no ve nóminas ni facturas.",
+   "esEmpleado": true,
+   "alcance": "todas",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [],
+    "clientes": [],
+    "quejas": [],
+    "existencias": [],
+    "reporte_ventas": [],
+    "empleados": [
+     "ver"
+    ],
+    "nominas": [],
+    "usuarios_y_accesos": [
+     "ver",
+     "crear",
+     "editar",
+     "desactivar",
+     "apagar_asistente"
+    ],
+    "asistente_ia": [
+     "usar",
+     "administrar"
+    ]
+   },
+   "empleadosConEsteRol": 1
+  },
+  {
+   "codigo": "gerente_sucursal",
+   "nombre": "Gerente de sucursal",
+   "descripcion": "Ve pedidos, clientes, quejas y existencias de su sucursal y autoriza devoluciones.",
+   "esEmpleado": true,
+   "alcance": "sucursal",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [
+     "ver",
+     "editar"
+    ],
+    "clientes": [
+     "ver",
+     "editar"
+    ],
+    "quejas": [
+     "ver",
+     "crear",
+     "editar",
+     "atender"
+    ],
+    "existencias": [
+     "ver"
+    ],
+    "reporte_ventas": [
+     "ver"
+    ],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 5
+  },
+  {
+   "codigo": "ventas",
+   "nombre": "Ventas y atención a clientes",
+   "descripcion": "Registra pedidos y quejas y consulta existencias de su sucursal.",
+   "esEmpleado": true,
+   "alcance": "sucursal",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [
+     "ver",
+     "crear",
+     "editar"
+    ],
+    "clientes": [
+     "ver"
+    ],
+    "quejas": [
+     "ver",
+     "crear"
+    ],
+    "existencias": [
+     "ver"
+    ],
+    "reporte_ventas": [],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 52
+  },
+  {
+   "codigo": "bodega",
+   "nombre": "Bodega",
+   "descripcion": "Consulta y actualiza existencias y surte pedidos de su sucursal.",
+   "esEmpleado": true,
+   "alcance": "sucursal",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [
+     "ver",
+     "editar"
+    ],
+    "clientes": [],
+    "quejas": [],
+    "existencias": [
+     "ver",
+     "editar"
+    ],
+    "reporte_ventas": [],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 32
+  },
+  {
+   "codigo": "reparto",
+   "nombre": "Reparto",
+   "descripcion": "Consulta pedidos por entregar y confirma entregas.",
+   "esEmpleado": true,
+   "alcance": "sucursal",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [
+     "ver",
+     "editar"
+    ],
+    "clientes": [],
+    "quejas": [],
+    "existencias": [],
+    "reporte_ventas": [],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 25
+  },
+  {
+   "codigo": "administrativo",
+   "nombre": "Administrativo",
+   "descripcion": "Apoyo administrativo y caja de la sucursal o de la dirección.",
+   "esEmpleado": true,
+   "alcance": "sucursal",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [
+     "ver"
+    ],
+    "clientes": [
+     "ver"
+    ],
+    "quejas": [],
+    "existencias": [],
+    "reporte_ventas": [],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 10
+  },
+  {
+   "codigo": "cliente",
+   "nombre": "Cliente externo",
+   "descripcion": "Hoteles, restaurantes, escuelas y tiendas: solo el asistente y su propia información de pedidos.",
+   "esEmpleado": false,
+   "alcance": "propio",
+   "permisos": {
+    "facturas_proveedores": [],
+    "proveedores": [],
+    "pedidos": [
+     "ver"
+    ],
+    "clientes": [],
+    "quejas": [
+     "crear"
+    ],
+    "existencias": [],
+    "reporte_ventas": [],
+    "empleados": [],
+    "nominas": [],
+    "usuarios_y_accesos": [],
+    "asistente_ia": [
+     "usar"
+    ]
+   },
+   "empleadosConEsteRol": 0
+  }
+ ]
+}

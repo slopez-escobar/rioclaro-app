@@ -1,0 +1,490 @@
+{
+ "meta": {
+  "descripcion": "Proveedores ficticios de Distribuidora Río Claro (proyecto AI-901). Nombres, RFC, direcciones y contactos son inventados.",
+  "totalProveedores": 60,
+  "uso": "El RFC y el nombre sirven para validar contra el RFC que Document Intelligence extrae de cada factura. Los datos bancarios no se incluyen a propósito.",
+  "formatoFechas": "AAAA-MM-DD"
+ },
+ "proveedores": [
+  {
+   "idProveedor": "PRV-001",
+   "razonSocial": "Esencias Norte S.A. de C.V.",
+   "nombreComercial": "Esencias Norte",
+   "rfc": "ENX920204L7M",
+   "categoria": "Fragancias y aromatizantes",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-002",
+   "razonSocial": "Desechables Beltrán S. de R.L. de C.V.",
+   "nombreComercial": "Desechables Beltrán",
+   "rfc": "DBX0909164XS",
+   "categoria": "Papel y desechables",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-003",
+   "razonSocial": "Plásticos Soplados Bajío S. de R.L. de C.V.",
+   "nombreComercial": "Plásticos Soplados Bajío",
+   "rfc": "PSB950504QUL",
+   "categoria": "Envases y tapas",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-004",
+   "razonSocial": "Trapeadores Mexicano S. de R.L. de C.V.",
+   "nombreComercial": "Trapeadores Mexicano",
+   "rfc": "TMX080125H8X",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-005",
+   "razonSocial": "Dispensadores Pacífico S.A.P.I. de C.V.",
+   "nombreComercial": "Dispensadores Pacífico",
+   "rfc": "DPX88011752Q",
+   "categoria": "Dispensadores y equipo",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-006",
+   "razonSocial": "Envapack Jalisco S.A. de C.V.",
+   "nombreComercial": "Envapack Jalisco",
+   "rfc": "EJX961119RTY",
+   "categoria": "Envases y tapas",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-007",
+   "razonSocial": "Papeles Nacional S.A. de C.V.",
+   "nombreComercial": "Papeles Nacional",
+   "rfc": "PNX171102BHQ",
+   "categoria": "Papel y desechables",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-008",
+   "razonSocial": "Industrias Químicas Valdés S. de R.L. de C.V.",
+   "nombreComercial": "Industrias Químicas Valdés",
+   "rfc": "IQV880504WB3",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-009",
+   "razonSocial": "Sistemas Sanitarios Cumbres S.A. de C.V.",
+   "nombreComercial": "Sistemas Sanitarios Cumbres",
+   "rfc": "SSC171023E55",
+   "categoria": "Dispensadores y equipo",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-010",
+   "razonSocial": "Etiquetas Uribe S.A. de C.V.",
+   "nombreComercial": "Etiquetas Uribe",
+   "rfc": "EUX180225XAJ",
+   "categoria": "Empaque, etiquetas y tarimas",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-011",
+   "razonSocial": "Envases Occidental S.A. de C.V.",
+   "nombreComercial": "Envases Occidental",
+   "rfc": "EOX881109FW1",
+   "categoria": "Envases y tapas",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-012",
+   "razonSocial": "Higiene Valdés S.A. de C.V.",
+   "nombreComercial": "Higiene Valdés",
+   "rfc": "HVX910717PMM",
+   "categoria": "Higiene personal",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-013",
+   "razonSocial": "Utensilios Rangel S. de R.L. de C.V.",
+   "nombreComercial": "Utensilios Rangel",
+   "rfc": "URX1207127K4",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-014",
+   "razonSocial": "Cubetas Centro S.A. de C.V.",
+   "nombreComercial": "Cubetas Centro",
+   "rfc": "CCX0204122WQ",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-015",
+   "razonSocial": "Plásticos Altiplano S.A. de C.V.",
+   "nombreComercial": "Plásticos Altiplano",
+   "rfc": "PAX0209070VZ",
+   "categoria": "Bolsas y plásticos",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-016",
+   "razonSocial": "Química Aplicada Beltrán S.A. de C.V.",
+   "nombreComercial": "Química Aplicada Beltrán",
+   "rfc": "QAB2011213F4",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-017",
+   "razonSocial": "Aromas Aranda S.A.P.I. de C.V.",
+   "nombreComercial": "Aromas Aranda",
+   "rfc": "AAX870906U2N",
+   "categoria": "Fragancias y aromatizantes",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-018",
+   "razonSocial": "Aromatizantes Figueroa S.A. de C.V.",
+   "nombreComercial": "Aromatizantes Figueroa",
+   "rfc": "AFX970920R1R",
+   "categoria": "Fragancias y aromatizantes",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-019",
+   "razonSocial": "Seguridad Industrial Norte S.A. de C.V.",
+   "nombreComercial": "Seguridad Industrial Norte",
+   "rfc": "SIN920725CVS",
+   "categoria": "Guantes y protección",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-020",
+   "razonSocial": "Plastiflex Norte S.A. de C.V.",
+   "nombreComercial": "Plastiflex Norte",
+   "rfc": "PNX1603111KG",
+   "categoria": "Bolsas y plásticos",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-021",
+   "razonSocial": "Químicos del Valle S.A. de C.V.",
+   "nombreComercial": "Químicos del Valle",
+   "rfc": "QVX870615QBD",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-022",
+   "razonSocial": "Papel y Pulpa Occidental S.A.P.I. de C.V.",
+   "nombreComercial": "Papel y Pulpa Occidental",
+   "rfc": "PPO120819LY2",
+   "categoria": "Papel y desechables",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-023",
+   "razonSocial": "Papelera Lozano S.A. de C.V.",
+   "nombreComercial": "Papelera Lozano",
+   "rfc": "PLX920814G8D",
+   "categoria": "Papel y desechables",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-024",
+   "razonSocial": "Cloros y Derivados Occidente S.A.P.I. de C.V.",
+   "nombreComercial": "Cloros y Derivados Occidente",
+   "rfc": "CDO920402DFT",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-025",
+   "razonSocial": "Espuma Pacífico S.A.P.I. de C.V.",
+   "nombreComercial": "Espuma Pacífico",
+   "rfc": "EPX860606FXN",
+   "categoria": "Detergentes y jabones",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-026",
+   "razonSocial": "Mecates y Mechudos Bajío S.A. de C.V.",
+   "nombreComercial": "Mecates y Mechudos Bajío",
+   "rfc": "MMB990701MTF",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-027",
+   "razonSocial": "Fragancias Centro S.A. de C.V.",
+   "nombreComercial": "Fragancias Centro",
+   "rfc": "FCX861207HP2",
+   "categoria": "Fragancias y aromatizantes",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-028",
+   "razonSocial": "Maquinaria de Limpieza Fuentes S.A. de C.V.",
+   "nombreComercial": "Maquinaria de Limpieza Fuentes",
+   "rfc": "MLF90042852Z",
+   "categoria": "Dispensadores y equipo",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-029",
+   "razonSocial": "Gel y Antisépticos Bernal S. de R.L. de C.V.",
+   "nombreComercial": "Gel y Antisépticos Bernal",
+   "rfc": "GAB980823EUZ",
+   "categoria": "Higiene personal",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-030",
+   "razonSocial": "Polietileno Altiplano S.A.P.I. de C.V.",
+   "nombreComercial": "Polietileno Altiplano",
+   "rfc": "PAX091201RJN",
+   "categoria": "Bolsas y plásticos",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-031",
+   "razonSocial": "Jabonera Maldonado S.A. de C.V.",
+   "nombreComercial": "Jabonera Maldonado",
+   "rfc": "JMX180806J53",
+   "categoria": "Detergentes y jabones",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-032",
+   "razonSocial": "Equipos de Higiene Fuentes S.A. de C.V.",
+   "nombreComercial": "Equipos de Higiene Fuentes",
+   "rfc": "EHF0903024WF",
+   "categoria": "Dispensadores y equipo",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-033",
+   "razonSocial": "Protección Uribe S.A. de C.V.",
+   "nombreComercial": "Protección Uribe",
+   "rfc": "PUX100214U3D",
+   "categoria": "Guantes y protección",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-034",
+   "razonSocial": "Grupo Jabonero Garibay S. de R.L. de C.V.",
+   "nombreComercial": "Grupo Jabonero Garibay",
+   "rfc": "GJG1504153QK",
+   "categoria": "Detergentes y jabones",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-035",
+   "razonSocial": "Cuidado Personal Mexicano S.A. de C.V.",
+   "nombreComercial": "Cuidado Personal Mexicano",
+   "rfc": "CPM080309N1W",
+   "categoria": "Higiene personal",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-036",
+   "razonSocial": "Látex Huerta S.A. de C.V.",
+   "nombreComercial": "Látex Huerta",
+   "rfc": "LHX8907060T9",
+   "categoria": "Guantes y protección",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-037",
+   "razonSocial": "Fibras Maldonado S.A. de C.V.",
+   "nombreComercial": "Fibras Maldonado",
+   "rfc": "FMX910606C93",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-038",
+   "razonSocial": "Higiénicos Bernal S.A. de C.V.",
+   "nombreComercial": "Higiénicos Bernal",
+   "rfc": "HBX1606019M6",
+   "categoria": "Papel y desechables",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-039",
+   "razonSocial": "Tapas y Envases Iglesias S.A. de C.V.",
+   "nombreComercial": "Tapas y Envases Iglesias",
+   "rfc": "TEI8710268PS",
+   "categoria": "Envases y tapas",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-040",
+   "razonSocial": "Soluciones Químicas Bajío S.A. de C.V.",
+   "nombreComercial": "Soluciones Químicas Bajío",
+   "rfc": "SQB910724ZF9",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-041",
+   "razonSocial": "Guantes Bajío S.A. de C.V.",
+   "nombreComercial": "Guantes Bajío",
+   "rfc": "GBX900904US0",
+   "categoria": "Guantes y protección",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-042",
+   "razonSocial": "Tissue Mexicano S. de R.L. de C.V.",
+   "nombreComercial": "Tissue Mexicano",
+   "rfc": "TMX870220GXE",
+   "categoria": "Papel y desechables",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-043",
+   "razonSocial": "Escobas Cumbres S. de R.L. de C.V.",
+   "nombreComercial": "Escobas Cumbres",
+   "rfc": "ECX851112RVP",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-044",
+   "razonSocial": "Detergentes Pacífico S.A.P.I. de C.V.",
+   "nombreComercial": "Detergentes Pacífico",
+   "rfc": "DPX000503JQ2",
+   "categoria": "Detergentes y jabones",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-045",
+   "razonSocial": "Bolsas Galván S. de R.L. de C.V.",
+   "nombreComercial": "Bolsas Galván",
+   "rfc": "BGX1104020T4",
+   "categoria": "Bolsas y plásticos",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-046",
+   "razonSocial": "Antibacteriales Mexicano S.A. de C.V.",
+   "nombreComercial": "Antibacteriales Mexicano",
+   "rfc": "AMX131217HNK",
+   "categoria": "Higiene personal",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-047",
+   "razonSocial": "Cepillos Paredes S.A.P.I. de C.V.",
+   "nombreComercial": "Cepillos Paredes",
+   "rfc": "CPX860603M9L",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-048",
+   "razonSocial": "Empaques Plásticos Delgado S.A.P.I. de C.V.",
+   "nombreComercial": "Empaques Plásticos Delgado",
+   "rfc": "EPD890710FB8",
+   "categoria": "Bolsas y plásticos",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-049",
+   "razonSocial": "Jabones Beltrán S.A. de C.V.",
+   "nombreComercial": "Jabones Beltrán",
+   "rfc": "JBX910608CGP",
+   "categoria": "Detergentes y jabones",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-050",
+   "razonSocial": "Cartón Occidente S.A. de C.V.",
+   "nombreComercial": "Cartón Occidente",
+   "rfc": "COX141219F0N",
+   "categoria": "Empaque, etiquetas y tarimas",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-051",
+   "razonSocial": "Química Industrial Mexicano S.A. de C.V.",
+   "nombreComercial": "Química Industrial Mexicano",
+   "rfc": "QIM9103011CS",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-052",
+   "razonSocial": "Tarimas Cumbres S.A. de C.V.",
+   "nombreComercial": "Tarimas Cumbres",
+   "rfc": "TCX980123UXP",
+   "categoria": "Empaque, etiquetas y tarimas",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-053",
+   "razonSocial": "Microfibras Huerta S.A. de C.V.",
+   "nombreComercial": "Microfibras Huerta",
+   "rfc": "MHX050221S3M",
+   "categoria": "Utensilios de limpieza",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-054",
+   "razonSocial": "Envasados Nieto S.A. de C.V.",
+   "nombreComercial": "Envasados Nieto",
+   "rfc": "ENX070107NJR",
+   "categoria": "Envases y tapas",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-055",
+   "razonSocial": "Limpieza Total Valdés S.A. de C.V.",
+   "nombreComercial": "Limpieza Total Valdés",
+   "rfc": "LTV9204209RY",
+   "categoria": "Detergentes y jabones",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-056",
+   "razonSocial": "Empaques Uribe S.A. de C.V.",
+   "nombreComercial": "Empaques Uribe",
+   "rfc": "EUX080926SJ0",
+   "categoria": "Empaque, etiquetas y tarimas",
+   "idEmpleadoComprador": "RC-0013"
+  },
+  {
+   "idProveedor": "PRV-057",
+   "razonSocial": "Celulosa Ledesma S.A. de C.V.",
+   "nombreComercial": "Celulosa Ledesma",
+   "rfc": "CLX93100840E",
+   "categoria": "Papel y desechables",
+   "idEmpleadoComprador": "RC-0014"
+  },
+  {
+   "idProveedor": "PRV-058",
+   "razonSocial": "Productos Químicos Bernal S.A. de C.V.",
+   "nombreComercial": "Productos Químicos Bernal",
+   "rfc": "PQB0911145E8",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-059",
+   "razonSocial": "Detergentes y Jabones Valle S.A. de C.V.",
+   "nombreComercial": "Detergentes y Jabones Valle",
+   "rfc": "DJV001109WST",
+   "categoria": "Detergentes y jabones",
+   "idEmpleadoComprador": "RC-0012"
+  },
+  {
+   "idProveedor": "PRV-060",
+   "razonSocial": "Sanitizantes Treviño S.A. de C.V.",
+   "nombreComercial": "Sanitizantes Treviño",
+   "rfc": "STX1006043H5",
+   "categoria": "Químicos",
+   "idEmpleadoComprador": "RC-0012"
+  }
+ ]
+}

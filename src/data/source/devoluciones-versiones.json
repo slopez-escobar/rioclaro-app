@@ -1,0 +1,89 @@
+{
+ "versiones": [
+  {
+   "clave": "v1",
+   "etiqueta": "v1 (2018)",
+   "archivo": "Politica_Devoluciones_FINAL.docx",
+   "version": "1.0",
+   "fecha": "Marzo 2018",
+   "elaboro": "Ernesto Ramírez Villaseñor (Director general)",
+   "aplicaA": "Todas las sucursales"
+  },
+  {
+   "clave": "leon",
+   "etiqueta": "León (2022)",
+   "archivo": "Politica_Devoluciones_Leon_NUEVA.docx",
+   "version": "Sin número",
+   "fecha": "Septiembre 2022",
+   "elaboro": "Mariana Torres Aguilar (Gerente León)",
+   "aplicaA": "León y Zapopan (pendiente confirmar Querétaro y Aguascalientes)"
+  },
+  {
+   "clave": "v3",
+   "etiqueta": "v3 (2024)",
+   "archivo": "Politica_Devoluciones_2024_v3.docx",
+   "version": "3.0",
+   "fecha": "Vigente desde 01/06/2024",
+   "elaboro": "Sandra Castro García (Contador general); autorizó Ernesto Ramírez Villaseñor",
+   "aplicaA": "Las 5 sucursales"
+  }
+ ],
+ "contradicciones": [
+  {
+   "tema": "Plazo",
+   "v1": "30 días naturales",
+   "leon": "8 días naturales",
+   "v3": "15 días naturales"
+  },
+  {
+   "tema": "Estado del producto",
+   "v1": "Buen estado; se acepta abierto si hay defecto",
+   "leon": "Sellado y sin usar",
+   "v3": "Sellado y en su empaque original"
+  },
+  {
+   "tema": "Reporte de daños",
+   "v1": "7 días",
+   "leon": "24 horas",
+   "v3": "48 horas, con fotografía"
+  },
+  {
+   "tema": "Quién autoriza",
+   "v1": "El vendedor hasta $2,000 + IVA; más, el gerente",
+   "leon": "Solo el gerente de sucursal",
+   "v3": "El gerente de sucursal"
+  },
+  {
+   "tema": "Compensación",
+   "v1": "Efectivo o transferencia en 5 días hábiles",
+   "leon": "Solo nota de crédito, nunca efectivo",
+   "v3": "Nota de crédito o reposición; reembolso solo si no hay existencia"
+  },
+  {
+   "tema": "Cargo por manejo",
+   "v1": "Ninguno",
+   "leon": "10% si no es falla de Río Claro",
+   "v3": "Ninguno"
+  },
+  {
+   "tema": "Flete de recolección",
+   "v1": "Lo paga el cliente",
+   "leon": "Lo paga Río Claro",
+   "v3": "Río Claro si la falla es suya; el cliente si el error fue de su pedido"
+  },
+  {
+   "tema": "No retornables",
+   "v1": "No se especifican",
+   "leon": "Garrafas de 20 litros y químicos trasvasados",
+   "v3": "Higiene personal (guantes, cubrebocas, gel)"
+  },
+  {
+   "tema": "Sucursales",
+   "v1": "Todas",
+   "leon": "León y Zapopan",
+   "v3": "Las 5"
+  }
+ ],
+ "vigente": "v3",
+ "notaVigente": "La v3.0 (2024): es la más reciente, la única que aplica a las 5 sucursales y la única con control de versiones, y es la que ya usa politica-devoluciones.md en la base de conocimiento del chat. La unificación consiste en conservar solo esa y documentar el cambio en ENTREGA.md (\"de tres versiones a una\")."
+}

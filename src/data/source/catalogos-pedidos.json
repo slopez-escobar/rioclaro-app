@@ -1,0 +1,97 @@
+{
+ "meta": {
+  "descripcion": "Catálogos de apoyo para clientes y pedidos de Río Claro."
+ },
+ "estadosPedido": [
+  {
+   "codigo": "pendiente_confirmacion",
+   "descripcion": "El pedido se recibió y falta confirmarlo",
+   "tipo": "en_progreso"
+  },
+  {
+   "codigo": "aceptado",
+   "descripcion": "Confirmado por la sucursal",
+   "tipo": "en_progreso"
+  },
+  {
+   "codigo": "en_preparacion",
+   "descripcion": "Se está surtiendo en bodega",
+   "tipo": "en_progreso"
+  },
+  {
+   "codigo": "listo_para_recoger",
+   "descripcion": "Listo en mostrador (solo recoger en sucursal)",
+   "tipo": "en_progreso"
+  },
+  {
+   "codigo": "en_ruta",
+   "descripcion": "En reparto al domicilio (solo envío)",
+   "tipo": "en_progreso"
+  },
+  {
+   "codigo": "entregado",
+   "descripcion": "Entregado o recogido por el cliente",
+   "tipo": "final"
+  },
+  {
+   "codigo": "cancelado",
+   "descripcion": "Cancelado antes de surtirse",
+   "tipo": "final"
+  },
+  {
+   "codigo": "devuelto",
+   "descripcion": "Entregado y devuelto después por el cliente",
+   "tipo": "final"
+  }
+ ],
+ "tiposEntrega": [
+  {
+   "codigo": "recoger_en_sucursal",
+   "descripcion": "El cliente recoge en mostrador"
+  },
+  {
+   "codigo": "envio_a_domicilio",
+   "descripcion": "Reparto al domicilio; envío gratis desde $3,000 de productos, de lo contrario $150 + IVA"
+  }
+ ],
+ "tamanosCliente": [
+  {
+   "codigo": "grande",
+   "descuentoListaPorcentaje": 8
+  },
+  {
+   "codigo": "mediano",
+   "descuentoListaPorcentaje": 4
+  },
+  {
+   "codigo": "pequeño",
+   "descuentoListaPorcentaje": 0
+  }
+ ],
+ "tiposCliente": [
+  "hotel",
+  "restaurante",
+  "escuela",
+  "tienda"
+ ],
+ "canales": [
+  "whatsapp",
+  "telefono",
+  "correo",
+  "visita_vendedor",
+  "mostrador"
+ ],
+ "estatusPago": [
+  "pagado",
+  "pendiente",
+  "vencido",
+  "no_aplica",
+  "nota_de_credito"
+ ],
+ "reglasNegocio": {
+  "tasaIVA": 0.16,
+  "envioGratisDesdeMXN": 3000,
+  "costoEnvioMXN": 150,
+  "horarioOperacion": "Lunes a sábado"
+ }
+}

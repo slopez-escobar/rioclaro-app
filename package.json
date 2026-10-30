@@ -1,0 +1,34 @@
+{
+  "name": "rioclaro-app",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Prototipo AI-901: Distribuidora Río Claro (facturas y asistente con IA)",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run --passWithNoTests",
+    "datos": "node scripts/preparar-datos.mjs",
+    "datos:check": "node scripts/preparar-datos.mjs --check",
+    "catalogo:unificar": "node scripts/unificar-catalogo.mjs",
+    "catalogo:check": "node scripts/unificar-catalogo.mjs --check",
+    "ventas:conciliar": "node scripts/conciliar-ventas.mjs",
+    "ventas:check": "node scripts/conciliar-ventas.mjs --check",
+    "docs:cuentas": "node scripts/generar-cuentas-demo.mjs"
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-router-dom": "7.18.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.1.2",
+    "exceljs": "4.4.0",
+    "vite": "8.3.5",
+    "vitest": "5.0.5"
+  }
+}
