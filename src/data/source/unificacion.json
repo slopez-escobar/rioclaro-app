@@ -8,7 +8,7 @@
  },
  "sucursales": {
   "gdl": {
-   "archivo": "Inventario_Guadalajara.xlsx",
+   "archivo": "Inventario_Guadalajara",
    "hojas": [
     "Inventario"
    ],
@@ -22,7 +22,7 @@
    }
   },
   "zap": {
-   "archivo": "Productos_Zapopan.xlsx",
+   "archivo": "Productos_Zapopan",
    "hojas": [
     "Productos"
    ],
@@ -36,7 +36,7 @@
    }
   },
   "leo": {
-   "archivo": "Inventario_Leon_oct2026.xlsx",
+   "archivo": "Inventario_Leon_oct2026",
    "hojas": [
     "Lista"
    ],
@@ -50,7 +50,7 @@
    }
   },
   "qro": {
-   "archivo": "Catalogo_Queretaro.xlsx",
+   "archivo": "Catalogo_Queretaro",
    "hojas": [
     "Químicos y limpieza",
     "Papel y plásticos",
@@ -66,7 +66,7 @@
    }
   },
   "ags": {
-   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "archivo": "Existencias_AGS_FINAL",
    "hojas": [
     "Existencias AGS"
    ],
@@ -4596,7 +4596,7 @@
  "revision": [
   {
    "sucursal": "ags",
-   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "archivo": "Existencias_AGS_FINAL",
    "hoja": "Existencias AGS",
    "fila": 22,
    "codigo": null,
@@ -4610,7 +4610,7 @@
   },
   {
    "sucursal": "ags",
-   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "archivo": "Existencias_AGS_FINAL",
    "hoja": "Existencias AGS",
    "fila": 23,
    "codigo": null,
@@ -4624,7 +4624,7 @@
   },
   {
    "sucursal": "ags",
-   "archivo": "Existencias_AGS_FINAL.xlsx",
+   "archivo": "Existencias_AGS_FINAL",
    "hoja": "Existencias AGS",
    "fila": 43,
    "codigo": null,

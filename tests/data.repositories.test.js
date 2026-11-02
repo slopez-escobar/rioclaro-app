@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { login } from "../src/features/auth/authService.js";
+import { login } from "../src/features/auth/authService.local.js";
 import { usuarios } from "../src/features/auth/data/usuarios.json";
 import { createCachedLoader } from "../src/data/repositories/repositoryUtils.js";
 import { listClientes, getCliente, getMiCliente } from "../src/data/repositories/clientesRepository.js";

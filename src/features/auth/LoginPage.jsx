@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
+import { usuarios as directorioCuentas } from "../admin/data/accounts.json";
 import { useDocumentTitle } from "../../shared/hooks/useDocumentTitle.js";
 import { useAuth } from "./AuthContext.jsx";
-import { CUENTAS_DEMO } from "./authService.js";
 import { landingPath } from "./permissions.js";
 import { empresa } from "../../config/sucursales.js";
 import Input from "../../shared/ui/Input.jsx";
@@ -17,6 +17,7 @@ export default function LoginPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [usuario, setUsuario] = useState("");
   const [password, setPassword] = useState("");
+  const [entrando, setEntrando] = useState(false);
   const [error, setError] = useState("");
   const [resetNotice, setResetNotice] = useState("");
   const [resetOpen, setResetOpen] = useState(false);
@@ -30,11 +31,33 @@ export default function LoginPage() {
 
   if (session) return <Navigate to={landingPath(session.rol)} replace />;
 
-  const entrar = (u, p) => {
-    const r = login(u, p);
-    if (!r.ok) return setError(r.error);
-    navigate(landingPath(r.session.rol), { replace: true });
+  const entrar = async (u, p) => {
+    setError("");
+    setEntrando(true);
+    try {
+      const r = await login(u, p);
+      if (!r.ok) return setError(r.error);
+      navigate(landingPath(r.session.rol), { replace: true });
+    } finally {
+      setEntrando(false);
+    }
   };
+
+  const demoAccounts = ["ernesto", "laura", "mariana", "tono", "carlos", "cliente1"]
+    .map((username) => directorioCuentas.find((account) => account.usuario === username))
+    .filter(Boolean);
+
+  async function enterDemo(account) {
+    if (import.meta.env.VITE_USE_AZURE === "true") {
+      setUsuario(account.usuario);
+      setPassword("");
+      setError("");
+      return;
+    }
+    const localAuth = await import("./authService.local.js");
+    const localAccount = localAuth.CUENTAS_DEMO.find((item) => item.usuario === account.usuario);
+    if (localAccount) await entrar(localAccount.usuario, localAccount.password);
+  }
 
   const resetDemo = () => {
     setResetError("");
@@ -70,18 +93,18 @@ export default function LoginPage() {
         <h2 id="login-titulo">Te damos la bienvenida</h2>
         <p className="login-intro">Ingresa a tu espacio de trabajo.</p>
         {resetNotice ? <p role="status">{resetNotice}</p> : null}
-        <form onSubmit={(e) => { e.preventDefault(); entrar(usuario, password); }} noValidate>
+        <form onSubmit={(e) => { e.preventDefault(); void entrar(usuario, password); }} noValidate>
           <Input label="Usuario" value={usuario} onChange={(e) => setUsuario(e.target.value)} autoComplete="username" />
           <Input label="Contraseña" type="password" value={password} onChange={(e) => setPassword(e.target.value)} autoComplete="current-password" error={error} />
-          <Button type="submit">Entrar</Button>
+          <Button type="submit" disabled={entrando}>{entrando ? "Entrando…" : "Entrar"}</Button>
         </form>
         <details className="demo">
           <summary>Cuentas de demostración</summary>
           <ul>
-            {CUENTAS_DEMO.map((c) => (
-              <li key={c.usuario}>
-                <Button variant="secondary" onClick={() => entrar(c.usuario, c.password)}>
-                  {c.nombre} · {c.detalle}
+            {demoAccounts.map((account) => (
+              <li key={account.usuario}>
+                <Button variant="secondary" disabled={entrando} onClick={() => void enterDemo(account)}>
+                  {account.nombre} · {account.usuario} · {account.puesto || "Cliente"}
                 </Button>
               </li>
             ))}

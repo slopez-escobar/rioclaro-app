@@ -8,7 +8,7 @@
   {
    "id": "gdl",
    "nombre": "Guadalajara",
-   "archivo": "Ventas_Sep_Guadalajara.xlsx",
+   "archivo": "Ventas_Sep_Guadalajara",
    "hoja": "Septiembre",
    "filasLeidas": 64,
    "totalReportado": 1823672.48,
@@ -60,7 +60,7 @@
   {
    "id": "zap",
    "nombre": "Zapopan",
-   "archivo": "ventas septiembre zapopan.xlsx",
+   "archivo": "ventas septiembre zapopan",
    "hoja": "Ventas",
    "filasLeidas": 64,
    "totalReportado": 652214.84,
@@ -113,7 +113,7 @@
   {
    "id": "leo",
    "nombre": "León",
-   "archivo": "Reporte_Ventas_Leon_FINAL.xlsx",
+   "archivo": "Reporte_Ventas_Leon_FINAL",
    "hoja": "Hoja1",
    "filasLeidas": 64,
    "totalReportado": 766586.52,
@@ -166,7 +166,7 @@
   {
    "id": "qro",
    "nombre": "Querétaro",
-   "archivo": "VENTAS QRO SEP.xlsx",
+   "archivo": "VENTAS QRO SEP",
    "hoja": "SEP",
    "filasLeidas": 63,
    "totalReportado": 763521.46,
@@ -218,7 +218,7 @@
   {
    "id": "ags",
    "nombre": "Aguascalientes",
-   "archivo": "Ventas_AGS.xlsx",
+   "archivo": "Ventas_AGS",
    "hoja": "Sept",
    "filasLeidas": 63,
    "totalReportado": 349811.56,

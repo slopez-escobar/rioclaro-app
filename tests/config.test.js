@@ -20,6 +20,7 @@ describe("configuración base", () => {
     expect(STORAGE_PREFIX).toBe("rc:v1:");
     expect(Object.keys(STORAGE_KEYS)).toEqual([
       "session",
+      "authToken",
       "invoices",
       "chat",
       "disabledAccounts",

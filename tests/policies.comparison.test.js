@@ -23,6 +23,17 @@ const sourcePath = findSourceFile(
   "CLAVE_comparacion_politicas.md",
 );
 const sourceMarkdown = readFileSync(sourcePath, "utf8");
+const withoutOriginalExtensions = (value) => {
+  if (typeof value === "string") return value.replace(/\.(docx|xlsx)\b/gi, "");
+  if (Array.isArray(value)) return value.map(withoutOriginalExtensions);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [
+      key,
+      withoutOriginalExtensions(item),
+    ]));
+  }
+  return value;
+};
 
 describe("comparación de versiones de devoluciones", () => {
   it("analiza las tres versiones y las nueve contradicciones del archivo fuente", () => {
@@ -51,7 +62,7 @@ describe("comparación de versiones de devoluciones", () => {
   });
 
   it("coincide exactamente con el JSON generado", () => {
-    expect(parseVersionComparison(sourceMarkdown)).toEqual(generatedComparison);
+    expect(withoutOriginalExtensions(parseVersionComparison(sourceMarkdown))).toEqual(generatedComparison);
   });
 
   it("falla en español cuando falta una tabla o una versión", () => {

@@ -1,4 +1,4 @@
-import { usuarios } from "../auth/data/usuarios.json";
+import { usuarios } from "./data/accounts.json";
 import { roles } from "../auth/data/roles.json";
 import { can } from "../auth/permissions.js";
 import { listSucursales } from "../../data/repositories/sucursalesRepository.js";

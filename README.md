@@ -28,6 +28,15 @@ Abre la dirección local que indique Vite. El proyecto está pensado para ejecut
 | `npm run docs:cuentas` | Genera `docs/CUENTAS_DEMO.md` a partir de las cuentas, roles y datos publicados. |
 | `npm test` | Ejecuta las pruebas con Vitest. |
 | `npm run build` | Compila la app en `dist/`. |
+| `npm run dev:azure` | Inicia Vite con `.env.azure` y proxy a Azure Functions local. |
+| `npm run build:azure` | Compila el modo Azure en `dist-azure/`. |
+| `npm run verificar:azure` | Busca datos sensibles y confirma la configuración del paquete Azure. |
+
+## Modo Azure
+
+El archivo versionado `.env.azure` activa `VITE_USE_AZURE=true` y configura `VITE_API_BASE_URL=/api`. Para desarrollo, inicia Azure Functions desde `api/` con `func start` y, en otra terminal, ejecuta `npm run dev:azure` desde `rioclaro-app`; Vite reenvía `/api` a `http://localhost:7071`. Para compilar y revisar el paquete ejecuta `npm run build:azure` y `npm run verificar:azure`.
+
+En este modo el login, la lectura de facturas y el análisis de sentimiento usan el backend. Las cuentas desactivadas y su panel permanecen locales a este navegador; el login remoto no consulta esa lista. Los datos de negocio continúan incluidos en el paquete de la aplicación. El paquete Azure excluye las contraseñas de demostración.
 
 ## Datos y estructura
 
@@ -95,7 +104,7 @@ Las rutas requieren sesión salvo `/login`. Los permisos se leen del catálogo `
 
 - Los datos operativos y cambios de demo viven en el navegador; borrar los datos del sitio los elimina.
 - No hay base de datos ni persistencia compartida; la API de demostración procesa sesiones en memoria y llama a Azure solo cuando el recurso está configurado.
-- Las contraseñas de demostración están en el paquete local y el backend para facilitar pruebas. No uses estas cuentas en producción.
+- Las contraseñas de demostración están disponibles únicamente en el modo local y en el backend de pruebas. No uses estas cuentas en producción.
 - Las cuentas desactivadas, la auditoría, el chat y los cambios de facturas/quejas son locales a este navegador.
 - El restablecimiento global elimina exclusivamente las claves con prefijo `rc:v1:`. Los datos fuente y las copias base no se modifican.
 - Antes de producción, la autenticación y la autorización deben migrarse a un servicio de identidad; los datos personales requieren un backend autorizado.

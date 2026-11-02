@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { createLocalStore } from "../src/shared/storage/localStore.js";
-import { login, getSession, logout, CUENTAS_DEMO } from "../src/features/auth/authService.js";
+import { getSession, logout } from "../src/features/auth/authService.js";
+import { login, CUENTAS_DEMO } from "../src/features/auth/authService.local.js";
 import { can, landingPath, alcanceDe } from "../src/features/auth/permissions.js";
 import { usuarios } from "../src/features/auth/data/usuarios.json";
 import { roles } from "../src/features/auth/data/roles.json";

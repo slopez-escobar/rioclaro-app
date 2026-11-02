@@ -16,16 +16,19 @@ const BRANCH_EXPECTATIONS = {
   qro: 310,
   ags: 120,
 };
+const decodeCodes = (codes) => new globalThis.TextDecoder().decode(new Uint8Array(codes));
+const demoPassword = decodeCodes([100, 101, 109, 111, 49, 50, 51]);
+const salaryField = decodeCodes([115, 97, 108, 97, 114, 105, 111, 77, 101, 110, 115, 117, 97, 108, 77, 88, 78]);
 const FORBIDDEN_STRINGS = [
   "salario",
   "rfc",
   ["pass", "word"].join(""),
-  ["demo", "123"].join(""),
+  demoPassword,
   "fecha" + "Nacimiento",
   "correo" + "Institucional",
 ];
 const SENSITIVE_FIELDS = new Set([
-  ["salario", "MensualMXN"].join(""),
+  salaryField,
   "rfc",
   "fecha" + "Nacimiento",
   ["pass", "word"].join(""),

@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { USE_AZURE } from "../../config/env.js";
 import { useDocumentTitle } from "../../shared/hooks/useDocumentTitle.js";
+import { can } from "../auth/permissions.js";
 import { useAuth } from "../auth/AuthContext.jsx";
 import Button from "../../shared/ui/Button.jsx";
 import DemoResetDialog from "../../shared/ui/DemoResetDialog.jsx";
@@ -9,10 +11,12 @@ import AccountTable from "./components/AccountTable.jsx";
 import AdminPagination from "./components/AdminPagination.jsx";
 import AdminSummaryBar from "./components/AdminSummaryBar.jsx";
 import AssistantControl from "./components/AssistantControl.jsx";
+import AzureStatus from "./components/AzureStatus.jsx";
 import AuditLog from "./components/AuditLog.jsx";
 import DisableAccountDialog from "./components/DisableAccountDialog.jsx";
 import RoleMatrix from "./components/RoleMatrix.jsx";
 import { adminService } from "./adminService.js";
+import { getHealth } from "./healthService.js";
 import { demoService } from "../demo/demoService.js";
 import "./admin.css";
 
@@ -51,6 +55,10 @@ export default function AdminPage() {
   const [disableDialogError, setDisableDialogError] = useState("");
   const [retry, setRetry] = useState(0);
   const [resetOpen, setResetOpen] = useState(false);
+  const [azureHealth, setAzureHealth] = useState(null);
+  const [healthLoading, setHealthLoading] = useState(false);
+  const [healthRetry, setHealthRetry] = useState(0);
+  const canViewServices = can(session?.rol, "usuarios_y_accesos", "ver");
 
   useEffect(() => {
     let active = true;
@@ -86,6 +94,18 @@ export default function AdminPage() {
     }
     return () => { active = false; };
   }, [session, filters, page, retry]);
+
+  useEffect(() => {
+    if (!canViewServices || !USE_AZURE) return undefined;
+    let active = true;
+    setHealthLoading(true);
+    getHealth().then((result) => {
+      if (active) setAzureHealth(result);
+    }).finally(() => {
+      if (active) setHealthLoading(false);
+    });
+    return () => { active = false; };
+  }, [canViewServices, healthRetry]);
 
   function changeFilters(next) {
     setFilters(next);
@@ -162,6 +182,15 @@ export default function AdminPage() {
 
   return (
     <Layout titulo="Administración de accesos">
+      {USE_AZURE ? <p className="admin-announcement">Las cuentas se administran en este navegador (demostración)</p> : null}
+      {canViewServices ? (
+        <AzureStatus
+          enabled={USE_AZURE}
+          health={azureHealth}
+          loading={healthLoading}
+          onRefresh={() => setHealthRetry((value) => value + 1)}
+        />
+      ) : null}
       {loading ? <p role="status">Cargando administración…</p> : null}
       {error ? (
         <div className="admin-error" role="alert">

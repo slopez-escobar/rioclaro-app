@@ -1,0 +1,1354 @@
+{
+ "usuarios": [
+  {
+   "usuario": "ernesto",
+   "nombre": "Ernesto Ramírez",
+   "puesto": "Director general",
+   "rol": "direccion",
+   "idEmpleado": "RC-0001",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "karla.camacho",
+   "nombre": "Karla Camacho",
+   "puesto": "Asistente de dirección",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0002",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "sandra.castro",
+   "nombre": "Sandra Castro",
+   "puesto": "Contador general",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0003",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "laura",
+   "nombre": "Laura Hernández",
+   "puesto": "Analista de cuentas por pagar",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0004",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "ana.esparza",
+   "nombre": "Ana Karen Esparza",
+   "puesto": "Auxiliar de cuentas por pagar",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0005",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "josefina.gutierrez",
+   "nombre": "Josefina Gutiérrez",
+   "puesto": "Analista de cuentas por cobrar",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0006",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "julio.medina",
+   "nombre": "Julio Medina",
+   "puesto": "Analista de cuentas por cobrar",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0007",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "teresa.medina",
+   "nombre": "Teresa Medina",
+   "puesto": "Auxiliar contable",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0008",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "citlali.ibarra",
+   "nombre": "Citlali Ibarra",
+   "puesto": "Auxiliar de facturación",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0009",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "ivonne.sandoval",
+   "nombre": "Ivonne Sandoval",
+   "puesto": "Auxiliar de facturación",
+   "rol": "finanzas",
+   "idEmpleado": "RC-0010",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "enrique.palacios",
+   "nombre": "Enrique Palacios",
+   "puesto": "Jefe de compras",
+   "rol": "compras",
+   "idEmpleado": "RC-0011",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "yesenia.flores",
+   "nombre": "Yesenia Flores",
+   "puesto": "Comprador",
+   "rol": "compras",
+   "idEmpleado": "RC-0012",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "claudia.herrera",
+   "nombre": "Claudia Herrera",
+   "puesto": "Comprador",
+   "rol": "compras",
+   "idEmpleado": "RC-0013",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "victor.garcia",
+   "nombre": "Víctor García",
+   "puesto": "Comprador",
+   "rol": "compras",
+   "idEmpleado": "RC-0014",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "leticia.castro",
+   "nombre": "Leticia Castro",
+   "puesto": "Jefe de recursos humanos",
+   "rol": "rh",
+   "idEmpleado": "RC-0015",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "luis.rojas",
+   "nombre": "Luis Rojas",
+   "puesto": "Auxiliar de recursos humanos",
+   "rol": "rh",
+   "idEmpleado": "RC-0016",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "carlos",
+   "nombre": "Carlos Medina",
+   "puesto": "Soporte y sistemas",
+   "rol": "administrador_ti",
+   "idEmpleado": "RC-0017",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "javier.vargas",
+   "nombre": "Javier Vargas",
+   "puesto": "Gerente de sucursal",
+   "rol": "gerente_sucursal",
+   "idEmpleado": "RC-0018",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "carmen.ramos",
+   "nombre": "Carmen Ramos",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0019",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "ernesto.rodriguez",
+   "nombre": "Ernesto Rodríguez",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0020",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "ricardo.velasco",
+   "nombre": "Ricardo Velasco",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0021",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "mario.gomez",
+   "nombre": "Mario Gómez",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0022",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "norma.gomez",
+   "nombre": "Norma Gómez",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0023",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "alejandro.pacheco",
+   "nombre": "Alejandro Pacheco",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0024",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "lucia.pacheco",
+   "nombre": "Lucía Pacheco",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0025",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "diana.ramos",
+   "nombre": "Diana Ramos",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0026",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "julio.sanchez",
+   "nombre": "Julio Sánchez",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0027",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "adrian.lara",
+   "nombre": "Adrián Lara",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0028",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "arturo.nunez",
+   "nombre": "Arturo Núñez",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0029",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "josefina.segura",
+   "nombre": "Josefina Segura",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0030",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "tono",
+   "nombre": "Antonio Gómez",
+   "puesto": "Jefe de bodega",
+   "rol": "bodega",
+   "idEmpleado": "RC-0031",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "rosa.jimenez",
+   "nombre": "Rosa Jiménez",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0032",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "josefina.escobar",
+   "nombre": "Josefina Escobar",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0033",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "armando.mendoza",
+   "nombre": "Armando Mendoza",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0034",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "diana.rojas",
+   "nombre": "Diana Rojas",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0035",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "fernanda.vargas",
+   "nombre": "Fernanda Vargas",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0036",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "francisco.hernandez",
+   "nombre": "Francisco Hernández",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0037",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "angel.flores",
+   "nombre": "Ángel Flores",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0038",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "marisol.palacios",
+   "nombre": "Marisol Palacios",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0039",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "leticia.gutierrez",
+   "nombre": "Leticia Gutiérrez",
+   "puesto": "Montacarguista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0040",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "karla.quintero",
+   "nombre": "Karla Quintero",
+   "puesto": "Montacarguista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0041",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "diana.barajas",
+   "nombre": "Diana Barajas",
+   "puesto": "Coordinador de logística",
+   "rol": "reparto",
+   "idEmpleado": "RC-0042",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "arturo.ramos",
+   "nombre": "Arturo Ramos",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0043",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "mario.castillo",
+   "nombre": "Mario Castillo",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0044",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "marisol.aguilar",
+   "nombre": "Marisol Aguilar",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0045",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "dulce.cervantes",
+   "nombre": "Dulce Cervantes",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0046",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "elena.avila",
+   "nombre": "Elena Ávila",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0047",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "patricia.diaz",
+   "nombre": "Patricia Díaz",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0048",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "paola.lopez",
+   "nombre": "Paola López",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0049",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "leticia.morales",
+   "nombre": "Leticia Morales",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0050",
+   "idCliente": null,
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "cecilia.ruiz",
+   "nombre": "Cecilia Ruiz",
+   "puesto": "Gerente de sucursal",
+   "rol": "gerente_sucursal",
+   "idEmpleado": "RC-0051",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "gustavo.ortiz",
+   "nombre": "Gustavo Ortiz",
+   "puesto": "Supervisor de ventas",
+   "rol": "ventas",
+   "idEmpleado": "RC-0052",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "teresa.nunez",
+   "nombre": "Teresa Núñez",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0053",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "arturo.nuneze",
+   "nombre": "Arturo Núñez",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0054",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "karla.ibarra",
+   "nombre": "Karla Ibarra",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0055",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "alejandro.castillo",
+   "nombre": "Alejandro Castillo",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0056",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "lorena.reyes",
+   "nombre": "Lorena Reyes",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0057",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "eduardo.cervantes",
+   "nombre": "Eduardo Cervantes",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0058",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "javier.morales",
+   "nombre": "Javier Morales",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0059",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "ivan.cortes",
+   "nombre": "Iván Cortés",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0060",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "cristian.ruiz",
+   "nombre": "Cristian Ruiz",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0061",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "jorge.dominguez",
+   "nombre": "Jorge Domínguez",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0062",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "pedro.ramirez",
+   "nombre": "Pedro Ramírez",
+   "puesto": "Encargado de almacén",
+   "rol": "bodega",
+   "idEmpleado": "RC-0063",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "eduardo.salazar",
+   "nombre": "Eduardo Salazar",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0064",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "ramon.diaz",
+   "nombre": "Ramón Díaz",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0065",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "patricia.cortes",
+   "nombre": "Patricia Cortés",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0066",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "saul.jimenez",
+   "nombre": "Saúl Jiménez",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0067",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "manuel.martinez",
+   "nombre": "Manuel Martínez",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0068",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "gerardo.becerra",
+   "nombre": "Gerardo Becerra",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0069",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "arturo.morales",
+   "nombre": "Arturo Morales",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0070",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "gabriela.nunez",
+   "nombre": "Gabriela Núñez",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0071",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "francisco.ortiz",
+   "nombre": "Francisco Ortiz",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0072",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "fernando.navarro",
+   "nombre": "Fernando Navarro",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0073",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "victor.rodriguez",
+   "nombre": "Víctor Rodríguez",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0074",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "victor.becerra",
+   "nombre": "Víctor Becerra",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0075",
+   "idCliente": null,
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "mariana",
+   "nombre": "Mariana Torres",
+   "puesto": "Gerente de sucursal",
+   "rol": "gerente_sucursal",
+   "idEmpleado": "RC-0076",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "ramon.ibarra",
+   "nombre": "Ramón Ibarra",
+   "puesto": "Supervisor de ventas",
+   "rol": "ventas",
+   "idEmpleado": "RC-0077",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "pilar.ramos",
+   "nombre": "Pilar Ramos",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0078",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "veronica.esparza",
+   "nombre": "Verónica Esparza",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0079",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "alejandro.velasco",
+   "nombre": "Alejandro Velasco",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0080",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "ramon.aguilar",
+   "nombre": "Ramón Aguilar",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0081",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "javier.ibarra",
+   "nombre": "Javier Ibarra",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0082",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "julio.mendoza",
+   "nombre": "Julio Mendoza",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0083",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "yesenia.segura",
+   "nombre": "Yesenia Segura",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0084",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "oscar.morales",
+   "nombre": "Óscar Morales",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0085",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "ricardo.morales",
+   "nombre": "Ricardo Morales",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0086",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "alejandro.becerra",
+   "nombre": "Alejandro Becerra",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0087",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "jorge.castillo",
+   "nombre": "Jorge Castillo",
+   "puesto": "Encargado de almacén",
+   "rol": "bodega",
+   "idEmpleado": "RC-0088",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "veronica.castro",
+   "nombre": "Verónica Castro",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0089",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "angelica.cortes",
+   "nombre": "Angélica Cortés",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0090",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "alberto.sandoval",
+   "nombre": "Alberto Sandoval",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0091",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "ramon.cortes",
+   "nombre": "Ramón Cortés",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0092",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "gerardo.zamora",
+   "nombre": "Gerardo Zamora",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0093",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "rafael.romero",
+   "nombre": "Rafael Romero",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0094",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "maria.segura",
+   "nombre": "María Guadalupe Segura",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0095",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "angelica.nunez",
+   "nombre": "Angélica Núñez",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0096",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "miguel.gonzalez",
+   "nombre": "Miguel Ángel González",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0097",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "fernanda.perez",
+   "nombre": "Fernanda Pérez",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0098",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "daniel.herrera",
+   "nombre": "Daniel Herrera",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0099",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "ramon.romero",
+   "nombre": "Ramón Romero",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0100",
+   "idCliente": null,
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "sandra.orozco",
+   "nombre": "Sandra Orozco",
+   "puesto": "Gerente de sucursal",
+   "rol": "gerente_sucursal",
+   "idEmpleado": "RC-0101",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "alejandro.reyes",
+   "nombre": "Alejandro Reyes",
+   "puesto": "Supervisor de ventas",
+   "rol": "ventas",
+   "idEmpleado": "RC-0102",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "claudia.mendoza",
+   "nombre": "Claudia Mendoza",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0103",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "roberto.reyes",
+   "nombre": "Roberto Reyes",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0104",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "marisol.gonzalez",
+   "nombre": "Marisol González",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0105",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "daniela.chavez",
+   "nombre": "Daniela Chávez",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0106",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "fernanda.escobar",
+   "nombre": "Fernanda Escobar",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0107",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "pedro.reyes",
+   "nombre": "Pedro Reyes",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0108",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "lorena.martinez",
+   "nombre": "Lorena Martínez",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0109",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "jose.medina",
+   "nombre": "José Luis Medina",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0110",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "sergio.sanchez",
+   "nombre": "Sergio Sánchez",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0111",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "yesenia.diaz",
+   "nombre": "Yesenia Díaz",
+   "puesto": "Encargado de almacén",
+   "rol": "bodega",
+   "idEmpleado": "RC-0112",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "rosa.rodriguez",
+   "nombre": "Rosa Rodríguez",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0113",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "arturo.diaz",
+   "nombre": "Arturo Díaz",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0114",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "claudia.cervantes",
+   "nombre": "Claudia Cervantes",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0115",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "claudia.sanchez",
+   "nombre": "Claudia Sánchez",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0116",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "maria.pacheco",
+   "nombre": "María Guadalupe Pacheco",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0117",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "silvia.romero",
+   "nombre": "Silvia Romero",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0118",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "juan.cervantes",
+   "nombre": "Juan Carlos Cervantes",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0119",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "rosa.cruz",
+   "nombre": "Rosa Cruz",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0120",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "adrian.trujillo",
+   "nombre": "Adrián Trujillo",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0121",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "juan.martinez",
+   "nombre": "Juan Carlos Martínez",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0122",
+   "idCliente": null,
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "mario.guerrero",
+   "nombre": "Mario Guerrero",
+   "puesto": "Gerente de sucursal",
+   "rol": "gerente_sucursal",
+   "idEmpleado": "RC-0123",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "roberto.villasenor",
+   "nombre": "Roberto Villaseñor",
+   "puesto": "Supervisor de ventas",
+   "rol": "ventas",
+   "idEmpleado": "RC-0124",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "manuel.reyes",
+   "nombre": "Manuel Reyes",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0125",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "armando.quintero",
+   "nombre": "Armando Quintero",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0126",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "gabriela.medina",
+   "nombre": "Gabriela Medina",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0127",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "fernando.chavez",
+   "nombre": "Fernando Chávez",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0128",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "daniela.cortes",
+   "nombre": "Daniela Cortés",
+   "puesto": "Vendedor",
+   "rol": "ventas",
+   "idEmpleado": "RC-0129",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "roberto.hernandez",
+   "nombre": "Roberto Hernández",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0130",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "angel.cortes",
+   "nombre": "Ángel Cortés",
+   "puesto": "Atención a clientes",
+   "rol": "ventas",
+   "idEmpleado": "RC-0131",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "hector.franco",
+   "nombre": "Héctor Franco",
+   "puesto": "Encargado de almacén",
+   "rol": "bodega",
+   "idEmpleado": "RC-0132",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "gustavo.romero",
+   "nombre": "Gustavo Romero",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0133",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "teresa.martinez",
+   "nombre": "Teresa Martínez",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0134",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "rodrigo.ramos",
+   "nombre": "Rodrigo Ramos",
+   "puesto": "Almacenista",
+   "rol": "bodega",
+   "idEmpleado": "RC-0135",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "rosa.becerra",
+   "nombre": "Rosa Becerra",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0136",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "veronica.herrera",
+   "nombre": "Verónica Herrera",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0137",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "victor.gonzalez",
+   "nombre": "Víctor González",
+   "puesto": "Chofer repartidor",
+   "rol": "reparto",
+   "idEmpleado": "RC-0138",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "ernesto.jimenez",
+   "nombre": "Ernesto Jiménez",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0139",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "hugo.ramirez",
+   "nombre": "Hugo Ramírez",
+   "puesto": "Auxiliar administrativo",
+   "rol": "administrativo",
+   "idEmpleado": "RC-0140",
+   "idCliente": null,
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "cliente1",
+   "nombre": "Hotel Alameda",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-0416",
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "cliente2",
+   "nombre": "Pollería El Molino",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-0363",
+   "idSucursal": "gdl"
+  },
+  {
+   "usuario": "cliente3",
+   "nombre": "Depósito Los Ángeles Ciudad Granja",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-0747",
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "cliente4",
+   "nombre": "Cremería y Abarrotes El Rosario Ciudad Granja",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-0848",
+   "idSucursal": "zap"
+  },
+  {
+   "usuario": "cliente5",
+   "nombre": "Instituto Simón Bolívar",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-1246",
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "cliente6",
+   "nombre": "Universidad Montessori Aurora",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-1274",
+   "idSucursal": "leo"
+  },
+  {
+   "usuario": "cliente7",
+   "nombre": "Hotel Santa Fe Histórico",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-1691",
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "cliente8",
+   "nombre": "Tendajón Mi Tiendita El Pueblito",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-1455",
+   "idSucursal": "qro"
+  },
+  {
+   "usuario": "cliente9",
+   "nombre": "Fonda La Casona Trojes de Alonso",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-1960",
+   "idSucursal": "ags"
+  },
+  {
+   "usuario": "cliente10",
+   "nombre": "Tienda El Arenal Jardines de la Concepción",
+   "puesto": null,
+   "rol": "cliente",
+   "idEmpleado": null,
+   "idCliente": "CLI-1837",
+   "idSucursal": "ags"
+  }
+ ]
+}

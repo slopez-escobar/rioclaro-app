@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { STORAGE_KEYS } from "../src/config/constants.js";
 import { createComplaintActionsRepository } from "../src/features/complaints/complaintActionsRepository.js";
 import { createComplaintRepository } from "../src/features/complaints/complaintRepository.js";
@@ -189,6 +189,34 @@ describe("servicio de quejas y alcance", () => {
 
     await service.reset(manager);
     expect(await complaintRepo.listNuevas()).toEqual([]);
+  });
+
+  it("no cachea sin_analizar y reintenta solo al abrir el detalle", async () => {
+    const complaint = sourceComplaints[0];
+    const sentiment = {
+      analyze: vi.fn()
+        .mockResolvedValueOnce({ sentimiento: "sin_analizar", confianza: 0, frasesClave: [], origen: "no_disponible" })
+        .mockResolvedValue({ sentimiento: "neutral", confianza: 0.6, frasesClave: [], origen: "azure-language" }),
+    };
+    const service = createComplaintService({
+      quejasRepo: { listQuejas: async () => [complaint] },
+      complaintRepo: { listNuevas: () => [] },
+      actionsRepo: { listAll: () => ({}) },
+      clientesRepo: { getCliente: async () => null },
+      sentiment,
+      now: fixedNow,
+    });
+    const session = sessionFor("ernesto");
+
+    const listed = await service.list(session);
+    expect(listed[0].sentimiento.sentimiento).toBe("sin_analizar");
+    expect(sentiment.analyze).toHaveBeenCalledOnce();
+
+    const detail = await service.get(session, complaint.idQueja);
+    expect(detail.sentimiento.sentimiento).toBe("neutral");
+    expect(sentiment.analyze).toHaveBeenCalledTimes(2);
+    await service.get(session, complaint.idQueja);
+    expect(sentiment.analyze).toHaveBeenCalledTimes(2);
   });
 });
 

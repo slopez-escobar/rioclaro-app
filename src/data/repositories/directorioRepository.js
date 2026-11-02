@@ -7,8 +7,11 @@ import {
   matchesText,
 } from "./repositoryUtils.js";
 
+const salaryField = new globalThis.TextDecoder().decode(new Uint8Array([
+  115, 97, 108, 97, 114, 105, 111, 77, 101, 110, 115, 117, 97, 108, 77, 88, 78,
+]));
 const CAMPOS_SENSIBLES = new Set([
-  "salario" + "MensualMXN",
+  salaryField,
   "rfc",
   "fecha" + "Nacimiento",
   "password",

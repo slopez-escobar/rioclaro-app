@@ -14,6 +14,12 @@ export default defineConfig({
     },
   },
   server: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:7071",
+        changeOrigin: true,
+      },
+    },
     fs: {
       allow: [projectRoot],
     },

@@ -105,10 +105,23 @@ describe("extractor simulado", () => {
 });
 
 describe("extractor de Azure", () => {
-  it("indica que aún no está implementado el paso B3", async () => {
-    const extractor = createAzureExtractor();
-    await expect(extractor.extractInvoice(new File([], "factura.pdf"))).rejects.toThrow(
-      "Extractor de Azure no implementado (paso B3)",
-    );
+  it("mapea una respuesta del servicio sin reemplazar el origen del backend", async () => {
+    const response = {
+      proveedor: { valor: "CY", confianza: 0.9 },
+      rfc: { valor: "CDO920402DFT", confianza: 0.8 },
+      folio: { valor: "A-8841", confianza: 0.7 },
+      fecha: { valor: "2026-10-06", confianza: 0.95 },
+      total: { valor: 10750.76, confianza: 0.98 },
+      meta: { origen: "azure-document-intelligence" },
+    };
+    const client = { request: vi.fn().mockResolvedValue(response) };
+    const file = loadFixture(manifest.facturas.find((invoice) => invoice.archivo.endsWith(".pdf")));
+    const result = await createAzureExtractor({ client }).extractInvoice(file);
+
+    expect(result).toEqual(response);
+    expect(client.request).toHaveBeenCalledWith("/extractInvoice", expect.objectContaining({
+      method: "POST",
+      body: expect.objectContaining({ nombre: file.name, tipo: file.type }),
+    }));
   });
 });

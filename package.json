@@ -9,7 +9,10 @@
   },
   "scripts": {
     "dev": "vite",
+    "dev:azure": "vite --mode azure",
     "build": "vite build",
+    "build:azure": "vite build --mode azure --outDir dist-azure",
+    "verificar:azure": "node scripts/verificar-paquete-azure.mjs",
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests",
     "datos": "node scripts/preparar-datos.mjs",

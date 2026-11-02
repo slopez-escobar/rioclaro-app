@@ -8,6 +8,8 @@ import { createInvoiceService } from "../src/features/invoices/invoiceService.js
 import { estimateHumanMinutes } from "../src/features/invoices/domain/estimateHumanMinutes.js";
 import { pendingApprovals } from "../src/features/invoices/domain/invoiceDecisions.js";
 import { createMockExtractor } from "../src/features/invoices/services/extractor.mock.js";
+import { createAzureExtractor } from "../src/features/invoices/services/extractor.azure.js";
+import { createApiClient } from "../src/shared/api/apiClient.js";
 import { hashFile } from "../src/shared/utils/hashFile.js";
 
 const manifest = JSON.parse(
@@ -192,6 +194,15 @@ describe("servicio de aplicación de facturas", () => {
     expect(record.fecha).toBeNull();
     expect(record.total).toBeNull();
     expect(record.nombreEstandar).toBeNull();
+  });
+
+  it("deja en Revisar una factura cuando falla la conexión de Azure", async () => {
+    const client = createApiClient({ fetch: async () => { throw new Error("offline"); } });
+    const { service } = makeService({ extractorOverride: createAzureExtractor({ client }) });
+    const record = await service.processFile(fixture(manifest.facturas[0]), finance);
+
+    expect(record.estado).toBe("Revisar");
+    expect(record.motivos).toContain("No se pudo leer automáticamente");
   });
 
   it("decide una factura de alto importe en ambos órdenes de aprobación", async () => {

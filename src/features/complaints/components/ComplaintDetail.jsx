@@ -22,6 +22,7 @@ const SENTIMENT_LABELS = {
   positivo: "Positivo",
   neutral: "Neutral",
   negativo: "Negativo",
+  sin_analizar: "Sin analizar",
 };
 const THEME_LABELS = {
   sin_existencia: "Falta de existencia",
@@ -93,12 +94,16 @@ export default function ComplaintDetail({ queja, onClose, onAction, onOpenOther 
               ? `${Math.round(sentiment.confianza * 100)}%`
               : "—"}
           </p>
-          {sentiment.frasesClave?.length ? (
+          {sentiment.sentimiento === "sin_analizar" ? (
+            <p>No se pudo analizar el texto; se reintentará al abrir la queja</p>
+          ) : sentiment.frasesClave?.length ? (
             <ul className="quejas-phrase-list">
               {sentiment.frasesClave.map((phrase) => <li key={phrase}>{phrase}</li>)}
             </ul>
           ) : <p>No se detectaron frases clave.</p>}
-          <p className="quejas-note">Análisis simulado; en producción lo hace Azure AI Language</p>
+          {sentiment.sentimiento === "sin_analizar" ? null : (
+            <p className="quejas-note">Análisis simulado; en producción lo hace Azure AI Language</p>
+          )}
         </section>
 
         {queja.casoRepetido ? (

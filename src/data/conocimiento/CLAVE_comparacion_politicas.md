@@ -4,9 +4,9 @@
 
 | Archivo | Versión interna | Fecha | Elaboró | Aplica a |
 |---|---|---|---|---|
-| `Politica_Devoluciones_FINAL.docx` | 1.0 | Marzo 2018 | Ernesto Ramírez Villaseñor (Director general) | Todas las sucursales |
-| `Politica_Devoluciones_Leon_NUEVA.docx` | Sin número | Septiembre 2022 | Mariana Torres Aguilar (Gerente León) | León y Zapopan (pendiente confirmar Querétaro y Aguascalientes) |
-| `Politica_Devoluciones_2024_v3.docx` | 3.0 | Vigente desde 01/06/2024 | Sandra Castro García (Contador general); autorizó Ernesto Ramírez Villaseñor | Las 5 sucursales |
+| `Politica_Devoluciones_FINAL` | 1.0 | Marzo 2018 | Ernesto Ramírez Villaseñor (Director general) | Todas las sucursales |
+| `Politica_Devoluciones_Leon_NUEVA` | Sin número | Septiembre 2022 | Mariana Torres Aguilar (Gerente León) | León y Zapopan (pendiente confirmar Querétaro y Aguascalientes) |
+| `Politica_Devoluciones_2024_v3` | 3.0 | Vigente desde 01/06/2024 | Sandra Castro García (Contador general); autorizó Ernesto Ramírez Villaseñor | Las 5 sucursales |
 
 Los nombres de archivo confunden a propósito: el que dice "FINAL" es el más antiguo y el que dice "NUEVA" no es el más reciente.
 

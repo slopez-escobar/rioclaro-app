@@ -62,7 +62,8 @@ export default function ComplaintTable({ quejas, onSelect, selectedId }) {
           {quejas.map((queja) => {
             const sentiment = queja.sentimiento?.sentimiento;
             const sentimentText = sentiment === "negativo" ? "☹ Negativo"
-              : sentiment === "positivo" ? "☺ Positivo" : "● Neutral";
+              : sentiment === "positivo" ? "☺ Positivo"
+                : sentiment === "sin_analizar" ? "◌ Sin analizar" : "● Neutral";
             return (
               <tr
                 key={queja.idQueja}

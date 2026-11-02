@@ -7,7 +7,7 @@ import { loadConfig } from "../api/src/lib/config.js";
 import { signToken, verifyToken } from "../api/src/lib/tokens.js";
 import { usuarios } from "../api/data/usuarios.json";
 import { roles } from "../api/data/roles.json";
-import { login as appLogin } from "../src/features/auth/authService.js";
+import { login as appLogin } from "../src/features/auth/authService.local.js";
 
 const TOKEN_SECRET = "secreto-de-prueba-con-32-caracteres-minimo";
 const config = {

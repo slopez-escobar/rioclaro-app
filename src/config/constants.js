@@ -9,6 +9,7 @@ export const FIELD_CONFIDENCE_THRESHOLDS = {
 export const STORAGE_PREFIX = "rc:v1:";
 export const STORAGE_KEYS = {
   session: "session",
+  authToken: "authToken",
   invoices: "invoices",
   chat: "chat",
   disabledAccounts: "disabledAccounts",

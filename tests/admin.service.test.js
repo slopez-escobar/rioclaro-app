@@ -8,7 +8,8 @@ import { createLocalStore } from "../src/shared/storage/localStore.js";
 import { createAccountOverridesRepository } from "../src/features/admin/accountOverridesRepository.js";
 import { createAdminAuditRepository } from "../src/features/admin/adminAuditRepository.js";
 import { createAdminService } from "../src/features/admin/adminService.js";
-import { getSession, login } from "../src/features/auth/authService.js";
+import { getSession } from "../src/features/auth/authService.js";
+import { login } from "../src/features/auth/authService.local.js";
 import { sessionFor } from "./chatTestUtils.js";
 
 function memoryStore() {

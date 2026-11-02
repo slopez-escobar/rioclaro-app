@@ -18,6 +18,7 @@ export function AuthProvider({ children }) {
         event
         && event.key
         && event.key !== `${STORAGE_PREFIX}${STORAGE_KEYS.session}`
+        && event.key !== `${STORAGE_PREFIX}${STORAGE_KEYS.authToken}`
         && event.key !== `${STORAGE_PREFIX}${STORAGE_KEYS.disabledAccounts}`
       ) return;
       refreshSession();
@@ -34,8 +35,14 @@ export function AuthProvider({ children }) {
     () => ({
       session,
       refreshSession,
-      login(usuario, password) {
-        const r = svc.login(usuario, password);
+      async login(usuario, password) {
+        let r;
+        if (import.meta.env.VITE_USE_AZURE === "true") {
+          r = await svc.loginRemote(usuario, password);
+        } else {
+          const localAuth = await import("./authService.local.js");
+          r = localAuth.login(usuario, password);
+        }
         if (r.ok) setSession(r.session);
         return r;
       },

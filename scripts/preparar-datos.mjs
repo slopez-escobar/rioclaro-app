@@ -25,6 +25,7 @@ const PROVIDER_FIELDS = [
 const MANAGED_DIRECTORIES = [
   "src/data/source",
   "src/features/auth/data",
+  "src/features/admin/data",
   "src/data/conocimiento",
   "public/facturas-prueba",
   "api/data",
@@ -75,16 +76,31 @@ function readJson(filePath) {
 
 function readMarkdown(filePath) {
   const contents = fs.readFileSync(filePath, "utf8");
-  return Buffer.from(contents.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n"), "utf8");
+  return Buffer.from(
+    contents.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n").replace(/\.(docx|xlsx)\b/gi, ""),
+    "utf8",
+  );
 }
 
 function jsonBuffer(value) {
   return Buffer.from(`${JSON.stringify(value, null, 1)}\n`, "utf8");
 }
 
+function withoutOriginalExtensions(value) {
+  if (typeof value === "string") return value.replace(/\.(docx|xlsx)\b/gi, "");
+  if (Array.isArray(value)) return value.map(withoutOriginalExtensions);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [
+      key,
+      withoutOriginalExtensions(item),
+    ]));
+  }
+  return value;
+}
+
 function addJsonOutput(outputs, relativePath, value, records) {
   outputs.set(relativePath, {
-    contents: jsonBuffer(value),
+    contents: jsonBuffer(withoutOriginalExtensions(value)),
     records: records ?? "",
   });
 }
@@ -206,6 +222,21 @@ async function makeOutputs() {
     { usuarios: [...employeeUsers, ...clients] },
     employeeUsers.length + clients.length,
   );
+  const publicAccounts = usuariosData.usuarios.map((user) => ({
+    usuario: user.usuario,
+    nombre: user.nombre,
+    puesto: user.puesto || null,
+    rol: user.rol,
+    idEmpleado: user.idEmpleado || null,
+    idCliente: user.idCliente || null,
+    idSucursal: user.idSucursal,
+  }));
+  addJsonOutput(
+    outputs,
+    "src/features/admin/data/accounts.json",
+    { usuarios: publicAccounts },
+    publicAccounts.length,
+  );
   addJsonOutput(
     outputs,
     "src/features/auth/data/roles.json",
@@ -302,7 +333,7 @@ async function makeOutputs() {
   addJsonOutput(
     outputs,
     "src/data/conocimiento/indice-politicas.json",
-    readJson(sourcePath("indicePoliticas")),
+    withoutOriginalExtensions(readJson(sourcePath("indicePoliticas"))),
     readJson(sourcePath("indicePoliticas")).politicas.length,
   );
   const comparisonMarkdown = readMarkdown(comparisonPath).toString("utf8");
@@ -310,7 +341,7 @@ async function makeOutputs() {
   addJsonOutput(
     outputs,
     "src/data/source/devoluciones-versiones.json",
-    comparison,
+    withoutOriginalExtensions(comparison),
     comparison.contradicciones.length,
   );
   const configuredComparisonPath = sourcePath("comparacionPoliticas");

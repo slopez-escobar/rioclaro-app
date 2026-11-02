@@ -74,9 +74,18 @@ export function createComplaintService({
 
   function getSentiment(queja) {
     if (!sentimentCache.has(queja.idQueja)) {
-      const result = Promise.resolve().then(() => sentiment.analyze(queja.descripcion));
+      const result = Promise.resolve()
+        .then(() => sentiment.analyze(queja.descripcion))
+        .then((value) => {
+          if (value?.sentimiento === "sin_analizar" && sentimentCache.get(queja.idQueja) === result) {
+            sentimentCache.delete(queja.idQueja);
+          }
+          return value;
+        });
       sentimentCache.set(queja.idQueja, result);
-      result.catch(() => sentimentCache.delete(queja.idQueja));
+      result.catch(() => {
+        if (sentimentCache.get(queja.idQueja) === result) sentimentCache.delete(queja.idQueja);
+      });
     }
     return sentimentCache.get(queja.idQueja);
   }
@@ -104,8 +113,8 @@ export function createComplaintService({
     );
   }
 
-  async function enrich(session, complaints) {
-    const repeated = findRepeatedCases(complaints);
+  async function enrich(session, complaints, repeatedCases = null) {
+    const repeated = repeatedCases || findRepeatedCases(complaints);
     const timestamp = now();
     return Promise.all(complaints.map(async (queja) => {
       const repeatInfo = repeated.porQueja.get(queja.idQueja) || null;
@@ -143,8 +152,11 @@ export function createComplaintService({
   }
 
   async function get(session, idQueja) {
-    const complaints = await list(session);
-    return complaints.find((queja) => queja.idQueja === idQueja) || null;
+    const complaints = await collectVisible(session);
+    const target = complaints.find((queja) => queja.idQueja === idQueja);
+    if (!target) return null;
+    const [enriched] = await enrich(session, [target], findRepeatedCases(complaints));
+    return enriched;
   }
 
   async function act(session, idQueja, { accion, comentario, calificacion } = {}) {

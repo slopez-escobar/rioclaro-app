@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { AZURE_SERVICES, PILOT_BUDGET } from "../src/config/pilotCost.js";
 import { buildBudgetStatus } from "../src/features/dashboard/domain/pilotConfig.js";
 import { createDashboardService, dashboardService } from "../src/features/dashboard/dashboardService.js";
-import { login } from "../src/features/auth/authService.js";
+import { login } from "../src/features/auth/authService.local.js";
 import { createLocalStore } from "../src/shared/storage/localStore.js";
 
 function memoryStore() {

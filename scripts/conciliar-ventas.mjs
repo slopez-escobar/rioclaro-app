@@ -146,7 +146,7 @@ function readWorksheet(worksheet, filePath, branch) {
       );
     }
     rows.push({
-      archivo: path.basename(filePath),
+      archivo: path.basename(filePath).replace(/\.xlsx?$/i, ""),
       hoja: worksheet.name,
       fila: rowNumber,
       codigo: codigo == null ? null : displayText(codigo),
@@ -301,7 +301,15 @@ function buildOutput(branchInputs, pedidos, catalogo) {
 }
 
 function jsonBuffer(value) {
-  return Buffer.from(`${JSON.stringify(value, null, 1)}\n`, "utf8");
+  const stripExtensions = (item) => {
+    if (typeof item === "string") return item.replace(/\.(docx|xlsx)\b/gi, "");
+    if (Array.isArray(item)) return item.map(stripExtensions);
+    if (item && typeof item === "object") {
+      return Object.fromEntries(Object.entries(item).map(([key, nested]) => [key, stripExtensions(nested)]));
+    }
+    return item;
+  };
+  return Buffer.from(`${JSON.stringify(stripExtensions(value), null, 1)}\n`, "utf8");
 }
 
 function writeAtomically(destination, contents) {

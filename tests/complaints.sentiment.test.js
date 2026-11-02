@@ -29,8 +29,15 @@ describe("análisis de sentimiento simulado", () => {
     expect(negativePercentage).toBeGreaterThan(50);
   });
 
-  it("mantiene el contrato pendiente de Azure AI Language", async () => {
-    await expect(createAzureSentiment().analyze("texto"))
-      .rejects.toThrow("Análisis de Azure no implementado (paso B3)");
+  it("devuelve la respuesta válida de Azure AI Language", async () => {
+    const result = {
+      sentimiento: "negativo",
+      confianza: 0.94,
+      frasesClave: ["entrega tardía"],
+      origen: "azure-language",
+    };
+    const client = { request: async () => result };
+    await expect(createAzureSentiment({ client }).analyze("La entrega llegó tarde."))
+      .resolves.toEqual(result);
   });
 });

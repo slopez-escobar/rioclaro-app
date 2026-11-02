@@ -1,5 +1,6 @@
 import { createLocalStore } from "../src/shared/storage/localStore.js";
-import { login, getSession } from "../src/features/auth/authService.js";
+import { getSession } from "../src/features/auth/authService.js";
+import { login } from "../src/features/auth/authService.local.js";
 import { usuarios } from "../src/features/auth/data/usuarios.json";
 
 export function memoryStore(initial = {}) {

@@ -24,7 +24,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-01_Politica_de_devoluciones.md",
-   "archivoDocx": "politicas_devoluciones/Politica_Devoluciones_2024_v3.docx"
+   "archivoDocx": "politicas_devoluciones/Politica_Devoluciones_2024_v3"
   },
   {
    "id": "POL-02",
@@ -44,7 +44,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-02_Pedidos_y_cancelaciones.md",
-   "archivoDocx": "politicas/docx/POL-02_Pedidos_y_cancelaciones.docx"
+   "archivoDocx": "politicas/docx/POL-02_Pedidos_y_cancelaciones"
   },
   {
    "id": "POL-03",
@@ -64,7 +64,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-03_Entregas_y_envios.md",
-   "archivoDocx": "politicas/docx/POL-03_Entregas_y_envios.docx"
+   "archivoDocx": "politicas/docx/POL-03_Entregas_y_envios"
   },
   {
    "id": "POL-04",
@@ -84,7 +84,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-04_Precios_descuentos_e_IVA.md",
-   "archivoDocx": "politicas/docx/POL-04_Precios_descuentos_e_IVA.docx"
+   "archivoDocx": "politicas/docx/POL-04_Precios_descuentos_e_IVA"
   },
   {
    "id": "POL-05",
@@ -104,7 +104,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-05_Credito_y_cobranza.md",
-   "archivoDocx": "politicas/docx/POL-05_Credito_y_cobranza.docx"
+   "archivoDocx": "politicas/docx/POL-05_Credito_y_cobranza"
   },
   {
    "id": "POL-06",
@@ -124,7 +124,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-06_Facturacion_a_clientes.md",
-   "archivoDocx": "politicas/docx/POL-06_Facturacion_a_clientes.docx"
+   "archivoDocx": "politicas/docx/POL-06_Facturacion_a_clientes"
   },
   {
    "id": "POL-07",
@@ -144,7 +144,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-07_Atencion_de_quejas_y_seguimiento.md",
-   "archivoDocx": "politicas/docx/POL-07_Atencion_de_quejas_y_seguimiento.docx"
+   "archivoDocx": "politicas/docx/POL-07_Atencion_de_quejas_y_seguimiento"
   },
   {
    "id": "POL-08",
@@ -164,7 +164,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-08_Uso_del_asistente_de_inteligencia_artificial.md",
-   "archivoDocx": "politicas/docx/POL-08_Uso_del_asistente_de_inteligencia_artificial.docx"
+   "archivoDocx": "politicas/docx/POL-08_Uso_del_asistente_de_inteligencia_artificial"
   },
   {
    "id": "POL-09",
@@ -184,7 +184,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-09_Privacidad_y_proteccion_de_datos_personales.md",
-   "archivoDocx": "politicas/docx/POL-09_Privacidad_y_proteccion_de_datos_personales.docx"
+   "archivoDocx": "politicas/docx/POL-09_Privacidad_y_proteccion_de_datos_personales"
   },
   {
    "id": "POL-10",
@@ -204,7 +204,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-10_Pago_a_proveedores_y_recepcion_de_facturas.md",
-   "archivoDocx": "politicas/docx/POL-10_Pago_a_proveedores_y_recepcion_de_facturas.docx"
+   "archivoDocx": "politicas/docx/POL-10_Pago_a_proveedores_y_recepcion_de_facturas"
   },
   {
    "id": "POL-11",
@@ -224,7 +224,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-11_Compras_y_alta_de_proveedores.md",
-   "archivoDocx": "politicas/docx/POL-11_Compras_y_alta_de_proveedores.docx"
+   "archivoDocx": "politicas/docx/POL-11_Compras_y_alta_de_proveedores"
   },
   {
    "id": "POL-12",
@@ -244,7 +244,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-12_Inventario_y_existencias.md",
-   "archivoDocx": "politicas/docx/POL-12_Inventario_y_existencias.docx"
+   "archivoDocx": "politicas/docx/POL-12_Inventario_y_existencias"
   },
   {
    "id": "POL-13",
@@ -264,7 +264,7 @@
     "nombre": "Ernesto Ramírez Villaseñor"
    },
    "archivoMd": "politicas/md/POL-13_Accesos_y_seguridad_de_la_informacion.md",
-   "archivoDocx": "politicas/docx/POL-13_Accesos_y_seguridad_de_la_informacion.docx"
+   "archivoDocx": "politicas/docx/POL-13_Accesos_y_seguridad_de_la_informacion"
   }
  ]
 }

@@ -1,8 +1,7 @@
-import { usuarios } from "../auth/data/usuarios.json";
+import { usuarios } from "../admin/data/accounts.json";
 import { roles } from "../auth/data/roles.json";
 import seedInvoiceData from "../../data/source/seedInvoices.json";
 import supplierData from "../../data/source/proveedores-catalogo.json";
-import { login } from "../auth/authService.js";
 import { loadKnowledgeBase } from "../chat/knowledge/knowledgeBase.js";
 import { createTools } from "../chat/tools/chatTools.js";
 import { createMockChatProvider } from "../chat/services/chatProvider.mock.js";
@@ -202,11 +201,19 @@ export async function createResponsibleAiDeps({
     if (sessionFactory) return sessionFactory(filter);
     const user = findSessionUser(filter, usersList);
     if (!user) throw new Error(`No se encontró una sesión de prueba para "${filter}".`);
-    const loginStore = createMemoryStore();
-    const credentialKey = ["pass", "word"].join("");
-    const result = login(user.usuario, user[credentialKey], loginStore);
-    if (!result.ok) throw new Error(result.error);
-    return result.session;
+    const role = roles.find((item) => item.codigo === user.rol);
+    return {
+      usuario: user.usuario,
+      nombre: user.nombre,
+      rol: user.rol,
+      esEmpleado: Boolean(role?.esEmpleado),
+      puesto: user.puesto || null,
+      idEmpleado: user.idEmpleado || null,
+      idCliente: user.idCliente || null,
+      idSucursal: user.idSucursal,
+      alcance: role?.alcance ?? null,
+      expiraEn: Date.now() + 8 * 60 * 60 * 1000,
+    };
   }
 
   return {

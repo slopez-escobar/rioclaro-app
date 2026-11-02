@@ -174,7 +174,7 @@ function readWorksheetRows(worksheet, branchId, filePath) {
 
     rows.push({
       sucursal: branchId,
-      archivo: path.basename(filePath),
+      archivo: path.basename(filePath).replace(/\.xlsx?$/i, ""),
       hoja: worksheet.name,
       fila: rowNumber,
       codigo: codigo === null || codigo === undefined ? null : codigo,
@@ -361,7 +361,15 @@ function buildOutput(branches, catalogo, existencias) {
 }
 
 function jsonBuffer(value) {
-  return Buffer.from(`${JSON.stringify(value, null, 1)}\n`, "utf8");
+  const stripExtensions = (item) => {
+    if (typeof item === "string") return item.replace(/\.(docx|xlsx)\b/gi, "");
+    if (Array.isArray(item)) return item.map(stripExtensions);
+    if (item && typeof item === "object") {
+      return Object.fromEntries(Object.entries(item).map(([key, nested]) => [key, stripExtensions(nested)]));
+    }
+    return item;
+  };
+  return Buffer.from(`${JSON.stringify(stripExtensions(value), null, 1)}\n`, "utf8");
 }
 
 function printSummary(result) {
