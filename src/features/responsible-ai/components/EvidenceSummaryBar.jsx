@@ -1,5 +1,6 @@
 export default function EvidenceSummaryBar({ checks, results, running, progress }) {
   const counts = {
+    local: checks.filter((check) => check.tipo === "local").length,
     pasa: results.filter((result) => result.estado === "pasa").length,
     falla: results.filter((result) => result.estado === "falla").length,
     pendiente: checks.filter((check) => check.tipo === "pendiente").length,
@@ -9,7 +10,7 @@ export default function EvidenceSummaryBar({ checks, results, running, progress 
     <section className="rai-summary" aria-label="Resumen de comprobaciones" aria-live="polite">
       <div>
         <strong>{checks.length} comprobaciones</strong>
-        <span>19 locales · 2 pendientes en Azure · 1 revisión manual</span>
+        <span>{counts.local} locales · {counts.pendiente} pendientes en Azure · {counts.manual} revisión manual</span>
       </div>
       <dl>
         <div><dt>Aprobadas</dt><dd>{counts.pasa}</dd></div>

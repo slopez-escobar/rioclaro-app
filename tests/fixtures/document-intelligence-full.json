@@ -1,0 +1,38 @@
+{
+  "status": "succeeded",
+  "analyzeResult": {
+    "content": "RFC EMISOR CDO920402DFT RFC RECEPTOR DRC0401127K2",
+    "documents": [
+      {
+        "fields": {
+          "VendorName": {
+            "valueString": "Cloros y Derivados Occidente S.A.P.I. de C.V.",
+            "content": "Cloros y Derivados Occidente S.A.P.I. de C.V.",
+            "confidence": 0.98
+          },
+          "VendorTaxId": {
+            "valueString": "CDO920402DFT",
+            "confidence": 0.97
+          },
+          "InvoiceId": {
+            "valueString": "A-8841",
+            "confidence": 0.95
+          },
+          "InvoiceDate": {
+            "valueDate": "2026-10-06",
+            "content": "6 de octubre de 2026",
+            "confidence": 0.94
+          },
+          "InvoiceTotal": {
+            "valueCurrency": {
+              "amount": 10750.76,
+              "currencyCode": "MXN"
+            },
+            "content": "$10,750.76",
+            "confidence": 0.99
+          }
+        }
+      }
+    ]
+  }
+}

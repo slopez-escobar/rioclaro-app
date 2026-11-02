@@ -13,6 +13,8 @@ import {
   normalizeRfc,
   normalizeText,
   standardName,
+  isLowConfidence,
+  thresholdFor,
   validateInvoice,
 } from "../src/features/invoices/domain/index.js";
 
@@ -108,15 +110,47 @@ describe("validateInvoice", () => {
     expect(result.motivos).toContain(reason);
   });
 
-  it("aplica el umbral de confianza inclusivo y normaliza el RFC del catálogo", () => {
-    const low = validateInvoice(validExtraction({ total: { valor: 1, confianza: 0.79 } }), { proveedores });
+  it.each([
+    ["folio", 0.6, "F-100"],
+    ["fecha", 0.8, "2026-10-06"],
+    ["total", 0.9, 10750.76],
+  ])("aplica el umbral inclusivo de %s", (field, threshold, value) => {
+    const atThreshold = validateInvoice(
+      validExtraction({ [field]: { valor: value, confianza: threshold } }),
+      { proveedores },
+    );
+    const belowThreshold = validateInvoice(
+      validExtraction({ [field]: { valor: value, confianza: threshold - 0.01 } }),
+      { proveedores },
+    );
+    expect(atThreshold.estado).toBe("OK");
+    expect(belowThreshold.estado).toBe("Revisar");
+    expect(belowThreshold.motivos).toContain(
+      `Confianza baja en ${field === "rfc" ? "RFC" : field}: ${Math.round((threshold - 0.01) * 100)}%`,
+    );
+    expect(thresholdFor(field)).toBe(threshold);
+    expect(isLowConfidence(field, threshold)).toBe(false);
+    expect(isLowConfidence(field, threshold - 0.01)).toBe(true);
+  });
+
+  it("usa el umbral por defecto para campos sin calibración y normaliza el RFC", () => {
     const boundary = validateInvoice(validExtraction({
-      rfc: { valor: " ab c-010203.xy1 ", confianza: 0.8 },
-      total: { valor: 1, confianza: 0.8 },
+      rfc: { valor: " ab c-010203.xy1 ", confianza: 0.1 },
+      total: { valor: 10750.76, confianza: 0.9 },
     }), { proveedores });
-    expect(low.estado).toBe("Revisar");
-    expect(low.motivos).toContain("Confianza baja en total: 79%");
-    expect(boundary).toEqual({ estado: "OK", motivos: [], proveedorId: "PRV-01" });
+    expect(thresholdFor("campo-desconocido")).toBe(0.8);
+    expect(isLowConfidence("campo-desconocido", 0.8)).toBe(false);
+    expect(isLowConfidence("campo-desconocido", 0.79)).toBe(true);
+    expect(thresholdFor("proveedor")).toBeNull();
+    expect(thresholdFor("rfc")).toBeNull();
+    expect(isLowConfidence("proveedor", 0.1)).toBe(false);
+    expect(isLowConfidence("rfc", 0.1)).toBe(false);
+    expect(boundary).toEqual({
+      estado: "OK",
+      motivos: [],
+      proveedorId: "PRV-01",
+      razonSocial: "Proveedor Uno S.A. de C.V.",
+    });
   });
 
   it("marca un RFC ausente del catálogo con el motivo exacto", () => {
@@ -125,6 +159,7 @@ describe("validateInvoice", () => {
       estado: "Revisar",
       motivos: ["Proveedor no registrado: el RFC XYZ010203XY1 no existe en el catálogo de proveedores"],
       proveedorId: null,
+      razonSocial: null,
     });
   });
 });
@@ -214,7 +249,7 @@ describe("evaluateInvoice", () => {
       proveedor: { valor: null, confianza: 0.4 },
     }), archivo, { proveedores, existentes: [existing] });
     expect(result.estado).toBe("Duplicada");
-    expect(result.motivos).toEqual(["Duplicada por datos: mismo proveedor, folio y total que anterior.pdf"]);
+    expect(result.motivos).toEqual(["Duplicada por datos: mismo RFC, folio y total que anterior.pdf"]);
     expect(result.duplicadoDe).toEqual({ id: "INV-1", archivo: "anterior.pdf", tipo: "datos" });
   });
 

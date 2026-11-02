@@ -1,0 +1,28 @@
+{
+  "status": "succeeded",
+  "analyzeResult": {
+    "content": "RFC emisor: PNX171102BHQ. RFC receptor: DRC0401127K2.",
+    "documents": [
+      {
+        "fields": {
+          "VendorName": {
+            "content": "Papeles Nacional S.A. de C.V.",
+            "confidence": 0.91
+          },
+          "InvoiceId": {
+            "valueString": "F 2231",
+            "confidence": 0.9
+          },
+          "InvoiceDate": {
+            "content": "08/10/2026",
+            "confidence": 0.88
+          },
+          "InvoiceTotal": {
+            "content": "$5,923.84",
+            "confidence": 0.9
+          }
+        }
+      }
+    ]
+  }
+}

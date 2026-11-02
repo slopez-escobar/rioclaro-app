@@ -1,4 +1,5 @@
 export { normalizeRfc, normalizeFolio, normalizeText, normalizeAmount, normalizeDate } from "./normalize.js";
+export { thresholdFor, isLowConfidence } from "./confidenceThresholds.js";
 export { validateInvoice } from "./validateInvoice.js";
 export { detectDuplicate, findRepeatedFolio } from "./detectDuplicate.js";
 export { evaluateInvoice } from "./evaluateInvoice.js";

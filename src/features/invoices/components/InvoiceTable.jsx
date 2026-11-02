@@ -1,5 +1,6 @@
 import { formatDate, formatMXN } from "../../../shared/utils/format.js";
 import { pendingApprovals, requiredApprovals } from "../domain/invoiceDecisions.js";
+import ConfidenceValue from "./ConfidenceValue.jsx";
 import { invoiceFieldValue } from "./presentation.js";
 import StatusTag from "./StatusTag.jsx";
 import "./invoice-components.css";
@@ -12,6 +13,17 @@ function approvalSummary(invoice) {
   return roles.map((role) =>
     `${ROLE_LABELS[role]} ${pending.includes(role) ? "pendiente" : "✓"}`,
   ).join(" · ");
+}
+
+function confidenceField(invoice, field) {
+  const value = invoice[field];
+  return value !== null && typeof value === "object" && Object.hasOwn(value, "valor")
+    ? value
+    : { valor: invoiceFieldValue(value), confianza: invoice.confianza?.[field] };
+}
+
+function catalogValidated(invoice, field) {
+  return invoice.proveedorId != null && ["proveedor", "rfc"].includes(field);
 }
 
 function openSelected(event, invoice, onSelect) {
@@ -57,11 +69,35 @@ export default function InvoiceTable({ facturas = [], onSelect, selectedId }) {
               onKeyDown={(event) => openSelected(event, invoice, onSelect)}
             >
               <td>{invoice.archivo || "—"}</td>
-              <td>{invoiceFieldValue(invoice.proveedor) || "—"}</td>
-              <td>{invoiceFieldValue(invoice.rfc) || "—"}</td>
-              <td>{invoiceFieldValue(invoice.folio) || "—"}</td>
-              <td>{formatDate(invoiceFieldValue(invoice.fecha))}</td>
-              <td>{formatMXN(invoiceFieldValue(invoice.total))}</td>
+              <td>
+                <ConfidenceValue
+                  campo={confidenceField(invoice, "proveedor")}
+                  field="proveedor"
+                  validadoPorCatalogo={catalogValidated(invoice, "proveedor")}
+                />
+              </td>
+              <td>
+                <ConfidenceValue
+                  campo={confidenceField(invoice, "rfc")}
+                  field="rfc"
+                  validadoPorCatalogo={catalogValidated(invoice, "rfc")}
+                />
+              </td>
+              <td><ConfidenceValue campo={confidenceField(invoice, "folio")} field="folio" /></td>
+              <td>
+                <ConfidenceValue
+                  campo={confidenceField(invoice, "fecha")}
+                  field="fecha"
+                  formato={formatDate}
+                />
+              </td>
+              <td>
+                <ConfidenceValue
+                  campo={confidenceField(invoice, "total")}
+                  field="total"
+                  formato={formatMXN}
+                />
+              </td>
               <td><StatusTag estado={invoice.estado} /></td>
               <td>{approvalSummary(invoice)}</td>
             </tr>

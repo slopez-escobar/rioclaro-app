@@ -1,0 +1,20 @@
+{
+  "status": "succeeded",
+  "analyzeResult": {
+    "content": "CDO920402DFT PNX171102BHQ DRC0401127K2",
+    "documents": [
+      {
+        "fields": {
+          "VendorName": {
+            "valueString": "Proveedor de prueba",
+            "confidence": 0.85
+          },
+          "VendorTaxId": {
+            "valueString": "RFC-INVALIDO",
+            "confidence": 0.4
+          }
+        }
+      }
+    ]
+  }
+}

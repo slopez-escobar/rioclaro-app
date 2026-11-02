@@ -105,12 +105,14 @@ export function createResponsibleAiService({ createDeps = createResponsibleAiDep
     buildEvidenceMarkdown(results = latestResults, session = null) {
       const visibleResults = results.map((result) => protectCustomerEvidence(result, session));
       const completed = visibleResults.filter((item) => item.tipo === "local");
+      const pending = visibleResults.filter((item) => item.tipo === "pendiente").length;
+      const manual = visibleResults.filter((item) => item.tipo === "manual").length;
       const passed = completed.filter((item) => item.estado === "pasa").length;
       const failed = completed.filter((item) => item.estado === "falla").length;
       const lines = [
         "# Evidencia de IA responsable · Río Claro",
         "",
-        `Comprobaciones enumeradas: ${visibleResults.length} (19 locales, 2 pendientes en Azure y 1 manual).`,
+        `Comprobaciones enumeradas: ${visibleResults.length} (${completed.length} locales, ${pending} pendientes en Azure y ${manual} manual).`,
         `Resultado local: ${passed} aprobadas, ${failed} con error, ${visibleResults.length - completed.length} pendientes/manuales.`,
         "",
         ...visibleResults.flatMap((result) => evidenceLines(result)),

@@ -21,7 +21,7 @@ El asistente virtual que atiende a clientes y empleados, y la lectura automátic
 - **Existencias:** Informa la cantidad disponible (existencia menos lo comprometido) de la sucursal consultada.
 - **Límites:** No inventa precios, existencias ni fechas. Si no sabe, lo dice y ofrece pasar la consulta a una persona.
 - **Datos protegidos:** Nunca comparte nóminas, RFC ni datos de empleados, ni información de otros clientes. Un cliente solo ve su propia información.
-- **Revisión humana:** La IA no aprueba pagos ni facturas. Si la lectura de una factura tiene baja confianza (menos de 80%) o parece duplicada, pasa a revisión de una persona.
+- **Revisión humana:** La IA no aprueba pagos ni facturas. Si la lectura de una factura tiene baja confianza en algún campo (menos del mínimo de ese campo) o parece duplicada, pasa a revisión de una persona.
 - **Equidad:** Aplica las mismas reglas y la misma calidad de respuesta a clientes de las cinco sucursales.
 - **Apagado:** Soporte y sistemas puede apagar el asistente de inmediato si falla. Dirección decide cuándo se reactiva.
 - **Mejora continua:** Cada mes se revisa una muestra de conversaciones y de facturas leídas para corregir errores.

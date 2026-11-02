@@ -1,0 +1,24 @@
+{
+ "sucursales": [
+  {
+   "id": "gdl",
+   "nombre": "Río Claro Guadalajara"
+  },
+  {
+   "id": "zap",
+   "nombre": "Río Claro Zapopan"
+  },
+  {
+   "id": "leo",
+   "nombre": "Río Claro León"
+  },
+  {
+   "id": "qro",
+   "nombre": "Río Claro Querétaro"
+  },
+  {
+   "id": "ags",
+   "nombre": "Río Claro Aguascalientes"
+  }
+ ]
+}

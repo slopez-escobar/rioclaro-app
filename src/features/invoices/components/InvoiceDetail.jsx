@@ -103,6 +103,10 @@ export default function InvoiceDetail({
               <dd>
                 <ConfidenceValue
                   campo={confidenceFields[field]}
+                  field={field}
+                  validadoPorCatalogo={
+                    factura.proveedorId != null && ["proveedor", "rfc"].includes(field)
+                  }
                   formato={field === "total" ? formatMXN : field === "fecha" ? formatDate : undefined}
                 />
               </dd>

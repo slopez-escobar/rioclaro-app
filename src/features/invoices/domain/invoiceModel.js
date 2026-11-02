@@ -34,7 +34,7 @@ export function createInvoiceRecord({ id, extraccion, archivo, evaluacion, subid
     hash,
     subidaEn,
     subidaPor,
-    proveedor: getValue(extraccion?.proveedor),
+    proveedor: evaluacion.razonSocial ?? getValue(extraccion?.proveedor),
     rfc,
     folio,
     fecha,

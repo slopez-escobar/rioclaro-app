@@ -4,4 +4,6 @@ dist
 .env
 .env.local
 api/local.settings.json
+api/node_modules/
+api/data/*.local.json
 *.log

@@ -1,0 +1,36 @@
+{
+  "status": "succeeded",
+  "analyzeResult": {
+    "content": "Factura de prueba RFC emisor PSB950504QUL",
+    "documents": [
+      {
+        "fields": {
+          "VendorName": {
+            "valueString": "Plásticos Soplados Bajío",
+            "confidence": 0.9
+          },
+          "VendorTaxId": {
+            "valueString": "PSB950504QUL",
+            "confidence": 0.92
+          },
+          "InvoiceId": {
+            "valueString": "E-30618",
+            "confidence": 0.87
+          },
+          "InvoiceDate": {
+            "valueDate": "2026-10-16",
+            "confidence": 0.84
+          },
+          "InvoiceTotal": {
+            "valueCurrency": {
+              "amount": 16330.94,
+              "currencyCode": "MXN"
+            },
+            "content": "total ilegible",
+            "confidence": 0.41
+          }
+        }
+      }
+    ]
+  }
+}

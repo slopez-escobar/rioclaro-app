@@ -12,6 +12,7 @@ import { createChatService } from "../chat/chatService.js";
 import { createInvoiceRepository } from "../invoices/invoiceRepository.js";
 import { createInvoiceService } from "../invoices/invoiceService.js";
 import { createMockExtractor } from "../invoices/services/extractor.mock.js";
+import { createRealReadingExtractor } from "../invoices/services/realReadings.js";
 import { createComplaintActionsRepository } from "../complaints/complaintActionsRepository.js";
 import { createComplaintRepository } from "../complaints/complaintRepository.js";
 import { createComplaintService } from "../complaints/complaintService.js";
@@ -163,6 +164,12 @@ export async function createResponsibleAiDeps({
   });
   const invoices = invoiceOptions(invoiceRepo);
   const seededInvoices = invoiceOptions(seedInvoiceRepo);
+  const realReadingInvoices = createInvoiceService({
+    extractor: createRealReadingExtractor(),
+    repository: createInvoiceRepository({ store: createMemoryStore(), seed: [] }),
+    proveedores: async () => supplierData.proveedores,
+    now: () => toTimestamp(now),
+  });
   const audit = createAdminAuditRepository({ store: appStore });
   const admin = createAdminService({
     usuarios: usersList,
@@ -178,6 +185,7 @@ export async function createResponsibleAiDeps({
     provider,
     tools,
     invoices,
+    realReadingInvoices,
     seededInvoices,
     invoiceRepository: invoiceRepo,
     seedInvoiceRepository: seedInvoiceRepo,

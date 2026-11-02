@@ -599,6 +599,50 @@ export function createChecks(deps) {
         ]);
       },
     ]),
+    localCheck(deps, [
+      "CS-7", "confiabilidad", "La confianza no es corrección",
+      "Comprueba la validación del proveedor por RFC de catálogo y la revisión de una factura sin datos suficientes.",
+      async ({ createSession, services, loadSampleFile }) => {
+        const pdf = await services.realReadingInvoices.processFile(
+          await loadSampleFile("FACTURA 8841 (1).pdf"),
+          await createSession("finanzas"),
+        );
+        const invoice = await services.realReadingInvoices.processFile(
+          await loadSampleFile("factura_urgente.jpg"),
+          await createSession("finanzas"),
+        );
+        const missingFields = [
+          "Falta el RFC",
+          "Falta el folio",
+          "Falta la fecha",
+          "Falta el total",
+        ];
+        requireCondition(pdf.estado === "OK", "El RFC de catálogo no validó la lectura PDF.");
+        requireCondition(pdf.proveedorId !== null, "El RFC leído no se asoció al catálogo.");
+        requireCondition(pdf.confianza?.proveedor === 0.82, "La confianza real de proveedor no coincide.");
+        requireCondition(pdf.confianza?.rfc === 0.723, "La confianza real del RFC no coincide.");
+        requireCondition(invoice.estado === "Revisar", "La factura con campos sin leer no quedó en revisión.");
+        requireCondition(invoice.proveedor === "Plásticos Soptodos Baje S. de R.L. de C.V.",
+          "La lectura de proveedor no coincide con la evidencia real.");
+        requireCondition(invoice.confianza?.proveedor === 0.995, "La confianza del proveedor no coincide con la evidencia real.");
+        requireCondition(invoice.proveedorId === null, "El nombre leído asoció un proveedor sin validar el RFC.");
+        for (const reason of missingFields) {
+          requireCondition(invoice.motivos.includes(reason), `Falta el motivo esperado: ${reason}.`);
+        }
+        return success("El PDF queda validado por el RFC del catálogo; el nombre borroso al 99.5% sigue en revisión por datos faltantes.", [
+          tableEvidence(["Caso", "Campo", "Valor leído o mostrado", "Confianza", "Resultado"], [
+            ["PDF", "Proveedor", pdf.proveedor, "RFC de catálogo", "Validado por catálogo"],
+            ["PDF", "RFC", pdf.rfc, "72.3%", "Asociado al catálogo"],
+            ["Borrosa", "Proveedor", invoice.proveedor, "99.5%", "Sin asociación al catálogo"],
+            ["Borrosa", "RFC", "No leído", "—", "Falta el RFC"],
+            ["Borrosa", "Folio", "No leído", "—", "Falta el folio"],
+            ["Borrosa", "Fecha", "No leída", "—", "Falta la fecha"],
+            ["Borrosa", "Total", "No leído", "—", "Falta el total"],
+          ]),
+          textEvidence("Estados", `PDF: ${pdf.estado}; borrosa: ${invoice.estado}; proveedorId borrosa: ${invoice.proveedorId}`),
+        ]);
+      },
+    ]),
   ];
 
   return checks;

@@ -14,6 +14,7 @@
     "test": "vitest run --passWithNoTests",
     "datos": "node scripts/preparar-datos.mjs",
     "datos:check": "node scripts/preparar-datos.mjs --check",
+    "api:probar": "node scripts/probar-api.mjs",
     "catalogo:unificar": "node scripts/unificar-catalogo.mjs",
     "catalogo:check": "node scripts/unificar-catalogo.mjs --check",
     "ventas:conciliar": "node scripts/conciliar-ventas.mjs",

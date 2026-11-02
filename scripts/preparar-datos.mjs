@@ -27,10 +27,13 @@ const MANAGED_DIRECTORIES = [
   "src/features/auth/data",
   "src/data/conocimiento",
   "public/facturas-prueba",
+  "api/data",
+  "api/src/prompts",
 ];
-const GENERATED_BY_CATALOG_SCRIPT = new Set([
+const EXEMPT_FROM_STALE_CHECK = new Set([
   path.join("src", "data", "source", "unificacion.json"),
   path.join("src", "data", "source", "ventas-conciliacion.json"),
+  path.join("api", "src", "prompts", "tools.js"),
 ]);
 
 function sourcePath(name) {
@@ -68,6 +71,11 @@ function readJson(filePath) {
   } catch (error) {
     throw new Error(`No se pudo leer el JSON ${filePath}: ${error.message}`);
   }
+}
+
+function readMarkdown(filePath) {
+  const contents = fs.readFileSync(filePath, "utf8");
+  return Buffer.from(contents.replace(/^\uFEFF/, "").replace(/\r\n?/g, "\n"), "utf8");
 }
 
 function jsonBuffer(value) {
@@ -118,7 +126,7 @@ function ensureSources() {
   }
 }
 
-function makeOutputs() {
+async function makeOutputs() {
   const empleadosData = readJson(sourcePath("empleados"));
   const usuariosData = readJson(sourcePath("usuarios"));
   const puestosRolesData = readJson(sourcePath("puestosRoles"));
@@ -206,6 +214,32 @@ function makeOutputs() {
   );
   addJsonOutput(
     outputs,
+    "api/data/usuarios.json",
+    JSON.parse(outputs.get("src/features/auth/data/usuarios.json").contents.toString("utf8")),
+    usuariosData.usuarios.length,
+  );
+  addJsonOutput(
+    outputs,
+    "api/data/roles.json",
+    { roles: puestosRolesData.rolesApp },
+    puestosRolesData.rolesApp.length,
+  );
+  addJsonOutput(
+    outputs,
+    "api/data/sucursales.json",
+    {
+      sucursales: sucursalesData.sucursales.map(({ id, nombre }) => ({ id, nombre })),
+    },
+    sucursalesData.sucursales.length,
+  );
+  const { SYSTEM_PROMPT } = await import("../src/features/chat/domain/guidelines.js");
+  addJsonOutput(
+    outputs,
+    "api/src/prompts/system.json",
+    { version: "1", systemPrompt: SYSTEM_PROMPT },
+  );
+  addJsonOutput(
+    outputs,
     "src/config/sucursales.json",
     sucursalesData,
     sucursalesData.sucursales.length,
@@ -250,12 +284,19 @@ function makeOutputs() {
 
   const policiesDir = sourcePath("politicasDir");
   const comparisonPath = findSourceFile(policiesDir, "CLAVE_comparacion_politicas.md");
-  for (const entry of fs.readdirSync(policiesDir, { withFileTypes: true })) {
-    if (entry.isFile() && entry.name.toLowerCase().endsWith(".md")) {
-      outputs.set(`src/data/conocimiento/${entry.name}`, {
-        contents: fs.readFileSync(path.join(policiesDir, entry.name)),
-        records: "",
-      });
+  for (const directory of [policiesDir, path.join(policiesDir, "md")]) {
+    if (!fs.existsSync(directory)) continue;
+    for (const entry of fs.readdirSync(directory, { withFileTypes: true })) {
+      if (
+        entry.isFile()
+        && entry.name.toLowerCase().endsWith(".md")
+        && !outputs.has(`src/data/conocimiento/${entry.name}`)
+      ) {
+        outputs.set(`src/data/conocimiento/${entry.name}`, {
+          contents: readMarkdown(path.join(directory, entry.name)),
+          records: "",
+        });
+      }
     }
   }
   addJsonOutput(
@@ -264,7 +305,7 @@ function makeOutputs() {
     readJson(sourcePath("indicePoliticas")),
     readJson(sourcePath("indicePoliticas")).politicas.length,
   );
-  const comparisonMarkdown = fs.readFileSync(comparisonPath, "utf8");
+  const comparisonMarkdown = readMarkdown(comparisonPath).toString("utf8");
   const comparison = parseVersionComparison(comparisonMarkdown);
   addJsonOutput(
     outputs,
@@ -275,7 +316,7 @@ function makeOutputs() {
   const configuredComparisonPath = sourcePath("comparacionPoliticas");
   if (fs.existsSync(configuredComparisonPath)) {
     outputs.set("src/data/conocimiento/comparacion-devoluciones.md", {
-      contents: fs.readFileSync(configuredComparisonPath),
+      contents: readMarkdown(configuredComparisonPath),
       records: "",
     });
   }
@@ -285,6 +326,7 @@ function makeOutputs() {
 
 function validateSensitiveData(outputs) {
   const usersPath = "src/features/auth/data/usuarios.json";
+  const apiUsersPath = "api/data/usuarios.json";
   const generatedFiles = [...outputs.entries()];
   const users = JSON.parse(outputs.get(usersPath).contents.toString("utf8")).usuarios;
   const employeeRfc = new Set(
@@ -296,12 +338,16 @@ function validateSensitiveData(outputs) {
   const problems = [];
 
   for (const [relativePath, output] of generatedFiles) {
-    if (!relativePath.startsWith("src/") && !relativePath.startsWith("public/")) continue;
+    if (
+      !relativePath.startsWith("src/")
+      && !relativePath.startsWith("public/")
+      && !relativePath.startsWith("api/")
+    ) continue;
     const text = output.contents.toString("utf8");
     if (text.includes("salarioMensualMXN")) {
       problems.push(`${relativePath} contiene salarioMensualMXN.`);
     }
-    if (relativePath !== usersPath) {
+    if (relativePath !== usersPath && relativePath !== apiUsersPath) {
       for (const rfc of employeeRfc) {
         if (rfc && text.includes(rfc)) {
           problems.push(`${relativePath} contiene el RFC de un empleado.`);
@@ -331,7 +377,7 @@ function validateWorkspaceFiles() {
   const employeePasswords = employees.map((employee) => employee.password).filter(Boolean);
   const problems = [];
 
-  for (const directory of ["src", "public"]) {
+  for (const directory of ["src", "public", "api"]) {
     const root = outputPath(directory);
     const pending = [root];
     while (pending.length) {
@@ -339,6 +385,7 @@ function validateWorkspaceFiles() {
       for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
         const filePath = path.join(current, entry.name);
         if (entry.isDirectory()) {
+          if (entry.name === "node_modules") continue;
           pending.push(filePath);
           continue;
         }
@@ -346,7 +393,11 @@ function validateWorkspaceFiles() {
         if (text.includes("salarioMensualMXN")) {
           problems.push(`${path.relative(ROOT, filePath)} contiene salarioMensualMXN.`);
         }
-        if (path.resolve(filePath) !== usersPath) {
+        const relativePath = path.relative(ROOT, filePath);
+        if (
+          path.resolve(filePath) !== usersPath
+          && relativePath !== path.join("api", "data", "usuarios.json")
+        ) {
           if (employeeRfc.some((rfc) => text.includes(rfc))) {
             problems.push(`${path.relative(ROOT, filePath)} contiene el RFC de un empleado.`);
           }
@@ -391,7 +442,7 @@ function findStaleFiles(outputs) {
       if (
         entry.isFile()
         && !expectedFiles.has(entry.name)
-        && !GENERATED_BY_CATALOG_SCRIPT.has(relativePath)
+        && !EXEMPT_FROM_STALE_CHECK.has(relativePath)
       ) {
         staleFiles.push(relativePath);
       }
@@ -400,12 +451,23 @@ function findStaleFiles(outputs) {
   return staleFiles;
 }
 
-function run() {
+function writeFileAtomically(destination, contents) {
+  fs.mkdirSync(path.dirname(destination), { recursive: true });
+  const temporary = `${destination}.${process.pid}.${crypto.randomBytes(6).toString("hex")}.tmp`;
+  try {
+    fs.writeFileSync(temporary, contents, { flag: "wx" });
+    fs.renameSync(temporary, destination);
+  } finally {
+    if (fs.existsSync(temporary)) fs.unlinkSync(temporary);
+  }
+}
+
+async function run() {
   if (args.some((arg) => arg !== "--check") || args.filter((arg) => arg === "--check").length > 1) {
     throw new Error("Uso: node scripts/preparar-datos.mjs [--check]");
   }
   ensureSources();
-  const outputs = makeOutputs();
+  const outputs = await makeOutputs();
   validateSensitiveData(outputs);
 
   const staleFiles = findStaleFiles(outputs);
@@ -414,13 +476,16 @@ function run() {
     if (CHECK_ONLY) {
       if (
         !fs.existsSync(destination) ||
-        !fs.readFileSync(destination).equals(output.contents)
+        !(
+          relativePath.toLowerCase().endsWith(".md")
+            ? readMarkdown(destination)
+            : fs.readFileSync(destination)
+        ).equals(output.contents)
       ) {
         staleFiles.push(relativePath);
       }
     } else {
-      fs.mkdirSync(path.dirname(destination), { recursive: true });
-      fs.writeFileSync(destination, output.contents);
+      writeFileAtomically(destination, output.contents);
     }
   }
   if (!CHECK_ONLY) {
@@ -439,7 +504,7 @@ function run() {
 }
 
 try {
-  run();
+  await run();
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;

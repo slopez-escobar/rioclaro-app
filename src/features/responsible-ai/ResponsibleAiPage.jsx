@@ -96,7 +96,7 @@ export default function ResponsibleAiPage() {
       ) : null}
       <div className="rai-toolbar">
         <Button onClick={runAll} disabled={running}>
-          {running ? "Ejecutando secuencia…" : "Ejecutar las 22 comprobaciones"}
+          {running ? "Ejecutando secuencia…" : `Ejecutar las ${checks.length} comprobaciones`}
         </Button>
         <Button
           variant="secondary"
@@ -105,7 +105,10 @@ export default function ResponsibleAiPage() {
         >
           Descargar evidencia (.md)
         </Button>
-        <p className="rai-toolbar-note">Las 19 pruebas locales se ejecutan una por una; Azure y revisión manual quedan señalados.</p>
+        <p className="rai-toolbar-note">
+          Las {checks.filter((check) => check.tipo === "local").length} pruebas locales se ejecutan una por una;
+          Azure y revisión manual quedan señalados.
+        </p>
       </div>
       {results.length === 0 ? (
         <p className="rai-check-note">Aún no se ejecutan comprobaciones. Puedes iniciar toda la secuencia o probar una por separado.</p>

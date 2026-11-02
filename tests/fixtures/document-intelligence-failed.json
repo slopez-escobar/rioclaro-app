@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "error": {
+    "code": "InvalidRequest",
+    "message": "Contenido sintético de prueba"
+  }
+}

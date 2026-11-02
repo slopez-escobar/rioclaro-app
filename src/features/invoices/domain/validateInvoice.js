@@ -1,12 +1,18 @@
-import { CONFIDENCE_THRESHOLD } from "../../../config/constants.js";
+import { isLowConfidence } from "./confidenceThresholds.js";
 import { normalizeRfc } from "./normalize.js";
 
 const REQUIRED_FIELDS = [
-  { key: "proveedor", label: "proveedor", missing: "Falta el proveedor" },
-  { key: "rfc", label: "RFC", missing: "Falta el RFC" },
-  { key: "folio", label: "folio", missing: "Falta el folio" },
-  { key: "fecha", label: "fecha", missing: "Falta la fecha" },
-  { key: "total", label: "total", missing: "Falta el total" },
+  { key: "proveedor", missing: "Falta el proveedor" },
+  { key: "rfc", missing: "Falta el RFC" },
+  { key: "folio", missing: "Falta el folio" },
+  { key: "fecha", missing: "Falta la fecha" },
+  { key: "total", missing: "Falta el total" },
+];
+
+const CONFIDENCE_FIELDS = [
+  { key: "folio", label: "folio" },
+  { key: "fecha", label: "fecha" },
+  { key: "total", label: "total" },
 ];
 
 /**
@@ -22,7 +28,7 @@ function isMissing(value) {
  * Valida los campos extraídos y el registro del proveedor.
  * @param {Object} extraccion Campos extraídos con valor y confianza.
  * @param {Object} options Catálogo de proveedores.
- * @returns {{estado: "OK"|"Revisar", motivos: string[], proveedorId: string|null}} Resultado de validación.
+ * @returns {{estado: "OK"|"Revisar", motivos: string[], proveedorId: string|null, razonSocial: string|null}} Resultado de validación.
  */
 export function validateInvoice(extraccion, { proveedores = [] } = {}) {
   const motivos = [];
@@ -30,8 +36,16 @@ export function validateInvoice(extraccion, { proveedores = [] } = {}) {
   for (const field of REQUIRED_FIELDS) {
     const extracted = extraccion?.[field.key];
     if (isMissing(extracted?.valor)) motivos.push(field.missing);
+  }
+
+  for (const field of CONFIDENCE_FIELDS) {
+    const extracted = extraccion?.[field.key];
     const confidence = extracted?.confianza;
-    if (typeof confidence !== "number" || !Number.isFinite(confidence) || confidence < CONFIDENCE_THRESHOLD) {
+    if (
+      typeof confidence !== "number"
+      || !Number.isFinite(confidence)
+      || isLowConfidence(field.key, confidence)
+    ) {
       const percent = typeof confidence === "number" && Number.isFinite(confidence)
         ? Math.round(confidence * 100)
         : 0;
@@ -48,10 +62,10 @@ export function validateInvoice(extraccion, { proveedores = [] } = {}) {
   if (rfc && !proveedor) {
     motivos.push(`Proveedor no registrado: el RFC ${rfc} no existe en el catálogo de proveedores`);
   }
-
   return {
     estado: motivos.length === 0 ? "OK" : "Revisar",
     motivos,
     proveedorId,
+    razonSocial: proveedor?.razonSocial ?? null,
   };
 }

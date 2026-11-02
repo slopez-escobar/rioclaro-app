@@ -14,7 +14,7 @@ export const PRINCIPLES = [
     nombre: "Confiabilidad y seguridad",
     pregunta: "¿Qué pasa si una factura está borrosa? ¿El sistema la marca para revisión humana en lugar de inventar un total?",
     queHace: [
-      { texto: "Marca campos de baja confianza o proveedores no registrados para revisión.", ruta: "/facturas" },
+      { texto: "Marca campos bajo su umbral de confianza y valida proveedores por RFC, no por nombre.", ruta: "/facturas" },
       { texto: "Detecta duplicados por contenido y por datos de factura.", ruta: "/facturas" },
       { texto: "El asistente rechaza instrucciones que intentan manipular sus reglas.", ruta: "/asistente" },
       { texto: "El interruptor administrativo detiene las respuestas del asistente.", ruta: "/admin" },

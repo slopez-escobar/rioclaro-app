@@ -120,6 +120,18 @@
   text-underline-offset: 3px;
 }
 
+.factura-confidence-catalogo {
+  display: inline-block;
+  margin-inline-start: 0.35rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 999px;
+  background: #e9f2df;
+  color: #244b32;
+  font-size: 0.72em;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
 .factura-sr-only {
   position: absolute;
   width: 1px;

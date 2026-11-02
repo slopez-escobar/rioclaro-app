@@ -1,0 +1,23 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "TOKEN_SECRET": "",
+    "TOKEN_TTL_HOURS": "8",
+    "ASSISTANT_ENABLED": "true",
+    "RECEPTOR_RFC": "DRC0401127K2",
+    "DOCINT_ENDPOINT": "",
+    "DOCINT_KEY": "",
+    "DOCINT_API_VERSION": "2024-11-30",
+    "AOAI_ENDPOINT": "",
+    "AOAI_KEY": "",
+    "AOAI_DEPLOYMENT": "",
+    "AOAI_API_VERSION": "2024-10-21",
+    "LANGUAGE_ENDPOINT": "",
+    "LANGUAGE_KEY": "",
+    "LANGUAGE_API_VERSION": "2023-04-01",
+    "SPEECH_REGION": "",
+    "SPEECH_KEY": ""
+  }
+}

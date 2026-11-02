@@ -1,5 +1,11 @@
 // Constantes del proyecto. Un solo lugar para umbrales y claves de localStorage.
-export const CONFIDENCE_THRESHOLD = 0.8; // bajo este nivel, la factura pasa a revisión humana
+export const CONFIDENCE_THRESHOLD = 0.8; // Valor por defecto para campos sin umbral específico.
+// Calibración con lecturas reales de Document Intelligence; son umbrales de prototipo.
+export const FIELD_CONFIDENCE_THRESHOLDS = {
+  folio: 0.6,
+  fecha: 0.8,
+  total: 0.9,
+};
 export const STORAGE_PREFIX = "rc:v1:";
 export const STORAGE_KEYS = {
   session: "session",

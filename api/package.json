@@ -1,0 +1,13 @@
+{
+  "name": "rioclaro-api",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "src/functions/*.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@azure/functions": "4.17.0"
+  }
+}

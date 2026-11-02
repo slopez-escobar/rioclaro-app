@@ -22,11 +22,12 @@ export function evaluateInvoice(extraccion, archivo, { proveedores = [], existen
   if (duplicado.duplicada) {
     const motivo = duplicado.tipo === "hash"
       ? `Duplicada por archivo: mismo contenido (hash) que ${duplicado.de.archivo}`
-      : `Duplicada por datos: mismo proveedor, folio y total que ${duplicado.de.archivo}`;
+      : `Duplicada por datos: mismo RFC, folio y total que ${duplicado.de.archivo}`;
     return {
       estado: "Duplicada",
       motivos: [motivo],
       proveedorId: validacion.proveedorId,
+      razonSocial: validacion.razonSocial,
       duplicadoDe: { ...duplicado.de, tipo: duplicado.tipo },
     };
   }
@@ -44,6 +45,7 @@ export function evaluateInvoice(extraccion, archivo, { proveedores = [], existen
     estado: motivos.length === 0 ? "OK" : "Revisar",
     motivos,
     proveedorId: validacion.proveedorId,
+    razonSocial: validacion.razonSocial,
     duplicadoDe: null,
   };
 }
