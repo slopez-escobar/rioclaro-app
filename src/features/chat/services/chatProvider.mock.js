@@ -2,19 +2,16 @@ import { getSucursal, listSucursales } from "../../../data/repositories/sucursal
 import { formatDate, formatDateTime, formatMXN } from "../../../shared/utils/format.js";
 import { assistantSwitch } from "../assistantSwitchRepository.js";
 import {
-  ASSISTANT_OFF,
   NO_INFO,
-  REFUSAL_INJECTION,
-  REFUSAL_SENSITIVE,
 } from "../domain/guidelines.js";
+import {
+  getGuardrailResponse,
+  isComplaintRequest,
+  normalizeGuardrailText,
+} from "../domain/guardrails.js";
 import { createTools } from "../tools/chatTools.js";
 
-function normalized(value) {
-  return String(value ?? "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLocaleLowerCase("es-MX");
-}
+const normalized = normalizeGuardrailText;
 
 function answer(texto, estado = "respondido", fuentes = [], acciones = []) {
   return { texto, estado, fuentes, acciones };
@@ -132,15 +129,10 @@ export function createMockChatProvider({
 } = {}) {
   async function send({ texto, message, session, historial = [] } = {}) {
     const input = String(texto ?? message ?? "").trim();
-    if (!switchRepository.isEnabled()) return answer(ASSISTANT_OFF, "apagado");
+    const guardrail = getGuardrailResponse(input, switchRepository.isEnabled());
+    if (guardrail) return answer(guardrail.texto, guardrail.estado);
     const query = normalized(input);
 
-    if (/\b(ignora tus reglas|olvida tus instrucciones|inventa precios|actua como|modo desarrollador)\b/.test(query)) {
-      return answer(REFUSAL_INJECTION, "rechazado");
-    }
-    if (/\b(salario|sueldo|nomina|cuanto gana|rfc|contrasena|datos de otros clientes)\b/.test(query)) {
-      return answer(REFUSAL_SENSITIVE, "rechazado");
-    }
     if (/\b(persona|agente humano|gerente|asesor)\b/.test(query)) {
       const branch = getSucursal(session?.idSucursal);
       if (!branch) return answer(NO_INFO, "sin_informacion", [], [{ tipo: "hablar_con_persona" }]);
@@ -151,7 +143,7 @@ export function createMockChatProvider({
         [{ tipo: "hablar_con_persona" }],
       );
     }
-    if (/\b(queja|reclamo|molesto|no me llego|mal servicio)\b/.test(query)) {
+    if (isComplaintRequest(input)) {
       const result = await tools.buscarPolitica({ consulta: "primera respuesta quejas" }, session);
       return answer(
         "Lamento el inconveniente. Puedo registrar tu queja; en horario de atención, el objetivo de primera respuesta es de 15 minutos.",

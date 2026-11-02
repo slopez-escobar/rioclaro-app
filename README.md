@@ -36,7 +36,7 @@ Abre la dirección local que indique Vite. El proyecto está pensado para ejecut
 
 El archivo versionado `.env.azure` activa `VITE_USE_AZURE=true` y configura `VITE_API_BASE_URL=/api`. Para desarrollo, inicia Azure Functions desde `api/` con `func start` y, en otra terminal, ejecuta `npm run dev:azure` desde `rioclaro-app`; Vite reenvía `/api` a `http://localhost:7071`. Para compilar y revisar el paquete ejecuta `npm run build:azure` y `npm run verificar:azure`.
 
-En este modo el login, la lectura de facturas y el análisis de sentimiento usan el backend. Las cuentas desactivadas y su panel permanecen locales a este navegador; el login remoto no consulta esa lista. Los datos de negocio continúan incluidos en el paquete de la aplicación. El paquete Azure excluye las contraseñas de demostración.
+En este modo el login, la lectura de facturas, el análisis de sentimiento y el chat usan el backend. Para el chat, `gpt-4.1-mini` decide si necesita una herramienta; la aplicación ejecuta las cinco herramientas con la sesión y el alcance del usuario y devuelve al modelo solo el resultado mínimo permitido. Los datos completos de existencias, pedidos y políticas no se envían al backend. Las negativas locales de privacidad e inyección se resuelven antes de cualquier llamada al modelo, incluso si Azure no está disponible. La aplicación no envía mensajes de sistema ni metadatos de interfaz; el backend agrega su instrucción de sistema y el modelo solo ve lo que cada herramienta devuelve. Las cuentas desactivadas y su panel permanecen locales a este navegador; el login remoto no consulta esa lista. Los datos de negocio continúan incluidos en el paquete de la aplicación. El paquete Azure excluye las contraseñas de demostración.
 
 ## Datos y estructura
 
@@ -76,7 +76,7 @@ La confianza de Document Intelligence representa su estimación sobre la lectura
 | `20261016_091523.jpg` (foto de la misma factura) | Proveedor `CY` (73.8%); RFC `CDO920402DFT` (82.1%); folio `A-8841` (68.3%); fecha 97.9%; total `$10,750.76` (97.6%). | Duplicada del PDF por RFC, folio y total. |
 | `factura_urgente.jpg` (borrosa) | Proveedor leído como “Plásticos Soptodos Baje S. de R.L. de C.V.” (99.5%); sin RFC, folio, fecha ni total. | En revisión; un nombre de alta confianza no valida al proveedor ni sustituye los datos faltantes. |
 
-El folio, por ser un código corto, tuvo menor confianza que los demás campos de la factura limpia; por eso tiene un mínimo de 60%. El total, por ser dinero, requiere 90%. La pantalla de IA responsable registra la validación por RFC y la lectura borrosa en CS-7; incluye 23 verificaciones (20 locales, 2 pendientes en Azure y 1 manual).
+El folio, por ser un código corto, tuvo menor confianza que los demás campos de la factura limpia; por eso tiene un mínimo de 60%. El total, por ser dinero, requiere 90%. La pantalla de IA responsable registra la validación por RFC y la lectura borrosa en CS-7; incluye 24 verificaciones (21 locales, 2 pendientes en Azure y 1 manual).
 
 ## Cuentas de demostración
 

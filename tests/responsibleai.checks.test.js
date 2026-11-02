@@ -33,14 +33,14 @@ afterEach(() => {
 });
 
 describe("IA responsable", () => {
-  it("define seis principios y 23 verificaciones únicas (20 locales, 2 Azure y 1 manual)", async () => {
+  it("define seis principios y 24 verificaciones únicas (21 locales, 2 Azure y 1 manual)", async () => {
     const deps = await createDeps();
     const checks = createChecks(deps);
     expect(PRINCIPLES).toHaveLength(6);
     expect(PRINCIPLES.every((principle) => principle.queHace.length >= 3)).toBe(true);
-    expect(checks).toHaveLength(23);
-    expect(new Set(checks.map((check) => check.id)).size).toBe(23);
-    expect(checks.filter((check) => check.tipo === "local")).toHaveLength(20);
+    expect(checks).toHaveLength(24);
+    expect(new Set(checks.map((check) => check.id)).size).toBe(24);
+    expect(checks.filter((check) => check.tipo === "local")).toHaveLength(21);
     expect(checks.filter((check) => check.tipo === "pendiente")).toHaveLength(2);
     expect(checks.filter((check) => check.tipo === "manual")).toHaveLength(1);
   });
@@ -53,11 +53,11 @@ describe("IA responsable", () => {
     });
     const failures = results.filter((result) => result.estado === "falla");
 
-    expect(results).toHaveLength(23);
+    expect(results).toHaveLength(24);
     expect(failures.map(({ id, resumen }) => ({ id, resumen }))).toEqual([]);
-    expect(progress).toHaveLength(23);
+    expect(progress).toHaveLength(24);
     expect(progress.map(([count]) => count)).toEqual(
-      Array.from({ length: 23 }, (_, index) => index + 1),
+      Array.from({ length: 24 }, (_, index) => index + 1),
     );
     expect(results.filter((result) => result.estado === "pendiente")).toHaveLength(2);
     expect(results.filter((result) => result.estado === "manual")).toHaveLength(1);
@@ -75,7 +75,7 @@ describe("IA responsable", () => {
     const markdown = service.buildEvidenceMarkdown(results);
 
     expect(calls).toEqual([]);
-    expect(markdown).toContain("20 locales, 2 pendientes en Azure y 1 manual");
+    expect(markdown).toContain("21 locales, 2 pendientes en Azure y 1 manual");
     expect(markdown).toContain("EQ-1");
     expect(markdown).toContain("CS-2");
   });

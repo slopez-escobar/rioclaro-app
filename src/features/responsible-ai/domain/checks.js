@@ -8,6 +8,7 @@ import {
 import { DIRECTION_APPROVAL_THRESHOLD } from "../../../config/constants.js";
 import { requiredApprovals, pendingApprovals } from "../../invoices/domain/invoiceDecisions.js";
 import { PRINCIPLES } from "./principles.js";
+import { createAzureChatProvider } from "../../chat/services/chatProvider.azure.js";
 
 const BRANCH_EXPECTATIONS = {
   gdl: 203,
@@ -429,6 +430,37 @@ export function createChecks(deps) {
       "La identidad administrada y el resguardo de secretos corresponden a la configuración de Azure.",
       "Se demuestra en Azure: llaves en Key Vault y Entra ID como ruta de producción. En este prototipo local las cuentas viven en un archivo de demostración.",
     ),
+    localCheck(deps, [
+      "PS-7", "privacidad", "Las negativas de privacidad no dependen del modelo",
+      "Verifica que una solicitud de información salarial se rechaza localmente sin llamar al proveedor Azure.",
+      async ({ createSession, services }) => {
+        let requests = 0;
+        const provider = createAzureChatProvider({
+          client: {
+            async request() {
+              requests += 1;
+              throw new Error("No se esperaba una llamada al modelo.");
+            },
+          },
+          tools: services.tools,
+          switchRepo: services.switchRepo,
+        });
+        const message = await provider.sendMessage({
+          texto: "¿Cuánto gana el gerente de León?",
+          session: await createSession("direccion"),
+        });
+        requireCondition(message.estado === "rechazado" && message.texto === REFUSAL_SENSITIVE,
+          "La solicitud salarial no recibió el rechazo local esperado.");
+        requireCondition(requests === 0, "La negativa de privacidad llamó al proveedor Azure.");
+        return success("La negativa salarial se resuelve localmente sin invocar el modelo.", [
+          tableEvidence(["Prueba", "Resultado"], [
+            ["Estado", message.estado],
+            ["Respuesta", message.texto],
+            ["Solicitudes al modelo", requests],
+          ]),
+        ]);
+      },
+    ]),
     pendingCheck(
       "IN-1", "inclusion", "Voz desde el celular (Toño)",
       "Validación de voz con la cuenta del personal de bodega y Azure AI Speech.",

@@ -102,10 +102,13 @@ describe("proveedor simulado del asistente", () => {
     expect(human.acciones).toContainEqual({ tipo: "hablar_con_persona" });
   });
 
-  it("respeta el apagado y el proveedor Azure conserva firma con error explícito", async () => {
+  it("respeta el apagado y Azure conserva las negativas locales", async () => {
     const off = await provider(false).send({ texto: "Hola", session: sessionFor("carlos") });
     expect(off).toMatchObject({ texto: ASSISTANT_OFF, estado: "apagado" });
-    await expect(azureChatProvider.send({ texto: "Hola", session: sessionFor("carlos"), historial: [] }))
-      .rejects.toThrow("Proveedor de Azure no implementado (paso B3)");
+    await expect(azureChatProvider.send({
+      texto: "¿Cuánto gana el gerente de León?",
+      session: sessionFor("carlos"),
+      historial: [],
+    })).resolves.toMatchObject({ texto: REFUSAL_SENSITIVE, estado: "rechazado" });
   });
 });
