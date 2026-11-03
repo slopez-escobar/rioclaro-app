@@ -5,7 +5,7 @@
   "type": "module",
   "main": "src/functions/*.js",
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "dependencies": {
     "@azure/functions": "4.17.0"

@@ -1,0 +1,112 @@
+name: Desplegar sitio y API de Río Claro
+
+# Despliega automáticamente en main y permite ejecuciones manuales.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  # Ejecuta todas las comprobaciones antes de publicar cualquiera de los servicios.
+  pruebas:
+    name: Pruebas y compilación
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Ejecutar pruebas
+        run: npm test
+
+      - name: Compilar modo Azure
+        run: npm run build:azure
+
+      - name: Verificar paquete Azure
+        run: npm run verificar:azure
+
+  # Publica el build de Vite en el contenedor del sitio web estático.
+  frontend:
+    name: Publicar frontend en Azure Storage
+    needs: pruebas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Compilar frontend Azure
+        run: npm run build:azure
+
+      - name: Publicar archivos del sitio estático
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        run: |
+          az storage blob delete-batch \
+            --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+            -s '$web' \
+            --only-show-errors
+          az storage blob upload-batch \
+            --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+            -d '$web' \
+            -s dist-azure \
+            --overwrite true \
+            --only-show-errors
+
+      - name: Establecer tipos de contenido por archivo
+        env:
+          AZURE_STORAGE_CONNECTION_STRING: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+        run: |
+          while IFS= read -r -d '' file; do
+            blob="${file#dist-azure/}"
+            content_type="$(python3 -c 'import mimetypes,os,sys; p=sys.argv[1]; fonts={".woff":"font/woff",".woff2":"font/woff2"}; print(fonts.get(os.path.splitext(p)[1].lower()) or mimetypes.guess_type(p)[0] or "application/octet-stream")' "$file")"
+            az storage blob update \
+              --connection-string "$AZURE_STORAGE_CONNECTION_STRING" \
+              --container-name '$web' \
+              --name "$blob" \
+              --content-type "$content_type" \
+              --only-show-errors
+          done < <(find dist-azure -type f -print0)
+
+  # Publica la Function App con el perfil almacenado como secreto de GitHub.
+  api:
+    name: Publicar Azure Functions
+    needs: pruebas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar dependencias de producción
+        working-directory: api
+        run: npm ci --omit=dev
+
+      - name: Publicar Function App
+        uses: Azure/functions-action@v1
+        with:
+          app-name: rioclaro-api-sle
+          package: api
+          publish-profile: ${{ secrets.AZURE_FUNCTIONAPP_PUBLISH_PROFILE }}

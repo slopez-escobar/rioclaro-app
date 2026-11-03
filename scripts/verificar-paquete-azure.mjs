@@ -5,6 +5,7 @@ import { DATA_DIR, FUENTES } from "./datos.config.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const OUTPUT = path.join(ROOT, "dist-azure");
+const ENV_AZURE = path.join(ROOT, ".env.azure");
 
 if (!fs.existsSync(OUTPUT)) {
   console.error("Ejecuta primero npm run build:azure");
@@ -23,6 +24,8 @@ if (!fs.existsSync(OUTPUT)) {
     text: fs.readFileSync(file).toString("utf8"),
   }));
   const allText = contents.map(({ text }) => text).join("\n");
+  const azureEnvironment = fs.readFileSync(ENV_AZURE, "utf8");
+  const apiBaseUrl = /^VITE_API_BASE_URL=(.+)$/m.exec(azureEnvironment)?.[1]?.trim();
   const credentialsPath = path.join(ROOT, "src", "features", "auth", "data", "usuarios.json");
   const localUsers = fs.existsSync(credentialsPath)
     ? JSON.parse(fs.readFileSync(credentialsPath, "utf8")).usuarios
@@ -38,17 +41,28 @@ if (!fs.existsSync(OUTPUT)) {
 
   const employeePath = path.join(DATA_DIR, FUENTES.empleados);
   let employeeIdentifiers = [];
-  if (fs.existsSync(employeePath)) {
+  if (!fs.existsSync(DATA_DIR)) {
+    console.log("omitida: data/ no disponible");
+  } else {
+    if (!fs.existsSync(employeePath)) {
+      throw new Error(`No se encontró la fuente de empleados: ${employeePath}`);
+    }
     const employeeData = JSON.parse(fs.readFileSync(employeePath, "utf8"));
     employeeIdentifiers = (employeeData.empleados || []).flatMap((employee) => [
       employee.rfc,
       employee.correoInstitucional,
     ]).filter((value) => typeof value === "string" && value.length > 0);
+    addCheck(
+      "Sin RFC ni correos de empleados",
+      employeeIdentifiers.every((value) => !allText.includes(value)),
+    );
   }
-  addCheck("Sin RFC ni correos de empleados", employeeIdentifiers.every((value) => !allText.includes(value)));
   addCheck("Sin ruta ../data", !allText.includes("../data"));
   addCheck("Sin extensiones DOCX/XLSX", !contents.some(({ file, text }) => /\.docx|\.xlsx/i.test(`${file}\n${text}`)));
-  addCheck("Incluye ruta de API", allText.includes("/api"));
+  addCheck(
+    "Incluye ruta de API",
+    Boolean(apiBaseUrl && apiBaseUrl.endsWith("/api") && allText.includes(apiBaseUrl)),
+  );
 
   console.table(checks);
   if (checks.some(({ Resultado }) => Resultado !== "OK")) process.exitCode = 1;

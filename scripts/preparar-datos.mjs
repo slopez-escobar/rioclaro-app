@@ -401,9 +401,8 @@ function validateSensitiveData(outputs) {
   }
 }
 
-function validateWorkspaceFiles() {
+function validateWorkspaceFiles(employees) {
   const usersPath = path.resolve(ROOT, "src", "features", "auth", "data", "usuarios.json");
-  const employees = readJson(sourcePath("empleados")).empleados;
   const employeeRfc = employees.map((employee) => employee.rfc).filter(Boolean);
   const employeePasswords = employees.map((employee) => employee.password).filter(Boolean);
   const problems = [];
@@ -497,6 +496,11 @@ async function run() {
   if (args.some((arg) => arg !== "--check") || args.filter((arg) => arg === "--check").length > 1) {
     throw new Error("Uso: node scripts/preparar-datos.mjs [--check]");
   }
+  if (CHECK_ONLY && !fs.existsSync(DATA_DIR)) {
+    console.log("omitida: data/ no disponible");
+    validateWorkspaceFiles([]);
+    return;
+  }
   ensureSources();
   const outputs = await makeOutputs();
   validateSensitiveData(outputs);
@@ -531,7 +535,7 @@ async function run() {
     return;
   }
   if (CHECK_ONLY) console.log("Los datos generados están actualizados.");
-  validateWorkspaceFiles();
+  validateWorkspaceFiles(readJson(sourcePath("empleados")).empleados);
 }
 
 try {

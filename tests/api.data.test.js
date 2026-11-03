@@ -48,42 +48,46 @@ describe("datos generados para la API", () => {
     );
   }, 15_000);
 
-  it("datos:check detecta un artefacto alterado en una copia temporal", () => {
-    const temporaryRoot = fs.mkdtempSync(path.join(os.tmpdir(), "rioclaro-api-check-"));
-    const copiedProject = path.join(temporaryRoot, "app");
-    const copyFile = (relativePath) => {
-      const destination = path.join(copiedProject, relativePath);
-      fs.mkdirSync(path.dirname(destination), { recursive: true });
-      fs.copyFileSync(path.join(ROOT, relativePath), destination);
-    };
+  it.skipIf(!fs.existsSync(DATA_DIR))(
+    "datos:check detecta un artefacto alterado en una copia temporal",
+    () => {
+      const temporaryRoot = fs.mkdtempSync(path.join(os.tmpdir(), "rioclaro-api-check-"));
+      const copiedProject = path.join(temporaryRoot, "app");
+      const copyFile = (relativePath) => {
+        const destination = path.join(copiedProject, relativePath);
+        fs.mkdirSync(path.dirname(destination), { recursive: true });
+        fs.copyFileSync(path.join(ROOT, relativePath), destination);
+      };
 
-    try {
-      for (const file of [
-        "scripts/preparar-datos.mjs",
-        "scripts/datos.config.mjs",
-        "src/features/policies/domain/parseVersionComparison.js",
-        "src/features/chat/domain/guidelines.js",
-      ]) {
-        copyFile(file);
+      try {
+        for (const file of [
+          "scripts/preparar-datos.mjs",
+          "scripts/datos.config.mjs",
+          "src/features/policies/domain/parseVersionComparison.js",
+          "src/features/chat/domain/guidelines.js",
+        ]) {
+          copyFile(file);
+        }
+
+        const scriptPath = path.join(copiedProject, "scripts", "preparar-datos.mjs");
+        const env = { ...process.env, RC_DATA_DIR: DATA_DIR };
+        execFileSync(process.execPath, [scriptPath], {
+          cwd: copiedProject,
+          env,
+          stdio: "pipe",
+        });
+
+        const promptPath = path.join(copiedProject, "api", "src", "prompts", "system.json");
+        fs.appendFileSync(promptPath, " ");
+        expect(() => execFileSync(process.execPath, [scriptPath, "--check"], {
+          cwd: copiedProject,
+          env,
+          stdio: "pipe",
+        })).toThrow();
+      } finally {
+        fs.rmSync(temporaryRoot, { recursive: true, force: true });
       }
-
-      const scriptPath = path.join(copiedProject, "scripts", "preparar-datos.mjs");
-      const env = { ...process.env, RC_DATA_DIR: DATA_DIR };
-      execFileSync(process.execPath, [scriptPath], {
-        cwd: copiedProject,
-        env,
-        stdio: "pipe",
-      });
-
-      const promptPath = path.join(copiedProject, "api", "src", "prompts", "system.json");
-      fs.appendFileSync(promptPath, " ");
-      expect(() => execFileSync(process.execPath, [scriptPath, "--check"], {
-        cwd: copiedProject,
-        env,
-        stdio: "pipe",
-      })).toThrow();
-    } finally {
-      fs.rmSync(temporaryRoot, { recursive: true, force: true });
-    }
-  }, 30_000);
+    },
+    30_000,
+  );
 });

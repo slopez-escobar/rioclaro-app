@@ -3,6 +3,9 @@ const flag = (valor, porDefecto) => (valor === undefined ? porDefecto : String(v
 
 // false = servicios simulados (Parte A). true = backend de Azure (Parte B).
 export const USE_AZURE = flag(import.meta.env.VITE_USE_AZURE, false);
-export const API_BASE_URL = String(import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "") || "/api";
+const configuredApiBaseUrl = String(import.meta.env.VITE_API_BASE_URL || "/api").replace(/\/+$/, "") || "/api";
+export const API_BASE_URL = import.meta.env.DEV && /^https?:\/\//i.test(configuredApiBaseUrl)
+  ? "/api"
+  : configuredApiBaseUrl;
 // Interruptor de apagado del asistente de IA.
 export const ASSISTANT_ENABLED = flag(import.meta.env.VITE_ASSISTANT_ENABLED, true);

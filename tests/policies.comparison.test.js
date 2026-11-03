@@ -1,4 +1,4 @@
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { DATA_DIR } from "../scripts/datos.config.mjs";
@@ -18,11 +18,13 @@ function findSourceFile(root, fileName) {
   throw new Error(`No se encontró ${fileName} en ${root}.`);
 }
 
-const sourcePath = findSourceFile(
-  path.join(DATA_DIR, "Politicas"),
-  "CLAVE_comparacion_politicas.md",
-);
-const sourceMarkdown = readFileSync(sourcePath, "utf8");
+const hasSourceData = existsSync(DATA_DIR);
+const sourceMarkdown = hasSourceData
+  ? readFileSync(findSourceFile(
+    path.join(DATA_DIR, "Politicas"),
+    "CLAVE_comparacion_politicas.md",
+  ), "utf8")
+  : "";
 const withoutOriginalExtensions = (value) => {
   if (typeof value === "string") return value.replace(/\.(docx|xlsx)\b/gi, "");
   if (Array.isArray(value)) return value.map(withoutOriginalExtensions);
@@ -35,7 +37,7 @@ const withoutOriginalExtensions = (value) => {
   return value;
 };
 
-describe("comparación de versiones de devoluciones", () => {
+describe.skipIf(!hasSourceData)("comparación de versiones de devoluciones", () => {
   it("analiza las tres versiones y las nueve contradicciones del archivo fuente", () => {
     const result = parseVersionComparison(sourceMarkdown);
     expect(result.versiones.map(({ clave }) => clave)).toEqual(["v1", "leon", "v3"]);

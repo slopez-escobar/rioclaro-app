@@ -1,6 +1,6 @@
 # API de Río Claro
 
-Base local de Azure Functions v4, Node.js 20 o posterior. Instala y ejecuta desde esta carpeta:
+Base local de Azure Functions v4, Node.js 22 o posterior. Instala y ejecuta desde esta carpeta:
 
 ```bash
 npm install

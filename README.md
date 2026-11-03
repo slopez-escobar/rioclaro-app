@@ -34,9 +34,47 @@ Abre la dirección local que indique Vite. El proyecto está pensado para ejecut
 
 ## Modo Azure
 
-El archivo versionado `.env.azure` activa `VITE_USE_AZURE=true` y configura `VITE_API_BASE_URL=/api`. Para desarrollo, inicia Azure Functions desde `api/` con `func start` y, en otra terminal, ejecuta `npm run dev:azure` desde `rioclaro-app`; Vite reenvía `/api` a `http://localhost:7071`. Para compilar y revisar el paquete ejecuta `npm run build:azure` y `npm run verificar:azure`.
+El archivo versionado `.env.azure` activa `VITE_USE_AZURE=true` y configura la URL de producción `VITE_API_BASE_URL`. En desarrollo, `npm run dev:azure` usa `/api` y Vite reenvía esa ruta a `http://localhost:7071`; en el build Azure el cliente usa la URL HTTPS absoluta de la Function App. Para compilar y revisar el paquete ejecuta `npm run build:azure` y `npm run verificar:azure`.
 
 En este modo el login, la lectura de facturas, el análisis de sentimiento y el chat usan el backend. Para el chat, `gpt-4.1-mini` decide si necesita una herramienta; la aplicación ejecuta las cinco herramientas con la sesión y el alcance del usuario y devuelve al modelo solo el resultado mínimo permitido. Los datos completos de existencias, pedidos y políticas no se envían al backend. Las negativas locales de privacidad e inyección se resuelven antes de cualquier llamada al modelo, incluso si Azure no está disponible. La aplicación no envía mensajes de sistema ni metadatos de interfaz; el backend agrega su instrucción de sistema y el modelo solo ve lo que cada herramienta devuelve. Las cuentas desactivadas y su panel permanecen locales a este navegador; el login remoto no consulta esa lista. Los datos de negocio continúan incluidos en el paquete de la aplicación. El paquete Azure excluye las contraseñas de demostración.
+
+## Despliegue
+
+La arquitectura usa un sitio web estático en Azure Storage (`https://strioclaroweb.z14.web.core.windows.net`) y una Function App independiente (`https://rioclaro-api-sle-e4c6brcsbkdkd7h0.belgiumcentral-01.azurewebsites.net`). En la configuración de sitio web estático de Azure Storage, establece `index.html` como documento de error para resolver las rutas de la SPA. El frontend llama directamente a la API; no hay Static Web Apps ni proxy en producción.
+
+El workflow `.github/workflows/deploy.yml` valida el repositorio y despliega el contenedor `$web` y la Function App `rioclaro-api-sle` en los pushes a `main` y al iniciarlo manualmente. Configura estos secretos de GitHub Actions:
+
+```text
+AZURE_STORAGE_CONNECTION_STRING
+AZURE_FUNCTIONAPP_PUBLISH_PROFILE
+```
+
+La Function App es Windows Consumption con Functions v4 y Node.js 22. Configura `WEBSITE_NODE_DEFAULT_VERSION` como `~22` en la Function App; define además estas variables de aplicación con los mismos nombres de `api/local.settings.json` y almacena sus valores solo en Azure:
+
+```text
+FUNCTIONS_WORKER_RUNTIME
+AzureWebJobsStorage
+TOKEN_SECRET
+TOKEN_TTL_HOURS
+ASSISTANT_ENABLED
+RECEPTOR_RFC
+DOCINT_ENDPOINT
+DOCINT_KEY
+DOCINT_API_VERSION
+AOAI_ENDPOINT
+AOAI_KEY
+AOAI_DEPLOYMENT
+AOAI_API_VERSION
+LANGUAGE_ENDPOINT
+LANGUAGE_KEY
+LANGUAGE_API_VERSION
+SPEECH_REGION
+SPEECH_KEY
+```
+
+En la configuración de CORS de la Function App, permite el origen exacto `https://strioclaroweb.z14.web.core.windows.net` (sin `/` final). Azure App Service/Functions procesa las solicitudes preflight `OPTIONS`; no agregues ese origen al código de los handlers. Las funciones declaran `GET` o `POST`, y la plataforma debe contestar el preflight antes de invocarlas.
+
+El workflow sube los archivos del build al contenedor `$web` con Azure CLI y establece explícitamente el tipo MIME de cada archivo según su extensión. Después publica `api/` con el perfil de publicación; `.funcignore` excluye archivos locales, pruebas y documentación, pero conserva `node_modules` con las dependencias de producción instaladas por el workflow.
 
 ## Datos y estructura
 
@@ -111,7 +149,7 @@ Las rutas requieren sesión salvo `/login`. Los permisos se leen del catálogo `
 
 ## Backend (`api/`)
 
-La API usa Azure Functions v4 y Node.js 20 o posterior. Instala sus dependencias desde el directorio independiente:
+La API usa Azure Functions v4 y Node.js 22 o posterior. Instala sus dependencias desde el directorio independiente:
 
 ```bash
 cd api

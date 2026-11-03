@@ -2,6 +2,8 @@
 .vscode
 .venv
 local.settings.json
-node_modules
+local.settings.*.json
 tests
+README*
+.funcignore
 *.log
