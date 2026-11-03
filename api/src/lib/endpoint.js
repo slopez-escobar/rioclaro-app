@@ -8,7 +8,6 @@ export function recordRequest(context, {
   now = Date.now,
   size,
   messages,
-  tokens,
 }) {
   if (typeof context?.log !== "function") return;
   const currentTime = typeof now === "function" ? now() : now;
@@ -19,7 +18,6 @@ export function recordRequest(context, {
     milisegundos: Math.max(0, currentTime - startedAt),
     ...(Number.isFinite(size) ? { tamano: size } : {}),
     ...(Number.isFinite(messages) ? { mensajes: messages } : {}),
-    ...(Number.isFinite(tokens) ? { tokens } : {}),
   });
 }
 

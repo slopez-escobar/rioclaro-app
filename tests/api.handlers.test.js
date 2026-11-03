@@ -9,7 +9,7 @@ import { usuarios } from "../api/data/usuarios.json";
 import { roles } from "../api/data/roles.json";
 import { login as appLogin } from "../src/features/auth/authService.local.js";
 
-const TOKEN_SECRET = "secreto-de-prueba-con-32-caracteres-minimo";
+const TOKEN_SECRET = "t".repeat(42);
 const config = {
   tokenSecret: TOKEN_SECRET,
   tokenTtlHours: 8,

@@ -133,9 +133,8 @@ function logProviderError(context, error) {
   if (typeof context?.log !== "function") return;
   context.log({
     servicio: "chat",
-    statusProveedor: error.status,
+    estado: error.status,
     ...(error.providerCode ? { code: error.providerCode } : {}),
-    ...(error.providerType ? { type: error.providerType } : {}),
   });
 }
 
@@ -156,7 +155,6 @@ export function createChatHandler({
     let response;
     let usuario = "anónimo";
     let messageCount;
-    let tokenCount;
     try {
       const session = requireSession(httpRequest, {
         config,
@@ -252,7 +250,6 @@ export function createChatHandler({
         ? "No puedo ayudar con esa solicitud."
         : choice.message.content ?? null;
       const usage = result.usage ?? {};
-      tokenCount = Number.isFinite(usage.total_tokens) ? usage.total_tokens : 0;
       const message = {
         role: "assistant",
         content,
@@ -283,7 +280,6 @@ export function createChatHandler({
         startedAt,
         now,
         messages: messageCount,
-        tokens: tokenCount,
       });
     }
   };

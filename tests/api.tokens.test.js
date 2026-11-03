@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { signToken, verifyToken } from "../api/src/lib/tokens.js";
 
-const secret = "secreto-de-prueba-con-32-caracteres-minimo";
+const secret = "t".repeat(42);
 const payload = {
   usuario: "laura",
   nombre: "Laura",

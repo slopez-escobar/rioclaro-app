@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { loadConfig } from "../api/src/lib/config.js";
 
-const SECRET = "secreto-de-prueba-con-32-caracteres-minimo";
+const SECRET = "t".repeat(42);
 
 describe("configuración de la API", () => {
   it("requiere TOKEN_SECRET de al menos 32 caracteres", () => {

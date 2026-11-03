@@ -109,9 +109,8 @@ describe("POST /api/chat", () => {
     expect(response.status).toBe(422);
     expect(providerLog).toEqual({
       servicio: "chat",
-      statusProveedor: 400,
+      estado: 400,
       code: "c".repeat(120),
-      type: "content_filter",
     });
     const logText = JSON.stringify(logs);
     expect(logText).not.toContain(privateMessage);

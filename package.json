@@ -13,6 +13,7 @@
     "build": "vite build",
     "build:azure": "vite build --mode azure --outDir dist-azure",
     "verificar:azure": "node scripts/verificar-paquete-azure.mjs",
+    "auditar:seguridad": "node scripts/auditar-seguridad.mjs",
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests",
     "datos": "node scripts/preparar-datos.mjs",

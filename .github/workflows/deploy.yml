@@ -30,6 +30,9 @@ jobs:
       - name: Ejecutar pruebas
         run: npm test
 
+      - name: Auditar seguridad y privacidad
+        run: npm run auditar:seguridad
+
       - name: Compilar modo Azure
         run: npm run build:azure
 
