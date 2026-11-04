@@ -1,7 +1,8 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { AZURE_SERVICES, PILOT_BUDGET } from "../src/config/pilotCost.js";
 import { buildBudgetStatus } from "../src/features/dashboard/domain/pilotConfig.js";
 import { createDashboardService, dashboardService } from "../src/features/dashboard/dashboardService.js";
+import { createComplaintService } from "../src/features/complaints/complaintService.js";
 import { login } from "../src/features/auth/authService.local.js";
 import { createLocalStore } from "../src/shared/storage/localStore.js";
 
@@ -114,6 +115,18 @@ describe("panel de dirección", () => {
     expect(panel.existencias.estado).toBe("ok");
     expect(panel.costo.estado).toBe("ok");
   });
+
+  it("abrir el panel y listar quejas en modo Azure no llama al análisis remoto", async () => {
+    const sentiment = { analyze: vi.fn() };
+    const complaints = createComplaintService({ sentiment, azureMode: true });
+    const service = createDashboardService({ complaints });
+    const session = sessionFor("ernesto");
+
+    await service.getPanel(session);
+    await complaints.list(session);
+
+    expect(sentiment.analyze).not.toHaveBeenCalled();
+  });
 });
 
 describe("presupuesto del piloto", () => {
@@ -124,13 +137,16 @@ describe("presupuesto del piloto", () => {
       porcentajeDeLaAlerta: null,
       estado: "sin_datos",
     });
-    expect(buildBudgetStatus({ creditoUSD: 99, alertaUSD: 20, gastoRealUSD: 19 }).estado)
+    expect(PILOT_BUDGET.gastoRealUsd).toBeNull();
+    expect(PILOT_BUDGET.fechaCorte).toBeNull();
+    expect(buildBudgetStatus({ creditoUSD: 99, alertaUSD: 20, gastoRealUsd: 19 }).estado)
       .toBe("dentro");
-    expect(buildBudgetStatus({ creditoUSD: 99, alertaUSD: 20, gastoRealUSD: 20 }))
+    expect(buildBudgetStatus({ creditoUSD: 99, alertaUSD: 20, gastoRealUsd: 20 }))
       .toMatchObject({ porcentajeDelCredito: 20.2, porcentajeDeLaAlerta: 100, estado: "alerta" });
-    expect(buildBudgetStatus({ creditoUSD: 99, alertaUSD: 20, gastoRealUSD: 99 }))
+    expect(buildBudgetStatus({ creditoUSD: 99, alertaUSD: 20, gastoRealUsd: 99 }))
       .toMatchObject({ porcentajeDelCredito: 100, porcentajeDeLaAlerta: 495, estado: "excedido" });
     expect(AZURE_SERVICES).toHaveLength(6);
+    expect(AZURE_SERVICES.map(({ nombre }) => nombre).join(" ")).not.toMatch(/Static Web Apps|Key Vault/);
     expect(AZURE_SERVICES.every((service) => service.estimadoUSD === null)).toBe(true);
   });
 });

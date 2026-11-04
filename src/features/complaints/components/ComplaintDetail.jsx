@@ -24,6 +24,11 @@ const SENTIMENT_LABELS = {
   negativo: "Negativo",
   sin_analizar: "Sin analizar",
 };
+const ANALYSIS_ORIGIN_LABELS = {
+  "azure-language": "Analizado con Azure AI Language",
+  simulado: "Análisis simulado (modo local)",
+  estimado: "Estimación local (no analizada con Azure AI Language)",
+};
 const THEME_LABELS = {
   sin_existencia: "Falta de existencia",
   error_de_captura: "Error de captura",
@@ -94,16 +99,14 @@ export default function ComplaintDetail({ queja, onClose, onAction, onOpenOther 
               ? `${Math.round(sentiment.confianza * 100)}%`
               : "—"}
           </p>
-          {sentiment.sentimiento === "sin_analizar" ? (
-            <p>No se pudo analizar el texto; se reintentará al abrir la queja</p>
-          ) : sentiment.frasesClave?.length ? (
+          {sentiment.sentimiento === "sin_analizar" ? null : sentiment.frasesClave?.length ? (
             <ul className="quejas-phrase-list">
               {sentiment.frasesClave.map((phrase) => <li key={phrase}>{phrase}</li>)}
             </ul>
           ) : <p>No se detectaron frases clave.</p>}
-          {sentiment.sentimiento === "sin_analizar" ? null : (
-            <p className="quejas-note">Análisis simulado; en producción lo hace Azure AI Language</p>
-          )}
+          <p className="quejas-note">{sentiment.sentimiento === "sin_analizar"
+            ? "No se pudo analizar"
+            : ANALYSIS_ORIGIN_LABELS[sentiment.origen] || "No se pudo analizar"}</p>
         </section>
 
         {queja.casoRepetido ? (

@@ -1,6 +1,8 @@
 import { can } from "../../auth/permissions.js";
+import { USE_AZURE } from "../../../config/env.js";
 import { buildComplaint } from "../domain/buildComplaint.js";
 import { getComplaintRepository } from "../complaintRepository.js";
+import { sentiment as defaultSentiment } from "./sentiment.js";
 
 /**
  * Valida alcance y registra una queja del cliente o de un empleado autorizado.
@@ -66,6 +68,14 @@ export async function registerComplaint(
     ahora: timestamp,
   });
   await complaintRepo.add(record);
+  if (deps.azureMode ?? USE_AZURE) {
+    const analyzer = deps.sentiment || defaultSentiment;
+    if (typeof analyzer.analyzeForComplaint === "function") {
+      await analyzer.analyzeForComplaint(record.idQueja, record.descripcion);
+    } else {
+      await analyzer.analyze(record.descripcion);
+    }
+  }
   return {
     ok: true,
     idQueja: record.idQueja,

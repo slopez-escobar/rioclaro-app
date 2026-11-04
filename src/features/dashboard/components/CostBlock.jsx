@@ -13,11 +13,12 @@ export default function CostBlock({ block }) {
         <div>
           <dt>Gasto real</dt>
           <dd>{gasto === null
-            ? "Por medir en Azure Cost Management (paso B7)"
+            ? "Pendiente de capturar"
             : usd.format(gasto)}</dd>
         </div>
+        <div><dt>Fecha de corte</dt><dd>{presupuesto.fechaCorte || "Pendiente de capturar"}</dd></div>
         <div><dt>Estado</dt><dd>{estadoPresupuesto.estado === "sin_datos"
-          ? "Por medir"
+          ? "Pendiente de capturar"
           : estadoPresupuesto.estado}</dd></div>
       </dl>
       <div className="panel-table-scroll" tabIndex="0"
@@ -34,6 +35,7 @@ export default function CostBlock({ block }) {
           ))}</tbody>
         </table>
       </div>
+      <p className="panel-note">Key Vault: mejora recomendada para producción.</p>
     </PanelBlock>
   );
 }

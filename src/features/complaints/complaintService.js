@@ -5,6 +5,7 @@ import * as clientesRepository from "../../data/repositories/clientesRepository.
 import * as quejasRepository from "../../data/repositories/quejasRepository.js";
 import { complaintActionsRepository } from "./complaintActionsRepository.js";
 import { complaintRepository } from "./complaintRepository.js";
+import { USE_AZURE } from "../../config/env.js";
 import {
   applyAction,
   canAct,
@@ -15,6 +16,7 @@ import {
   sortComplaints,
 } from "./domain/index.js";
 import { sentiment as defaultSentiment } from "./services/sentiment.js";
+import { createMockSentiment } from "./services/sentiment.mock.js";
 import { formatLocalMinute } from "../../shared/utils/time.js";
 
 function normalizeText(value) {
@@ -68,26 +70,29 @@ export function createComplaintService({
   actionsRepo = complaintActionsRepository,
   clientesRepo = clientesRepository,
   sentiment = defaultSentiment,
+  estimatedSentiment = createMockSentiment(),
+  azureMode = USE_AZURE,
   now = () => formatLocalMinute(new Date()),
 } = {}) {
   const sentimentCache = new Map();
+  let analysisQueue = Promise.resolve();
 
   function getSentiment(queja) {
     if (!sentimentCache.has(queja.idQueja)) {
-      const result = Promise.resolve()
-        .then(() => sentiment.analyze(queja.descripcion))
-        .then((value) => {
-          if (value?.sentimiento === "sin_analizar" && sentimentCache.get(queja.idQueja) === result) {
-            sentimentCache.delete(queja.idQueja);
-          }
-          return value;
-        });
+      const result = analysisQueue.then(() => (
+        typeof sentiment.analyzeForComplaint === "function"
+          ? sentiment.analyzeForComplaint(queja.idQueja, queja.descripcion)
+          : sentiment.analyze(queja.descripcion)
+      ));
+      analysisQueue = result.then(() => undefined, () => undefined);
       sentimentCache.set(queja.idQueja, result);
-      result.catch(() => {
-        if (sentimentCache.get(queja.idQueja) === result) sentimentCache.delete(queja.idQueja);
-      });
     }
     return sentimentCache.get(queja.idQueja);
+  }
+
+  async function getEstimatedSentiment(queja) {
+    const result = await estimatedSentiment.analyze(queja.descripcion);
+    return azureMode ? { ...result, origen: "estimado" } : result;
   }
 
   async function getClientName(session, idCliente) {
@@ -113,13 +118,15 @@ export function createComplaintService({
     );
   }
 
-  async function enrich(session, complaints, repeatedCases = null) {
+  async function enrich(session, complaints, repeatedCases = null, { analyzeRemotely = false } = {}) {
     const repeated = repeatedCases || findRepeatedCases(complaints);
     const timestamp = now();
     return Promise.all(complaints.map(async (queja) => {
       const repeatInfo = repeated.porQueja.get(queja.idQueja) || null;
       const [sentimentResult, clienteNombre] = await Promise.all([
-        getSentiment(queja),
+        azureMode
+          ? (analyzeRemotely ? getSentiment(queja) : getEstimatedSentiment(queja))
+          : getSentiment(queja),
         getClientName(session, queja.idCliente),
       ]);
       return {
@@ -155,7 +162,12 @@ export function createComplaintService({
     const complaints = await collectVisible(session);
     const target = complaints.find((queja) => queja.idQueja === idQueja);
     if (!target) return null;
-    const [enriched] = await enrich(session, [target], findRepeatedCases(complaints));
+    const [enriched] = await enrich(
+      session,
+      [target],
+      findRepeatedCases(complaints),
+      { analyzeRemotely: true },
+    );
     return enriched;
   }
 
@@ -250,6 +262,7 @@ export function createComplaintService({
     actionsRepo.reset();
     await complaintRepo.clear();
     sentimentCache.clear();
+    sentiment.clearCache?.();
     return list(session);
   }
 

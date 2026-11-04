@@ -20,21 +20,42 @@ function isValidResult(result) {
 
 /** Crea el adaptador remoto de Azure AI Language. */
 export function createAzureSentiment({ client = apiClient } = {}) {
-  return {
-    async analyze(texto) {
-      if (typeof texto !== "string" || texto.trim().length < 5) {
-        throw new Error("Escribe al menos 5 caracteres para analizar el sentimiento.");
-      }
-      const input = texto.slice(0, 2000);
+  const complaintCache = new Map();
+  let requestQueue = Promise.resolve();
+
+  function enqueue(texto) {
+    const request = requestQueue.then(async () => {
       try {
         const result = await client.request("/analyzeComplaint", {
           method: "POST",
-          body: { texto: input },
+          body: { texto: texto.slice(0, 2000) },
         });
         return isValidResult(result) ? result : { ...UNAVAILABLE };
       } catch {
         return { ...UNAVAILABLE };
       }
+    });
+    requestQueue = request.then(() => undefined, () => undefined);
+    return request;
+  }
+
+  async function analyze(texto) {
+    if (typeof texto !== "string" || texto.trim().length < 5) {
+      throw new Error("Escribe al menos 5 caracteres para analizar el sentimiento.");
+    }
+    return enqueue(texto);
+  }
+
+  return {
+    analyze,
+    analyzeForComplaint(idQueja, texto) {
+      if (!complaintCache.has(idQueja)) {
+        complaintCache.set(idQueja, analyze(texto));
+      }
+      return complaintCache.get(idQueja);
+    },
+    clearCache() {
+      complaintCache.clear();
     },
   };
 }

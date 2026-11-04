@@ -2,7 +2,7 @@
  * Compara el gasto real con los límites de crédito y alerta del piloto.
  */
 export function buildBudgetStatus(presupuesto) {
-  const gasto = presupuesto.gastoRealUSD;
+  const gasto = presupuesto.gastoRealUsd;
   const gastado = typeof gasto === "number" && Number.isFinite(gasto) ? gasto : null;
   const credito = presupuesto.creditoUSD;
   const alerta = presupuesto.alertaUSD;

@@ -34,4 +34,38 @@ describe("sentimiento Azure", () => {
     await expect(createAzureSentiment({ client }).analyze("texto válido"))
       .resolves.toEqual({ sentimiento: "sin_analizar", confianza: 0, frasesClave: [], origen: "no_disponible" });
   });
+
+  it("cachea un intento por queja, incluidos los fallos", async () => {
+    const client = { request: vi.fn().mockRejectedValue(new Error("offline")) };
+    const analyzer = createAzureSentiment({ client });
+    const first = analyzer.analyzeForComplaint("QJA-1", "La entrega llegó tarde.");
+    const second = analyzer.analyzeForComplaint("QJA-1", "La entrega llegó tarde.");
+
+    await expect(first).resolves.toMatchObject({ sentimiento: "sin_analizar" });
+    await expect(second).resolves.toMatchObject({ sentimiento: "sin_analizar" });
+    expect(client.request).toHaveBeenCalledOnce();
+  });
+
+  it("limita a una solicitud de Azure concurrente", async () => {
+    let active = 0;
+    let maxActive = 0;
+    const client = {
+      request: vi.fn(async () => {
+        active += 1;
+        maxActive = Math.max(maxActive, active);
+        await new Promise((resolve) => setTimeout(resolve, 5));
+        active -= 1;
+        return result;
+      }),
+    };
+    const analyzer = createAzureSentiment({ client });
+
+    await Promise.all([
+      analyzer.analyzeForComplaint("QJA-1", "La entrega llegó tarde."),
+      analyzer.analyzeForComplaint("QJA-2", "El pedido llegó completo."),
+    ]);
+
+    expect(maxActive).toBe(1);
+    expect(client.request).toHaveBeenCalledTimes(2);
+  });
 });

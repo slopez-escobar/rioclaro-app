@@ -13,7 +13,7 @@
 El comando `npm run auditar:seguridad` actualiza automáticamente esta tabla. La auditoría no imprime valores de secretos.
 
 <!-- SECURITY_AUDIT_RESULTS_START -->
-Resultados más recientes: 2026-11-03.
+Resultados más recientes: 2026-11-04.
 
 | Comprobación | Resultado | Detalle |
 |---|---|---|

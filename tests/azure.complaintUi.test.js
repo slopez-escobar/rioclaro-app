@@ -36,7 +36,7 @@ describe("presentación de sentimiento no disponible", () => {
     expect(markup).toContain("◌ Sin analizar");
   });
 
-  it("explica el reintento en el detalle sin llamarlo neutral", () => {
+  it("muestra que no se pudo analizar sin llamarlo neutral", () => {
     const markup = renderToStaticMarkup(createElement(ComplaintDetail, {
       queja: complaint,
       onClose() {},
@@ -44,7 +44,35 @@ describe("presentación de sentimiento no disponible", () => {
       onOpenOther() {},
     }));
     expect(markup).toContain("Sin analizar");
-    expect(markup).toContain("No se pudo analizar el texto; se reintentará al abrir la queja");
+    expect(markup).toContain("No se pudo analizar");
     expect(markup).not.toContain("Neutral");
+  });
+
+  it.each([
+    ["azure-language", "Analizado con Azure AI Language"],
+    ["simulado", "Análisis simulado (modo local)"],
+  ])("muestra el origen %s del análisis", (origen, label) => {
+    const markup = renderToStaticMarkup(createElement(ComplaintDetail, {
+      queja: {
+        ...complaint,
+        sentimiento: { sentimiento: "neutral", confianza: 0.6, frasesClave: [], origen },
+      },
+      onClose() {},
+      onAction() {},
+      onOpenOther() {},
+    }));
+    expect(markup).toContain(label);
+  });
+
+  it("marca como estimado el sentimiento de la lista Azure", () => {
+    const markup = renderToStaticMarkup(createElement(ComplaintTable, {
+      quejas: [{
+        ...complaint,
+        sentimiento: { sentimiento: "negativo", confianza: 0.8, frasesClave: [], origen: "estimado" },
+      }],
+      onSelect() {},
+      selectedId: null,
+    }));
+    expect(markup).toContain("Negativo (estimado)");
   });
 });
