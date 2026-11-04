@@ -2,9 +2,9 @@
 
 **Proyecto final AI-901 (Fundamentos de IA con tecnologías Microsoft)**
 
-**Autores:**<br>
-Saúl López Escobar<br>
-Irma Andrea Ramírez Padilla
+| | |
+|---|---|
+| **Autores:** | Saúl López Escobar<br>Irma Andrea Ramírez Padilla |
 
 **Fecha de entrega:** 6 de noviembre de 2026
 
