@@ -12,7 +12,7 @@
 |---|---|
 | **Prototipo público** | https://strioclaroweb.z14.web.core.windows.net/ |
 | **API (Azure Functions)** | https://rioclaro-api-sle-e4c6brcsbkdkd7h0.belgiumcentral-01.azurewebsites.net/api |
-| **Código fuente** | https://github.com/slopez-escobar/rioclaro-app *(repositorio privado)* |
+| **Código fuente** | https://github.com/slopez-escobar/rioclaro-app *(repositorio público)* |
 | **Cuentas de demostración** | Contraseña de todas: `demo123`. Usuarios: `laura` (finanzas), `mariana`, `yesenia.flores`, `cliente1` (cliente). La lista completa está en «Cuentas de demostración» de la pantalla de acceso. |
 
 ![Pantalla de acceso del prototipo publicado](capturas/01-login.png)
