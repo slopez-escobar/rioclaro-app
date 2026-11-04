@@ -1,7 +1,9 @@
 # Distribuidora Río Claro · Prototipo con IA en Azure
 
 **Proyecto final AI-901 (Fundamentos de IA con tecnologías Microsoft)**
-**Autores:** Saúl López Escobar
+
+**Autores:**<br>
+Saúl López Escobar<br>
 Irma Andrea Ramírez Padilla
 
 **Fecha de entrega:** 6 de noviembre de 2026
